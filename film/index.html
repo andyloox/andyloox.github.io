@@ -243,11 +243,12 @@ if ('serviceWorker' in navigator) {
 		function selectPlayers() {
 			players.classList.add('active');
 			sp1.classList.add('active');
-			torrents.classList.remove('active');
-			trailers.classList.remove('active');
-			sp2.classList.remove('active');
-			
+			torrents.classList.add('active');
+			trailers.classList.add('active');
+			sp2.classList.add('active');
+			/**
 			players.removeAttribute('onclick');
+			*/
 			torrents.setAttribute("onclick", "selectTorrents()");
 			trailers.setAttribute("onclick", "selectTrailers()");
 			
