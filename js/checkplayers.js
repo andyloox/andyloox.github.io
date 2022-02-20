@@ -27,6 +27,21 @@
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="https://apimovie.tobaco.ws/embed/kp/'+id+'"></iframe>';
 		};
 		
+		function selectPlayers1() {
+			players.classList.add('active');
+			sp1.classList.add('active');
+			torrents.classList.remove('active');
+			trailers.classList.remove('active');
+			sp2.classList.remove('active');
+			
+			players.removeAttribute('onclick');
+			torrents.setAttribute("onclick", "selectTorrents()");
+			trailers.setAttribute("onclick", "selectTrailers()");
+			
+			containers.innerHTML = '';
+			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
+		};
+		
 		/**
 		 * Switch to trailers list
 		 */
