@@ -130,17 +130,17 @@ if ('serviceWorker' in navigator) {
 
                 <a href="#" onclick="history.back();return false;" class="history-back"> 🔙 Назад </a> | 
 
-		<a  id="players" class="active"> 🖥 Плеер </a>
+		<a onclick="selectPlayers();" id="players" class="active"> 🖥 Плеер </a>
 		<span id="sp1" class="active">|</span>
-			<a onclick="selectPlayers1(); id="players1" class="active"> 🖥 Плеер1 </a>
+			<a onclick="selectPlayers1();" id="players1" class="active"> 🖥 Плеер1 </a>
 		<span id="sp2" class="active">|</span>
-			<a id="players2" class="active"> 🖥 Плеер2 </a>
+			<a onclick="selectPlayers2();" id="players2" class="active"> 🖥 Плеер2 </a>
 		<span id="sp3" class="active">|</span>
-			<a id="players3" class="active"> 🖥 Плеер3 </a>
+			<a onclick="selectPlayers3();" id="players3" class="active"> 🖥 Плеер3 </a>
 		<span id="sp4" class="active">|</span>
-			<a id="players4" class="active"> 🖥 Плеер4 </a>
+			<a onclick="selectPlayers4();" id="players4" class="active"> 🖥 Плеер4 </a>
 		<span id="sp5" class="active">|</span>
-		<a id="players5" class="active"> 🖥 Плеер5 </a>
+		<a onclick="selectPlayers5();" id="players5" class="active"> 🖥 Плеер5 </a>
 		<span id="sp6" class="active">|</span>
 		<a onclick onclick="selectTrailers();" id="trailers"> 📱 Трейлер </a>
 		<span id="sp7">|</span>
@@ -243,15 +243,17 @@ if ('serviceWorker' in navigator) {
 		const trailers = document.getElementById('trailers');
 		const players = document.getElementById('players');
 		const players1 = document.getElementById('players1');
-	//	const players2 = document.getElementById('players2');
-	//	const players3 = document.getElementById('players3');
-	//	const players4 = document.getElementById('players4');
-	//	const players5 = document.getElementById('players5');
-		//const sp1 = document.getElementById('sp1');
-	//	const sp2 = document.getElementById('sp2');
-		//const sp3 = document.getElementById('sp3');
-	//	const sp4 = document.getElementById('sp4');
-	//	const sp5 = document.getElementById('sp5');
+		const players2 = document.getElementById('players2');
+	const players3 = document.getElementById('players3');
+		const players4 = document.getElementById('players4');
+		const players5 = document.getElementById('players5');
+		const sp1 = document.getElementById('sp1');
+		const sp2 = document.getElementById('sp2');
+		const sp3 = document.getElementById('sp3');
+		const sp4 = document.getElementById('sp4');
+	const sp5 = document.getElementById('sp5');
+	const sp6 = document.getElementById('sp6');
+	const sp7 = document.getElementById('sp7');
 		iframe.src = "https://apimovie.tobaco.ws/embed/kp/"+id;
 
 		//containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 70vmin;" src="https://apimovie.tobaco.ws/embed/kp/'+id+'"></iframe>';
@@ -261,25 +263,25 @@ if ('serviceWorker' in navigator) {
 		function selectPlayers() {
 			players.classList.add('active');
 			players1.classList.remove('active');
-		//	players2.classList.remove('active');
-		//	players3.classList.remove('active');
-		//	players4.classList.remove('active');
-		//	players5.classList.remove('active');
-		//	sp1.classList.add('active');
-		//	sp2.classList.remove('active');
-		//	sp3.classList.remove('active');
-		//	sp4.classList.remove('active');
-		//	sp5.classList.remove('active');
+			players2.classList.remove('active');
+			players3.classList.remove('active');
+			players4.classList.remove('active');
+			players5.classList.remove('active');
+			sp1.classList.add('active');
+			sp2.classList.remove('active');
+			sp3.classList.remove('active');
+			sp4.classList.remove('active');
+			sp5.classList.remove('active');
 			torrents.classList.remove('active');
 			trailers.classList.remove('active');
 			
 			
 			players.removeAttribute('onclick');
 			players1.setAttribute("onclick", "selectPlayers1()");
-		//	players2.setAttribute("onclick", "selectPlayers2()");
-		//	players3.setAttribute("onclick", "selectPlayers3()");
-		//	players4.setAttribute("onclick", "selectPlayers4()");
-		//	players5.setAttribute("onclick", "selectPlayers5()");
+			players2.setAttribute("onclick", "selectPlayers2()");
+		players3.setAttribute("onclick", "selectPlayers3()");
+			players4.setAttribute("onclick", "selectPlayers4()");
+		players5.setAttribute("onclick", "selectPlayers5()");
 			torrents.setAttribute("onclick", "selectTorrents()");
 			trailers.setAttribute("onclick", "selectTrailers()");
 			
@@ -291,29 +293,29 @@ if ('serviceWorker' in navigator) {
 		function selectPlayers1() {
 			players.classList.remove('active');
 			players1.classList.add('active');
-			//players2.classList.remove('active');
-			//players3.classList.remove('active');
-			//players4.classList.remove('active');
-			//players5.classList.remove('active');
-			//sp1.classList.remove('active');
-			//sp2.classList.add('active');
-		//	sp3.classList.remove('active');
-		//	sp4.classList.remove('active');
-		//	sp5.classList.remove('active');
+			players2.classList.remove('active');
+			players3.classList.remove('active');
+			players4.classList.remove('active');
+			players5.classList.remove('active');
+			sp1.classList.remove('active');
+			sp2.classList.add('active');
+			sp3.classList.remove('active');
+			sp4.classList.remove('active');
+			sp5.classList.remove('active');
 			
 			players1.removeAttribute('onclick');
 			players.setAttribute("onclick", "selectPlayers()");
-		//	players2.setAttribute("onclick", "selectPlayers2()");
-		//	players3.setAttribute("onclick", "selectPlayers3()");
-		//	players4.setAttribute("onclick", "selectPlayers4()");
-		//	players5.setAttribute("onclick", "selectPlayers5()");
+			players2.setAttribute("onclick", "selectPlayers2()");
+			players3.setAttribute("onclick", "selectPlayers3()");
+			players4.setAttribute("onclick", "selectPlayers4()");
+			players5.setAttribute("onclick", "selectPlayers5()");
 			torrents.setAttribute("onclick", "selectTorrents()");
 			trailers.setAttribute("onclick", "selectTrailers()");
 			
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player1.html#'+id+'"></iframe>';
 		};
-/*
+
 				function selectPlayers2() {
 			players.classList.add('active');
 			players1.classList.add('active');
@@ -386,7 +388,7 @@ if ('serviceWorker' in navigator) {
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./players#'+id+'"></iframe>';
 		};
-		*/
+		
 		/**
 		 * Switch to trailers list
 		 */
@@ -397,11 +399,11 @@ if ('serviceWorker' in navigator) {
 			torrents.classList.remove('active');
 			players.classList.remove('active');
 			players.setAttribute("onclick", "selectPlayers()");
-		//		players1.setAttribute("onclick", "selectPlayers1()");
-		//	players2.setAttribute("onclick", "selectPlayers2()");
-		//	players3.setAttribute("onclick", "selectPlayers3()");
-		//	players4.setAttribute("onclick", "selectPlayers4()");
-		//	players5.setAttribute("onclick", "selectPlayers5()");
+				players1.setAttribute("onclick", "selectPlayers1()");
+			players2.setAttribute("onclick", "selectPlayers2()");
+			players3.setAttribute("onclick", "selectPlayers3()");
+			players4.setAttribute("onclick", "selectPlayers4()");
+			players5.setAttribute("onclick", "selectPlayers5()");
 			trailers.removeAttribute('onclick');
 			torrents.setAttribute("onclick", "selectTorrents()");
 			players.setAttribute("onclick", "selectPlayers()");
