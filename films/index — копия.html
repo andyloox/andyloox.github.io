@@ -132,16 +132,8 @@ if ('serviceWorker' in navigator) {
 
 		<a id="players" class="active"> 🖥 Плеер </a>
 		<span id="sp1" class="active">|</span>
-			<a id="players" class="active"> 🖥 Плеер </a>
-		<span id="sp2" class="active">|</span>
-			<a id="players" class="active"> 🖥 Плеер </a>
-		<span id="sp3" class="active">|</span>
-			<a id="players" class="active"> 🖥 Плеер </a>
-		<span id="sp4" class="active">|</span>
-			<a id="players" class="active"> 🖥 Плеер </a>
-		<span id="sp5" class="active">|</span>
 		<a onclick="selectTrailers();" id="trailers"> 📱 Трейлер </a>
-		<span id="sp6">|</span>
+		<span id="sp2">|</span>
 		<a onclick="selectTorrents();" id="torrents"> 📲 Торрент </a>
 	</div>
 	<div id="containers" style="position: relative; margin: 5px;">
@@ -240,19 +232,11 @@ if ('serviceWorker' in navigator) {
 		const torrents = document.getElementById('torrents');
 		const trailers = document.getElementById('trailers');
 		const players = document.getElementById('players');
-		const players1 = document.getElementById('players1');
-		const players2 = document.getElementById('players2');
-		const players3 = document.getElementById('players3');
-		const players4 = document.getElementById('players4');
-		const players5 = document.getElementById('players5');
 		const sp1 = document.getElementById('sp1');
 		const sp2 = document.getElementById('sp2');
-		const sp3 = document.getElementById('sp3');
-		const sp4 = document.getElementById('sp4');
-		const sp5 = document.getElementById('sp5');
-		//iframe.src = "https://apimovie.tobaco.ws/embed/kp/"+id;
+		iframe.src = "https://apimovie.tobaco.ws/embed/kp/"+id;
 
-		containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 70vmin;" src="https://apimovie.tobaco.ws/embed/kp/'+id+'"></iframe>';
+		///containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 70vmin;" src="https://apimovie.tobaco.ws/embed/kp/'+id+'"></iframe>';
 		/**
 		 * Switch to players list
 		 */
