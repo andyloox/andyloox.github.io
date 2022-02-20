@@ -130,20 +130,20 @@ if ('serviceWorker' in navigator) {
 
                 <a href="#" onclick="history.back();return false;" class="history-back"> 🔙 Назад </a> | 
 
-		<a id="selectplayers" class="active"> 🖥 Плеер </a>
-		<span id="sp1" class="active">|</span>
-			<a onclick id="selectplayers1" class="active"> 🖥 Плеер1 </a>
-		<span id="sp2" class="active">|</span>
-			<a onclick id="selectplayers2" class="active"> 🖥 Плеер2 </a>
-		<span id="sp3" class="active">|</span>
-			<a onclick id="selectplayers3" class="active"> 🖥 Плеер3 </a>
-		<span id="sp4" class="active">|</span>
-			<a onclick id="selectplayers4" class="active"> 🖥 Плеер4 </a>
-		<span id="sp5" class="active">|</span>
-		<a onclick id="selectplayers5" class="active"> 🖥 Плеер5 </a>
-		<span id="sp6" class="active">|</span>
+		<a onclick="selectplayers(); id="players" class="active"> 🖥 Плеер </a>
+		//<span id="sp1" class="active">|</span>
+			<a onclick="selectplayers1(); id="players1" class="active"> 🖥 Плеер1 </a>
+		//<span id="sp2" class="active">|</span>
+			//<a onclick id="players2" class="active"> 🖥 Плеер2 </a>
+		//<span id="sp3" class="active">|</span>
+		//	<a onclick id="players3" class="active"> 🖥 Плеер3 </a>
+		//<span id="sp4" class="active">|</span>
+		//	<a onclick id="players4" class="active"> 🖥 Плеер4 </a>
+		//<span id="sp5" class="active">|</span>
+	//	<a onclick="selectplayers5(); id="players5" class="active"> 🖥 Плеер5 </a>
+	//	<span id="sp6" class="active">|</span>
 		<a onclick onclick="selectTrailers();" id="trailers"> 📱 Трейлер </a>
-		<span id="sp7">|</span>
+		//<span id="sp7">|</span>
 		<a onclick="selectTorrents();" id="torrents"> 📲 Торрент </a>
 	</div>
 	<div  id="containers" style="position: relative; margin: 5px;">
