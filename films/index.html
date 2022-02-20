@@ -130,17 +130,17 @@ if ('serviceWorker' in navigator) {
 
                 <a href="#" onclick="history.back();return false;" class="history-back"> 🔙 Назад </a> | 
 
-		<a id="players" class="active"> 🖥 Плеер </a>
+		<a id="selectplayers" class="active"> 🖥 Плеер </a>
 		<span id="sp1" class="active">|</span>
-			<a onclick id="players1" class="active"> 🖥 Плеер1 </a>
+			<a onclick id="selectplayers1" class="active"> 🖥 Плеер1 </a>
 		<span id="sp2" class="active">|</span>
-			<a onclick id="players2" class="active"> 🖥 Плеер2 </a>
+			<a onclick id="selectplayers2" class="active"> 🖥 Плеер2 </a>
 		<span id="sp3" class="active">|</span>
-			<a onclick id="players3" class="active"> 🖥 Плеер3 </a>
+			<a onclick id="selectplayers3" class="active"> 🖥 Плеер3 </a>
 		<span id="sp4" class="active">|</span>
-			<a onclick id="players4" class="active"> 🖥 Плеер4 </a>
+			<a onclick id="selectplayers4" class="active"> 🖥 Плеер4 </a>
 		<span id="sp5" class="active">|</span>
-		<a onclick id="players5" class="active"> 🖥 Плеер5 </a>
+		<a onclick id="selectplayers5" class="active"> 🖥 Плеер5 </a>
 		<span id="sp6" class="active">|</span>
 		<a onclick onclick="selectTrailers();" id="trailers"> 📱 Трейлер </a>
 		<span id="sp7">|</span>
@@ -302,7 +302,7 @@ if ('serviceWorker' in navigator) {
 			sp5.classList.remove('active');
 			
 			players1.removeAttribute('onclick');
-			players1.setAttribute("onclick", "selectPlayers1()");
+			players.setAttribute("onclick", "selectPlayers()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players3.setAttribute("onclick", "selectPlayers3()");
 			players4.setAttribute("onclick", "selectPlayers4()");
@@ -328,7 +328,7 @@ if ('serviceWorker' in navigator) {
 			
 			players2.removeAttribute('onclick');
 			players1.setAttribute("onclick", "selectPlayers1()");
-			players2.setAttribute("onclick", "selectPlayers2()");
+			players.setAttribute("onclick", "selectPlayers()");
 			players3.setAttribute("onclick", "selectPlayers3()");
 			players4.setAttribute("onclick", "selectPlayers4()");
 			players5.setAttribute("onclick", "selectPlayers5()");
@@ -353,7 +353,7 @@ if ('serviceWorker' in navigator) {
 			players3.removeAttribute('onclick');
 			players1.setAttribute("onclick", "selectPlayers1()");
 			players2.setAttribute("onclick", "selectPlayers2()");
-			players3.setAttribute("onclick", "selectPlayers3()");
+			players.setAttribute("onclick", "selectPlayers()");
 			players4.setAttribute("onclick", "selectPlayers4()");
 			players5.setAttribute("onclick", "selectPlayers5()");
 			torrents.setAttribute("onclick", "selectTorrents()");
@@ -378,7 +378,7 @@ if ('serviceWorker' in navigator) {
 			players1.setAttribute("onclick", "selectPlayers1()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players3.setAttribute("onclick", "selectPlayers3()");
-			players4.setAttribute("onclick", "selectPlayers4()");
+			players.setAttribute("onclick", "selectPlayers()");
 			players5.setAttribute("onclick", "selectPlayers5()");
 			torrents.setAttribute("onclick", "selectTorrents()");
 			trailers.setAttribute("onclick", "selectTrailers()");
@@ -395,6 +395,7 @@ if ('serviceWorker' in navigator) {
 			sp2.classList.add('active');
 			torrents.classList.remove('active');
 			players.classList.remove('active');
+			players.setAttribute("onclick", "selectPlayers()");
 				players1.setAttribute("onclick", "selectPlayers1()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players3.setAttribute("onclick", "selectPlayers3()");
@@ -417,6 +418,7 @@ if ('serviceWorker' in navigator) {
 			sp1.classList.remove('active');
 			torrents.classList.add('active');
 			sp2.classList.add('active');
+			players.setAttribute("onclick", "selectPlayers()");
 				players1.setAttribute("onclick", "selectPlayers1()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players3.setAttribute("onclick", "selectPlayers3()");
