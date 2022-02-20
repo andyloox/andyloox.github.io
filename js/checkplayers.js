@@ -42,7 +42,7 @@
 			players.setAttribute("onclick", "selectPlayers()");
 			
 			containers.innerHTML = '';
-			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./trailer#'+id+'"></iframe>';
+			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./trailer.html#'+id+'"></iframe>';
 		};
 
 		/**
@@ -60,5 +60,5 @@
 			players.setAttribute("onclick", "selectPlayers()");
 			
 			containers.innerHTML = '';
-			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./torrent#'+TLT+'"></iframe>';
+			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./torrent.html#'+TLT+'"></iframe>';
 		};
