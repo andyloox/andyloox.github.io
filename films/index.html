@@ -260,12 +260,17 @@ if ('serviceWorker' in navigator) {
 		 */
 		function selectPlayers() {
 			players.classList.add('active');
+			players1.classList.add('active');
+			players2.classList.add('active');
+			players3.classList.add('active');
+			players4.classList.add('active');
+			players5.classList.add('active');
 			sp1.classList.add('active');
 			torrents.classList.remove('active');
 			trailers.classList.remove('active');
 			sp2.classList.remove('active');
 			
-			players.removeAttribute('onclick');
+			//players.removeAttribute('onclick');
 			torrents.setAttribute("onclick", "selectTorrents()");
 			trailers.setAttribute("onclick", "selectTrailers()");
 			
@@ -317,7 +322,7 @@ if ('serviceWorker' in navigator) {
     Если Вы владелец авторских прав, просим Вас учесть, что все плееры на сайте из сторонних API источников. Пишите напрямую по контактным данным этих видео-хостингов, для соблюдения DMCA. В 99% случаев они удаляют спорный контент в течении 24 часов. Плееры недоступные на первоисточнике априори не будут отображаться у нас на сайте. </br> 
 <hr color="red" align="left" size="1px"> 
 
-<div onclick="window.open('https://ttttt.me/PiperPiedBot')" class="footer">Наш бот в Телеграмм ®️</div>
+
 
 	
 
