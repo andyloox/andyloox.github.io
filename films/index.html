@@ -260,15 +260,19 @@ if ('serviceWorker' in navigator) {
 		 */
 		function selectPlayers() {
 			players.classList.add('active');
-			players1.classList.add('active');
-			players2.classList.add('active');
-			players3.classList.add('active');
-			players4.classList.add('active');
-			players5.classList.add('active');
+			players1.classList.remove('active');
+			players2.classList.remove('active');
+			players3.classList.remove('active');
+			players4.classList.remove('active');
+			players5.classList.remove('active');
 			sp1.classList.add('active');
+			sp2.classList.remove('active');
+			sp3.classList.remove('active');
+			sp4.classList.remove('active');
+			sp5.classList.remove('active');
 			torrents.classList.remove('active');
 			trailers.classList.remove('active');
-			sp2.classList.remove('active');
+			
 			
 			//players.removeAttribute('onclick');
 			players1.setAttribute("onclick", "selectPlayers1()");
@@ -285,16 +289,17 @@ if ('serviceWorker' in navigator) {
 
 		};
 						function selectPlayers1() {
-			players.classList.add('active');
+			players.classList.remove('active');
 			players1.classList.add('active');
-			players2.classList.add('active');
-			players3.classList.add('active');
-			players4.classList.add('active');
-			players5.classList.add('active');
-			sp1.classList.add('active');
-			torrents.classList.remove('active');
-			trailers.classList.remove('active');
-			sp2.classList.remove('active');
+			players2.classList.remove('active');
+			players3.classList.remove('active');
+			players4.classList.remove('active');
+			players5.classList.remove('active');
+			sp1.classList.remove('active');
+			sp2.classList.add('active');
+			sp3.classList.remove('active');
+			sp4.classList.remove('active');
+			sp5.classList.remove('active');
 			
 			//players.removeAttribute('onclick');
 			players1.setAttribute("onclick", "selectPlayers1()");
