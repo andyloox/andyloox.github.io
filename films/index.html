@@ -56,7 +56,7 @@ if ('serviceWorker' in navigator) {
 <script id="chatBroEmbedCode">/* Chatbro Widget Embed Code Start */function ChatbroLoader(chats,async){async=!1!==async;var params={embedChatsParameters:chats instanceof Array?chats:[chats],lang:navigator.language||navigator.userLanguage,needLoadCode:'undefined'==typeof Chatbro,embedParamsVersion:localStorage.embedParamsVersion,chatbroScriptVersion:localStorage.chatbroScriptVersion},xhr=new XMLHttpRequest;xhr.withCredentials=!0,xhr.onload=function(){eval(xhr.responseText)},xhr.onerror=function(){console.error('Chatbro loading error')},xhr.open('GET','//www.chatbro.com/embed.js?'+btoa(unescape(encodeURIComponent(JSON.stringify(params)))),async),xhr.send()}/* Chatbro Widget Embed Code End */ChatbroLoader({encodedChatId: '06Kvb'});</script>
 
   <script src="https://use.fontawesome.com/4ca20d00e4.js"></script>	
-  <title id="websiteTitle">@Piper_Pied</title>
+  <title id="websiteTitle">Фильмовик</title>
 </head>
 <body>
   <div class="container">
@@ -65,7 +65,7 @@ if ('serviceWorker' in navigator) {
 	  
 <div id="navbar" class="">
         <div id="navInner">
-            <span id="navbarName" onclick="location.href='/film';">Дудочник</span>
+            <span id="navbarName" onclick="location.href='/film';">Фильмовик</span>
         </div>
     </div>
 
@@ -132,21 +132,21 @@ if ('serviceWorker' in navigator) {
 
 		<a id="players" class="active"> 🖥 Плеер </a>
 		<span id="sp1" class="active">|</span>
-			<a id="players1" class="active"> 🖥 Плеер1 </a>
+			<a onclick id="players1" class="active"> 🖥 Плеер1 </a>
 		<span id="sp2" class="active">|</span>
-			<a id="players2" class="active"> 🖥 Плеер2 </a>
+			<a onclick id="players2" class="active"> 🖥 Плеер2 </a>
 		<span id="sp3" class="active">|</span>
-			<a id="players3" class="active"> 🖥 Плеер3 </a>
+			<a onclick id="players3" class="active"> 🖥 Плеер3 </a>
 		<span id="sp4" class="active">|</span>
-			<a id="players4" class="active"> 🖥 Плеер4 </a>
+			<a onclick id="players4" class="active"> 🖥 Плеер4 </a>
 		<span id="sp5" class="active">|</span>
-		<a id="players5" class="active"> 🖥 Плеер5 </a>
+		<a onclick id="players5" class="active"> 🖥 Плеер5 </a>
 		<span id="sp6" class="active">|</span>
-		<a onclick="selectTrailers();" id="trailers"> 📱 Трейлер </a>
+		<a onclick onclick="selectTrailers();" id="trailers"> 📱 Трейлер </a>
 		<span id="sp7">|</span>
 		<a onclick="selectTorrents();" id="torrents"> 📲 Торрент </a>
 	</div>
-	<div id="containers" style="position: relative; margin: 5px;">
+	<div  id="containers" style="position: relative; margin: 5px;">
 		<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="https://apimovie.tobaco.ws/embed/kp/'+id+'"></iframe>
 	</div>
 	<script>
@@ -395,7 +395,11 @@ if ('serviceWorker' in navigator) {
 			sp2.classList.add('active');
 			torrents.classList.remove('active');
 			players.classList.remove('active');
-			
+				players1.setAttribute("onclick", "selectPlayers1()");
+			players2.setAttribute("onclick", "selectPlayers2()");
+			players3.setAttribute("onclick", "selectPlayers3()");
+			players4.setAttribute("onclick", "selectPlayers4()");
+			players5.setAttribute("onclick", "selectPlayers5()");
 			trailers.removeAttribute('onclick');
 			torrents.setAttribute("onclick", "selectTorrents()");
 			players.setAttribute("onclick", "selectPlayers()");
@@ -413,7 +417,11 @@ if ('serviceWorker' in navigator) {
 			sp1.classList.remove('active');
 			torrents.classList.add('active');
 			sp2.classList.add('active');
-			
+				players1.setAttribute("onclick", "selectPlayers1()");
+			players2.setAttribute("onclick", "selectPlayers2()");
+			players3.setAttribute("onclick", "selectPlayers3()");
+			players4.setAttribute("onclick", "selectPlayers4()");
+			players5.setAttribute("onclick", "selectPlayers5()");
 			torrents.removeAttribute('onclick');
 			trailers.setAttribute("onclick", "selectTrailers()");
 			players.setAttribute("onclick", "selectPlayers()");
