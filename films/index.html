@@ -132,11 +132,11 @@ if ('serviceWorker' in navigator) {
 
 		<a onclick="selectPlayers();" id="players" class="active"> 🖥 Плеер KP </a>
 		<span id="sp1" class="active">|</span>
-			<a onclick="selectPlayers1();" id="players1" class="active"> 🖥 Плеер JO-NW </a>
+			<a onclick="selectPlayers1();" id="players1" class="active"> 🖥 Плеер Kino </a>
 		<span id="sp2" class="active">|</span>
-			<a onclick="selectPlayers2();" id="players2" class="active"> 🖥 Плеер JO-Or</a>
+			<a onclick="selectPlayers2();" id="players2" class="active"> 🖥 Плеер JO-Or </a>
 		<span id="sp3" class="active">|</span>
-			<a onclick="selectPlayers3();" id="players3" class="active"> 🖥 Плеер Kino </a>
+			<a onclick="selectPlayers3();" id="players3" class="active"> 🖥 Плеер JO-NW  </a>
 		<span id="sp4" class="active">|</span>
 		<a onclick onclick="selectTrailers();" id="trailers"> 📱 Трейлер </a>
 		<span id="sp5">|</span>
@@ -255,7 +255,7 @@ if ('serviceWorker' in navigator) {
 		//iframe.src = "./players#"+id;
 		containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
 		/**
-		 * Switch to players list
+		 * Switch to players kinoplay
 		 */
 		function selectPlayers() {
 			players.classList.add('active');
@@ -284,7 +284,9 @@ if ('serviceWorker' in navigator) {
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
 		};
 
-		
+			/**
+		 * Switch to kinodb
+		*/
 		function selectPlayers1() {
 			players.classList.remove('active');
 			players1.classList.add('active');
@@ -310,8 +312,10 @@ if ('serviceWorker' in navigator) {
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player1.html#'+id+'"></iframe>';
 		};
-
-				function selectPlayers2() {
+	/**
+		 * Switch to JO_orig
+		*/
+		function selectPlayers2() {
 			players.classList.add('active');
 			players1.classList.add('active');
 			players2.classList.add('active');
@@ -335,6 +339,9 @@ if ('serviceWorker' in navigator) {
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player2#'+id+'"></iframe>';
 		};
+			/**
+		 * Switch to JO_on_site 
+		*/
 		function selectPlayers3() {
 			players.classList.add('active');
 			players1.classList.add('active');
@@ -426,6 +433,7 @@ var oldRelease,navbar=document.getElementById("navbar");var loadedOldReleases=!1
 </div>
 	  
     </div>
+  </div>
   </div>
 </body>
 </html>
