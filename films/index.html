@@ -138,14 +138,12 @@ if ('serviceWorker' in navigator) {
 		<span id="sp3" class="active">|</span>
 			<a onclick="selectPlayers3();" id="players3" class="active"> 🖥 Плеер Kino </a>
 		<span id="sp4" class="active">|</span>
-			<a onclick="selectPlayers4();" id="players4" class="active"> 🖥 Плеер Tobaco </a>
-		<span id="sp5" class="active">|</span>
 		<a onclick onclick="selectTrailers();" id="trailers"> 📱 Трейлер </a>
-		<span id="sp6">|</span>
-		<a onclick="selectTorrents();" id="torrents"> 📲 Торрент </a>
+		<span id="sp5">|</span>
+		<a onclick="selectTorrents();" id="torrents"> 📲 Торрент не работает </a>
 	</div>
 	<div  id="containers" style="position: relative; margin: 5px;">
-		<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="https://apimovie.tobaco.ws/embed/kp/'+id+'"></iframe>
+		<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>
 	</div>
 	<script>
 	var searchString = new URLSearchParams(window.location.search);
@@ -243,18 +241,16 @@ if ('serviceWorker' in navigator) {
 		const players1 = document.getElementById('players1');
 		const players2 = document.getElementById('players2');
 		const players3 = document.getElementById('players3');
-		const players4 = document.getElementById('players4');
+	
 		const sp1 = document.getElementById('sp1');
 		const sp2 = document.getElementById('sp2');
 		const sp3 = document.getElementById('sp3');
 		const sp4 = document.getElementById('sp4');
 		const sp5 = document.getElementById('sp5');
-		const sp6 = document.getElementById('sp6');
+	
 		
 		iframe.src = "./players#"+id;
-		//iframe.src = "https://apimovie.tobaco.ws/embed/kp/"+id;
-
-		//containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 70vmin;" src="https://apimovie.tobaco.ws/embed/kp/'+id+'"></iframe>';
+	
 		/**
 		 * Switch to players list
 		 */
@@ -263,7 +259,7 @@ if ('serviceWorker' in navigator) {
 			players1.classList.remove('active');
 			players2.classList.remove('active');
 			players3.classList.remove('active');
-			players4.classList.remove('active');
+		
 
 			sp1.classList.add('active');
 			sp2.classList.remove('active');
@@ -276,7 +272,7 @@ if ('serviceWorker' in navigator) {
 			players1.setAttribute("onclick", "selectPlayers1()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players3.setAttribute("onclick", "selectPlayers3()");
-			players4.setAttribute("onclick", "selectPlayers4()");
+		
 		
 			torrents.setAttribute("onclick", "selectTorrents()");
 			trailers.setAttribute("onclick", "selectTrailers()");
@@ -291,7 +287,7 @@ if ('serviceWorker' in navigator) {
 			players1.classList.add('active');
 			players2.classList.remove('active');
 			players3.classList.remove('active');
-			players4.classList.remove('active');
+	
 	
 			sp1.classList.remove('active');
 			sp2.classList.add('active');
@@ -303,7 +299,7 @@ if ('serviceWorker' in navigator) {
 			players.setAttribute("onclick", "selectPlayers()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players3.setAttribute("onclick", "selectPlayers3()");
-			players4.setAttribute("onclick", "selectPlayers4()");
+	
 		
 			torrents.setAttribute("onclick", "selectTorrents()");
 			trailers.setAttribute("onclick", "selectTrailers()");
@@ -317,7 +313,7 @@ if ('serviceWorker' in navigator) {
 			players1.classList.add('active');
 			players2.classList.add('active');
 			players3.classList.add('active');
-			players4.classList.add('active');
+		
 		
 			sp1.classList.add('active');
 			torrents.classList.remove('active');
@@ -328,7 +324,7 @@ if ('serviceWorker' in navigator) {
 			players1.setAttribute("onclick", "selectPlayers1()");
 			players.setAttribute("onclick", "selectPlayers()");
 			players3.setAttribute("onclick", "selectPlayers3()");
-			players4.setAttribute("onclick", "selectPlayers4()");
+	
 		
 			torrents.setAttribute("onclick", "selectTorrents()");
 			trailers.setAttribute("onclick", "selectTrailers()");
@@ -341,7 +337,7 @@ if ('serviceWorker' in navigator) {
 			players1.classList.add('active');
 			players2.classList.add('active');
 			players3.classList.add('active');
-			players4.classList.add('active');
+
 
 			sp1.classList.add('active');
 			torrents.classList.remove('active');
@@ -352,7 +348,7 @@ if ('serviceWorker' in navigator) {
 			players1.setAttribute("onclick", "selectPlayers1()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players.setAttribute("onclick", "selectPlayers()");
-			players4.setAttribute("onclick", "selectPlayers4()");
+	
 		
 			torrents.setAttribute("onclick", "selectTorrents()");
 			trailers.setAttribute("onclick", "selectTrailers()");
@@ -360,30 +356,7 @@ if ('serviceWorker' in navigator) {
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player3#'+id+'"></iframe>';
 		};
-								function selectPlayers4() {
-			players.classList.add('active');
-			players1.classList.add('active');
-			players2.classList.add('active');
-			players3.classList.add('active');
-			players4.classList.add('active');
-		
-			sp1.classList.add('active');
-			torrents.classList.remove('active');
-			trailers.classList.remove('active');
-			sp2.classList.remove('active');
-			
-			players4.removeAttribute('onclick');
-			players1.setAttribute("onclick", "selectPlayers1()");
-			players2.setAttribute("onclick", "selectPlayers2()");
-			players3.setAttribute("onclick", "selectPlayers3()");
-			players.setAttribute("onclick", "selectPlayers()");
-
-			torrents.setAttribute("onclick", "selectTorrents()");
-			trailers.setAttribute("onclick", "selectTrailers()");
-			
-			containers.innerHTML = '';
-			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="https://apimovie.tobaco.ws/embed/kp/'+id+'"></iframe>';
-		};
+							
 		
 		/**
 		 * Switch to trailers list
@@ -398,7 +371,7 @@ if ('serviceWorker' in navigator) {
 			players1.setAttribute("onclick", "selectPlayers1()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players3.setAttribute("onclick", "selectPlayers3()");
-			players4.setAttribute("onclick", "selectPlayers4()");
+	
 		
 			trailers.removeAttribute('onclick');
 			torrents.setAttribute("onclick", "selectTorrents()");
@@ -421,7 +394,7 @@ if ('serviceWorker' in navigator) {
 				players1.setAttribute("onclick", "selectPlayers1()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players3.setAttribute("onclick", "selectPlayers3()");
-			players4.setAttribute("onclick", "selectPlayers4()");
+
 		
 			torrents.removeAttribute('onclick');
 			trailers.setAttribute("onclick", "selectTrailers()");
