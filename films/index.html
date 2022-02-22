@@ -238,25 +238,16 @@ if ('serviceWorker' in navigator) {
 		const containers = document.getElementById('containers');
 		const iframe = document.getElementById('iframe');
 		const actions = document.getElementById('actions');
-	/** 
-		const torrents = document.getElementById('torrents');
-		const trailers = document.getElementById('trailers');
-			*/
 		const players = document.getElementById('players');
 		const players1 = document.getElementById('players1');
 		const players2 = document.getElementById('players2');
 		const players3 = document.getElementById('players3');
-	
 		const sp1 = document.getElementById('sp1');
 		const sp2 = document.getElementById('sp2');
 		const sp3 = document.getElementById('sp3');
-	/** 
-		const sp4 = document.getElementById('sp4');
-		const sp5 = document.getElementById('sp5');
-	
-	
-		//iframe.src = "./players#"+id;
-		containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
+		
+		iframe.src = "./players#"+id;
+	//	containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
 		/**
 		 * Switch to players kinoplay
 		 */
@@ -270,21 +261,12 @@ if ('serviceWorker' in navigator) {
 			sp1.classList.add('active');
 			sp2.classList.remove('active');
 			sp3.classList.remove('active');
-		/** 
-			sp4.classList.remove('active');
-			sp5.classList.remove('active');
-			torrents.classList.remove('active');
-			trailers.classList.remove('active');
-				*/
+
 			players.removeAttribute('onclick');
 			players1.setAttribute("onclick", "selectPlayers1()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players3.setAttribute("onclick", "selectPlayers3()");
-		/**
-		
-			torrents.setAttribute("onclick", "selectTorrents()");
-			trailers.setAttribute("onclick", "selectTrailers()");
-				*/
+
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
 		};
@@ -302,19 +284,13 @@ if ('serviceWorker' in navigator) {
 			sp1.classList.remove('active');
 			sp2.classList.add('active');
 			sp3.classList.remove('active');
-		/** 
-			sp4.classList.remove('active');
-			sp5.classList.remove('active');
-				*/
+
 			players1.removeAttribute('onclick');
 			players.setAttribute("onclick", "selectPlayers()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players3.setAttribute("onclick", "selectPlayers3()");
 	
-		/** 
-			torrents.setAttribute("onclick", "selectTorrents()");
-			trailers.setAttribute("onclick", "selectTrailers()");
-				*/
+
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player1.html#'+id+'"></iframe>';
 		};
@@ -326,24 +302,13 @@ if ('serviceWorker' in navigator) {
 			players1.classList.add('active');
 			players2.classList.add('active');
 			players3.classList.add('active');
-		
-		
 			sp1.classList.add('active');
-		/** 
-			torrents.classList.remove('active');
-			trailers.classList.remove('active');
-				*/
 			sp2.classList.remove('active');
-			
 			players2.removeAttribute('onclick');
 			players1.setAttribute("onclick", "selectPlayers1()");
 			players.setAttribute("onclick", "selectPlayers()");
 			players3.setAttribute("onclick", "selectPlayers3()");
-	
-		/** 
-			torrents.setAttribute("onclick", "selectTorrents()");
-			trailers.setAttribute("onclick", "selectTrailers()");
-				*/
+
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player2#'+id+'"></iframe>';
 		};
@@ -358,73 +323,15 @@ if ('serviceWorker' in navigator) {
 
 
 			sp1.classList.add('active');
-	/**
-			torrents.classList.remove('active');
-			trailers.classList.remove('active');
-				*/
 			sp2.classList.remove('active');
 			
 			players3.removeAttribute('onclick');
 			players1.setAttribute("onclick", "selectPlayers1()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players.setAttribute("onclick", "selectPlayers()");
-	
-		/** 
-			torrents.setAttribute("onclick", "selectTorrents()");
-			trailers.setAttribute("onclick", "selectTrailers()");
-			*/	
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player3#'+id+'"></iframe>';
 		};
-							
-		
-		/**
-		 * Switch to trailers list
-		 
-		 
-		function selectTrailers() {
-			trailers.classList.add('active');
-			sp1.classList.add('active');
-			sp2.classList.add('active');
-			<!-- 
-			torrents.classList.remove('active');
-			players.classList.remove('active');
-			players.setAttribute("onclick", "selectPlayers()");
-			players1.setAttribute("onclick", "selectPlayers1()");
-			players2.setAttribute("onclick", "selectPlayers2()");
-			players3.setAttribute("onclick", "selectPlayers3()");
-	
-		
-			trailers.removeAttribute('onclick');
-			torrents.setAttribute("onclick", "selectTorrents()");
-			players.setAttribute("onclick", "selectPlayers()");
-			
-			containers.innerHTML = '';
-			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./trailer.html#'+id+'"></iframe>';
-		};
-
-				 * Switch to torrents list 
-		
-		function selectTorrents() {
-			players.classList.remove('active');
-			trailers.classList.remove('active');
-			sp1.classList.remove('active');
-			torrents.classList.add('active');
-			sp2.classList.add('active');
-			players.setAttribute("onclick", "selectPlayers()");
-				players1.setAttribute("onclick", "selectPlayers1()");
-			players2.setAttribute("onclick", "selectPlayers2()");
-			players3.setAttribute("onclick", "selectPlayers3()");
-
-		
-			torrents.removeAttribute('onclick');
-			trailers.setAttribute("onclick", "selectTrailers()");
-			players.setAttribute("onclick", "selectPlayers()");
-			
-			containers.innerHTML = '';
-			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./torrent.html#'+TLT+'"></iframe>';
-		};
-		*/
 </script>
 
 <hr color="green" align="left" size="1px">
