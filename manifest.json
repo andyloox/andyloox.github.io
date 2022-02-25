@@ -1,7 +1,7 @@
 {
-  "name": "Дудочник®️",
-  "short_name": "Дудочник®️",
-  "description": "@Piper-Pied",
+  "name": "Фильмовик",
+  "short_name": "Фильмовик",
+  "description": "Фильмовик",
   "lang": "ru",
   "start_url": "/apps",
   "display": "standalone",
