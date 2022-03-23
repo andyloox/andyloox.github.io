@@ -253,7 +253,7 @@ if ('serviceWorker' in navigator) {
 		 * Switch to players kinoplay
 		 */
 		function selectPlayers() {
-			players.classList.add('active');
+		/**	players.classList.add('active');
 			players1.classList.remove('active');
 			players2.classList.remove('active');
 			players3.classList.remove('active');
@@ -267,7 +267,7 @@ if ('serviceWorker' in navigator) {
 			players1.setAttribute("onclick", "selectPlayers1()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players3.setAttribute("onclick", "selectPlayers3()");
-
+ */
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
 		};
@@ -276,7 +276,7 @@ if ('serviceWorker' in navigator) {
 		 * Switch to kinodb
 		*/
 		function selectPlayers1() {
-			players.classList.remove('active');
+		/**	players.classList.remove('active');
 			players1.classList.add('active');
 			players2.classList.remove('active');
 			players3.classList.remove('active');
@@ -291,7 +291,7 @@ if ('serviceWorker' in navigator) {
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players3.setAttribute("onclick", "selectPlayers3()");
 	
-
+*/
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player1.html#'+id+'"></iframe>';
 		};
