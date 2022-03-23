@@ -243,10 +243,11 @@ if ('serviceWorker' in navigator) {
 		const players1 = document.getElementById('players1');
 		const players2 = document.getElementById('players2');
 		const players3 = document.getElementById('players3');
+		/**
 		const sp1 = document.getElementById('sp1');
 		const sp2 = document.getElementById('sp2');
 		const sp3 = document.getElementById('sp3');
-		
+		*/
 		iframe.src = "./players#"+id;
 	//	containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
 		/**
@@ -299,6 +300,7 @@ if ('serviceWorker' in navigator) {
 		 * Switch to JO_orig
 		*/
 		function selectPlayers2() {
+			/**
 			players.classList.add('active');
 			players1.classList.add('active');
 			players2.classList.add('active');
@@ -309,7 +311,7 @@ if ('serviceWorker' in navigator) {
 			players1.setAttribute("onclick", "selectPlayers1()");
 			players.setAttribute("onclick", "selectPlayers()");
 			players3.setAttribute("onclick", "selectPlayers3()");
-
+	*/
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player2#'+id+'"></iframe>';
 		};
@@ -317,7 +319,7 @@ if ('serviceWorker' in navigator) {
 		 * Switch to JO_on_site 
 		*/
 		function selectPlayers3() {
-			players.classList.add('active');
+		/**	players.classList.add('active');
 			players1.classList.add('active');
 			players2.classList.add('active');
 			players3.classList.add('active');
@@ -330,6 +332,7 @@ if ('serviceWorker' in navigator) {
 			players1.setAttribute("onclick", "selectPlayers1()");
 			players2.setAttribute("onclick", "selectPlayers2()");
 			players.setAttribute("onclick", "selectPlayers()");
+		*/
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player3#'+id+'"></iframe>';
 		};
