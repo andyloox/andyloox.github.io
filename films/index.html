@@ -2,17 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width initial-scale=1">
-<link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/dudo4nik.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="icons/android-icon-192x192.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
@@ -113,11 +102,9 @@ if ('serviceWorker' in navigator) {
               <dd class="entity-desc-value">
               <span class="age" style="border: 1px solid #748491; padding: 3px 4px; font-size: 1em; font-weight: 600; line-height: 13px; border-radius: 4px;"></span>
               </dd>
-            </dl>
-                                  </dl></div>
+            </dl></dl></div>
           <div>
-	        
-              <dt class="entity-desc-item">Описание</dt>
+	              <dt class="entity-desc-item">Описание</dt>
             <div class="entity-desc-description" itemprop="description"></div>
           </div>
         </div>
@@ -128,7 +115,8 @@ if ('serviceWorker' in navigator) {
                 <button style="font-size:12px;" onclick="selectPlayers();return false;">🖥 Плеер JO-Or </button>   | 
                 <button style="font-size:12px;" onclick="selectPlayers1();return false;">📱 Плеер Kino </button>   | 
                 <button style="font-size:12px;" onclick="selectPlayers2();" id="players2" >📲 Плеер  KP </button>   |
-                <button style="font-size:12px;" onclick="selectPlayers3();" id="players3" >🔝 ustore </button>
+                <button style="font-size:12px;" onclick="selectPlayers3();" id="players3" >🔝 ustore </button>      |
+                <button style="font-size:12px;" onclick="selectPlayers4();" id="players4" >📲 Плеер  KP </button>   
 	</div>
 
 
@@ -144,6 +132,7 @@ if ('serviceWorker' in navigator) {
 		const players1 = document.getElementById('players1');
 		const players2 = document.getElementById('players2');
 		const players3 = document.getElementById('players3');
+		const players4 = document.getElementById('players4');
 		iframe.src = "./players.html#"+id;
 	//	containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
 		/**
@@ -169,11 +158,19 @@ if ('serviceWorker' in navigator) {
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player2.html#'+id+'"></iframe>';
 		};
 			/**
-		 * Switch to JO_on_site 
+		 * Switch to ustore
 		*/
 		function selectPlayers3() {
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player3.html#'+id+'"></iframe>';
+		};
+		
+					/**
+		 * Switch to kinoplayer
+		*/
+		function selectPlayers4() {
+			containers.innerHTML = '';
+			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player4.html#'+id+'"></iframe>';
 		};
 </script>
 <hr color="green" align="left" size="1px">
