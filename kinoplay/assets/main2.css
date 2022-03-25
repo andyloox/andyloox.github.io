@@ -3,7 +3,7 @@
     font-display: swap;
     font-style: normal;
     font-weight: 400;
-    src: local("Segoe UI Semilight"), url(../../../../Downloaded Web Sites2/kinofilms.tk/build/4418dcb32b12ac66ebaecc1f8cadfc65.woff2.html) format("woff2"), url(../../../../Downloaded Web Sites2/kinofilms.tk/build/f5427cf6cbfc0620b044072735ff00fb.woff.html) format("woff"), url(../../../../Downloaded Web Sites2/kinofilms.tk/build/048446abd762ec631017b519e8021d54.ttf.html) format("truetype")
+    src: local("Segoe UI Semilight"), url(/build/4418dcb32b12ac66ebaecc1f8cadfc65.woff2.html) format("woff2"), url(/build/f5427cf6cbfc0620b044072735ff00fb.woff.html) format("woff"), url(/build/048446abd762ec631017b519e8021d54.ttf.html) format("truetype")
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     font-display: swap;
     font-style: normal;
     font-weight: 700;
-    src: local("Segoe UI Black"), url(../../../../Downloaded Web Sites2/kinofilms.tk/build/1468352eedcd12fa05bae6b2c552c694.woff2.html) format("woff2"), url(../../../../Downloaded Web Sites2/kinofilms.tk/build/a54dd6f7ee159516a2966b1e76e4e22d.woff.html) format("woff"), url(../../../../Downloaded Web Sites2/kinofilms.tk/build/8cb5c104160d0d6019691e779731604a.ttf.html) format("truetype")
+    src: local("Segoe UI Black"), url(/build/1468352eedcd12fa05bae6b2c552c694.woff2.html) format("woff2"), url(/build/a54dd6f7ee159516a2966b1e76e4e22d.woff.html) format("woff"), url(/build/8cb5c104160d0d6019691e779731604a.ttf.html) format("truetype")
 }
 
 @-webkit-keyframes fadeIn {
@@ -177,7 +177,7 @@ body.embed .entity-header .video-js {
 
 .l-content.loading:before {
     margin: 8em auto 0;
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/963e9da50918d1d838089db83f19ca34.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/963e9da50918d1d838089db83f19ca34.svg.html) 50% 50% no-repeat;
     background-size: 100% !important;
     content: " ";
     width: 3em;
@@ -186,7 +186,7 @@ body.embed .entity-header .video-js {
 }
 
 .no-svg .l-content.loading:before {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/spinner.gif.html) 50% 50% no-repeat
+    background:transparent url(/img/spinner.gif.html) 50% 50% no-repeat
 }
 
 .l-overlay {
@@ -284,7 +284,7 @@ body.embed .entity-header .video-js {
 }
 
 .header-nav-item.is-index {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/4fa2aa71a75e4fc6d800418888f99241.svg.html) center 1.9rem no-repeat;
+    background: transparent url(/build/4fa2aa71a75e4fc6d800418888f99241.svg.html) center 1.9rem no-repeat;
     background-size: 100% !important;
     width: 6.3rem;
     padding: 0 .1rem;
@@ -294,17 +294,17 @@ body.embed .entity-header .video-js {
 }
 
 .no-svg .header-nav-item.is-index {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/logo-text.png.html) center 1.9rem no-repeat
+    background:transparent url(/img/logo-text.png.html) center 1.9rem no-repeat
 }
 
 .header-nav-item.is-index.is-selected {
     opacity: 1;
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/48098fb43eef744e39ff2973da07b546.svg.html) center 1.9rem no-repeat;
+    background: transparent url(/build/48098fb43eef744e39ff2973da07b546.svg.html) center 1.9rem no-repeat;
     background-size:100% !important
 }
 
 .no-svg .header-nav-item.is-index.is-selected {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/logo-text-active.png.html) center 1.9rem no-repeat
+    background:transparent url(/img/logo-text-active.png.html) center 1.9rem no-repeat
 }
 
 .header-search-btn {
@@ -318,12 +318,12 @@ body.embed .entity-header .video-js {
     top: 1.4em;
     right: 1.2em;
     opacity: .54;
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/e22d0d1fa8d862d2130ae1e4d74691f1.svg.html) 50% no-repeat;
+    background: transparent url(/build/e22d0d1fa8d862d2130ae1e4d74691f1.svg.html) 50% no-repeat;
     background-size:80% !important
 }
 
 .no-svg .header-search-btn {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/search.png.html) 50% no-repeat
+    background:transparent url(/img/search.png.html) 50% no-repeat
 }
 
 .header-search-btn:focus {
@@ -337,12 +337,12 @@ body.embed .entity-header .video-js {
 }
 
 .header-back-btn {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/ed636b88a6412ade6ddd18d260f2dbc6.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/ed636b88a6412ade6ddd18d260f2dbc6.svg.html) 50% 50% no-repeat;
     background-size:auto !important
 }
 
 .no-svg .header-back-btn {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/back.png.html) 50% 50% no-repeat
+    background:transparent url(/img/back.png.html) 50% 50% no-repeat
 }
 
 .header-back-btn:focus {
@@ -424,12 +424,12 @@ body.embed .entity-header .video-js {
     top: 0;
     right: 0;
     opacity: .54;
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/e22d0d1fa8d862d2130ae1e4d74691f1.svg.html) 50% no-repeat;
+    background: transparent url(/build/e22d0d1fa8d862d2130ae1e4d74691f1.svg.html) 50% no-repeat;
     background-size:80% !important
 }
 
 .no-svg .header-search-line-submit {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/search.png.html) 50% no-repeat
+    background:transparent url(/img/search.png.html) 50% no-repeat
 }
 
 .header-search-line-submit:focus {
@@ -872,21 +872,21 @@ body.embed .entity-header .video-js {
 }
 
 .vlist-control-left:after {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/864844fb4abfe8c5fb7e2d77723b30c6.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/864844fb4abfe8c5fb7e2d77723b30c6.svg.html) 50% 50% no-repeat;
     background-size:50% !important
 }
 
 .no-svg .vlist-control-left:after {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/arrow-left.png.html) 50% 50% no-repeat
+    background:transparent url(/img/arrow-left.png.html) 50% 50% no-repeat
 }
 
 .vlist-control-left:hover:after {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/6cf54dc70006be4f6dc5854e54a065d7.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/6cf54dc70006be4f6dc5854e54a065d7.svg.html) 50% 50% no-repeat;
     background-size:50% !important
 }
 
 .no-svg .vlist-control-left:hover:after {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/arrow-left-active.png.html) 50% 50% no-repeat
+    background:transparent url(/img/arrow-left-active.png.html) 50% 50% no-repeat
 }
 
 .vlist-control-right {
@@ -895,21 +895,21 @@ body.embed .entity-header .video-js {
 }
 
 .vlist-control-right:after {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/109e4b97e78177043ff0fd90b826963a.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/109e4b97e78177043ff0fd90b826963a.svg.html) 50% 50% no-repeat;
     background-size:50% !important
 }
 
 .no-svg .vlist-control-right:after {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/arrow-right.png.html) 50% 50% no-repeat
+    background:transparent url(/img/arrow-right.png.html) 50% 50% no-repeat
 }
 
 .vlist-control-right:hover:after {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/e6817f9b02244762cce82357f9c0896a.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/e6817f9b02244762cce82357f9c0896a.svg.html) 50% 50% no-repeat;
     background-size:50% !important
 }
 
 .no-svg .vlist-control-right:hover:after {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/arrow-right-active.png.html) 50% 50% no-repeat
+    background:transparent url(/img/arrow-right-active.png.html) 50% 50% no-repeat
 }
 
 .items {
@@ -1035,21 +1035,21 @@ body.embed .entity-header .video-js {
     outline: none;
     border: none;
     padding: 0;
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/ed636b88a6412ade6ddd18d260f2dbc6.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/ed636b88a6412ade6ddd18d260f2dbc6.svg.html) 50% 50% no-repeat;
     background-size:80% !important
 }
 
 .no-svg .auth-back {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/back.png.html) 50% 50% no-repeat
+    background:transparent url(/img/back.png.html) 50% 50% no-repeat
 }
 
 .auth-back:active {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/c3f917d21509ae5a54970d51cb50beae.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/c3f917d21509ae5a54970d51cb50beae.svg.html) 50% 50% no-repeat;
     background-size:80% !important
 }
 
 .no-svg .auth-back:active {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/back-active.png.html) 50% 50% no-repeat
+    background:transparent url(/img/back-active.png.html) 50% 50% no-repeat
 }
 
 .auth-tabs {
@@ -1173,12 +1173,12 @@ body.embed .entity-header .video-js {
     left: 0;
     width: 2.4rem;
     height: 2.4rem;
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/aef0dbb86158f72f496026ac4334fb16.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/aef0dbb86158f72f496026ac4334fb16.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .auth-success-text:before {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/check.png.html) 50% 50% no-repeat
+    background:transparent url(/img/check.png.html) 50% 50% no-repeat
 }
 
 .auth-remind-expired-error {
@@ -1214,12 +1214,12 @@ body.embed .entity-header .video-js {
     left: 0;
     width: 5rem;
     height: 4rem;
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/bc3a6bfc149bcf05142f3458459aa56f.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/bc3a6bfc149bcf05142f3458459aa56f.svg.html) 50% 50% no-repeat;
     background-size:52.5% !important
 }
 
 .no-svg .user-logout:before {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/logout.png.html) 50% 50% no-repeat
+    background:transparent url(/img/logout.png.html) 50% 50% no-repeat
 }
 
 .hide {
@@ -1241,12 +1241,12 @@ body.embed .entity-header .video-js {
 }
 
 .link .cover-wrap .cover.b-error, .link .cover-wrap .cover.is-noimage {
-    background: hsla(0, 0%, 100%, .25) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/7b3b2bd1810cb0e642dd7e7d435d40f4.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .25) url(/build/7b3b2bd1810cb0e642dd7e7d435d40f4.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .link .cover-wrap .cover.b-error, .no-svg .link .cover-wrap .cover.is-noimage {
-    background:hsla(0, 0%, 100%, .25) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/nocover.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .25) url(/img/nocover.png.html) 50% 50% no-repeat
 }
 
 .trailer-item .link .cover-wrap {
@@ -1299,7 +1299,7 @@ body.embed .entity-header .video-js {
 }
 
 .no-svg .description .rating:before {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/star.png.html) 50% 50% no-repeat
+    background:transparent url(/img/star.png.html) 50% 50% no-repeat
 }
 
 .description .year {
@@ -1321,120 +1321,120 @@ body.embed .entity-header .video-js {
 }
 
 .genre-link.is-genre-multfilm {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/900ed65392ccde70eff4177dca931f80.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/900ed65392ccde70eff4177dca931f80.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-multfilm {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-multfilm.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-multfilm.png.html) 50% 30% no-repeat
 }
 
 .genre-link.is-genre-komediia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/8a5da9428f267168aa223e1b5f9a3a12.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/8a5da9428f267168aa223e1b5f9a3a12.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-komediia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-komediia.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-komediia.png.html) 50% 30% no-repeat
 }
 
 .genre-link.is-genre-melodrama {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/394cbaafae53e95357b2127f8daac2f4.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/394cbaafae53e95357b2127f8daac2f4.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-melodrama {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-melodrama.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-melodrama.png.html) 50% 30% no-repeat
 }
 
 .genre-link.is-genre-drama {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/763afb634e5c456925df284745401be1.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/763afb634e5c456925df284745401be1.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-drama {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-drama.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-drama.png.html) 50% 30% no-repeat
 }
 
 .genre-link.is-genre-boevik {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/f539b2818791a7b624416e6a0a5d64a7.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/f539b2818791a7b624416e6a0a5d64a7.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-boevik {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-boevik.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-boevik.png.html) 50% 30% no-repeat
 }
 
 .genre-link.is-genre-uzhasy {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/104362fb253096da5494917f9edb2675.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/104362fb253096da5494917f9edb2675.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-uzhasy {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-uzhasy.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-uzhasy.png.html) 50% 30% no-repeat
 }
 
 .genre-link.is-genre-prikliucheniia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/8d6b5aa7d6e6adca8f4089c6a53a9db0.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/8d6b5aa7d6e6adca8f4089c6a53a9db0.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-prikliucheniia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-prikliucheniia.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-prikliucheniia.png.html) 50% 30% no-repeat
 }
 
 .genre-link.is-genre-dokumentalnyi {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/8b782f3ff12a9fc4c03a64ddb0777943.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/8b782f3ff12a9fc4c03a64ddb0777943.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-dokumentalnyi {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-dokumentalnyi.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-dokumentalnyi.png.html) 50% 30% no-repeat
 }
 
 .genre-link.is-genre-triller {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/97d5196ac7d87a03360d821d68211dfa.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/97d5196ac7d87a03360d821d68211dfa.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-triller {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-triller.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-triller.png.html) 50% 30% no-repeat
 }
 
 .genre-link.is-genre-miuzikl {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/7f61cacd98fb493bf4c9dbb19d0f70db.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/7f61cacd98fb493bf4c9dbb19d0f70db.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-miuzikl {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-miuzikl.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-miuzikl.png.html) 50% 30% no-repeat
 }
 
 .genre-link.is-genre-fantastika {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/6585a9f603b464de766b8d1b34aaf358.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/6585a9f603b464de766b8d1b34aaf358.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-fantastika {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-fantastika.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-fantastika.png.html) 50% 30% no-repeat
 }
 
 .genre-link.is-genre-istoriia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/865839ee23ebe62b67d7e05246c8d62a.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/865839ee23ebe62b67d7e05246c8d62a.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-istoriia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-istoriia.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-istoriia.png.html) 50% 30% no-repeat
 }
 
 .genre-link.is-genre-voennyi {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/6bdac15cd065bf3b3c70c242a293e7ae.svg.html) 50% 30% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/6bdac15cd065bf3b3c70c242a293e7ae.svg.html) 50% 30% no-repeat;
     background-size:85% !important
 }
 
 .no-svg .genre-link.is-genre-voennyi {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/genre-voennyi.png.html) 50% 30% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/genre-voennyi.png.html) 50% 30% no-repeat
 }
 
 .genre-link .title {
@@ -1461,120 +1461,120 @@ body.embed .entity-header .video-js {
 }
 
 .country-link .img.is-country-rossiia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/2c185c4c41cd47d9e1dad1783c753d2e.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/2c185c4c41cd47d9e1dad1783c753d2e.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-rossiia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-rossiia.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-rossiia.png.html) 50% 50% no-repeat
 }
 
 .country-link .img.is-country-ssha {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/9f4cba95a7895c2c952fd751590956e8.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/9f4cba95a7895c2c952fd751590956e8.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-ssha {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-ssha.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-ssha.png.html) 50% 50% no-repeat
 }
 
 .country-link .img.is-country-frantciia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/5a650fd7dbe47b973edcadb00d53f4e8.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/5a650fd7dbe47b973edcadb00d53f4e8.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-frantciia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-frantciia.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-frantciia.png.html) 50% 50% no-repeat
 }
 
 .country-link .img.is-country-italiia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/cd621bc5a9ed7c707ac5c6ea094a00f1.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/cd621bc5a9ed7c707ac5c6ea094a00f1.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-italiia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-italiia.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-italiia.png.html) 50% 50% no-repeat
 }
 
 .country-link .img.is-country-koreia-iuzhnaia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/8006338f22467e9b943ca366a8c260d5.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/8006338f22467e9b943ca366a8c260d5.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-koreia-iuzhnaia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-koreia-iuzhnaia.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-koreia-iuzhnaia.png.html) 50% 50% no-repeat
 }
 
 .country-link .img.is-country-germaniia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/054f5a7193866ee6c0020b939094e57b.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/054f5a7193866ee6c0020b939094e57b.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-germaniia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-germaniia.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-germaniia.png.html) 50% 50% no-repeat
 }
 
 .country-link .img.is-country-iaponiia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/5c1ef62b4d6f20a7c3ce1953c576275e.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/5c1ef62b4d6f20a7c3ce1953c576275e.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-iaponiia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-iaponiia.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-iaponiia.png.html) 50% 50% no-repeat
 }
 
 .country-link .img.is-country-kitai {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/33fe4e47618ed4572a74e102f816d9a6.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/33fe4e47618ed4572a74e102f816d9a6.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-kitai {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-kitai.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-kitai.png.html) 50% 50% no-repeat
 }
 
 .country-link .img.is-country-ukraina {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/5387b1946b9102ce2ee77d3ea2de8f7b.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/5387b1946b9102ce2ee77d3ea2de8f7b.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-ukraina {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-ukraina.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-ukraina.png.html) 50% 50% no-repeat
 }
 
 .country-link .img.is-country-ispaniia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/98eaf0490ff33d3e2811d49d53ba0f6b.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/98eaf0490ff33d3e2811d49d53ba0f6b.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-ispaniia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-ispaniia.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-ispaniia.png.html) 50% 50% no-repeat
 }
 
 .country-link .img.is-country-velikobritaniia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/08cf4121da3198047f531e07df47030a.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/08cf4121da3198047f531e07df47030a.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-velikobritaniia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-velikobritaniia.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-velikobritaniia.png.html) 50% 50% no-repeat
 }
 
 .country-link .img.is-country-shvetciia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/7d88db0b59908351c900acb1e6bf1967.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/7d88db0b59908351c900acb1e6bf1967.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-shvetciia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-shvetciia.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-shvetciia.png.html) 50% 50% no-repeat
 }
 
 .country-link .img.is-country-daniia {
-    background: hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/55e31ecaa8cd8301ae11e6e02c1e72d2.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .07) url(/build/55e31ecaa8cd8301ae11e6e02c1e72d2.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .country-link .img.is-country-daniia {
-    background:hsla(0, 0%, 100%, .07) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/country-daniia.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .07) url(/img/country-daniia.png.html) 50% 50% no-repeat
 }
 
 .country-link .name {
@@ -1762,7 +1762,7 @@ body.embed .entity-header .video-js {
     margin: -2px 7px 3px 5px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
-    background: url(../../../../Downloaded Web Sites2/kinofilms.tk/build/75da14688baec1512bd51d5955bc9092.png.html) 0 0 no-repeat;
+    background: url(/build/75da14688baec1512bd51d5955bc9092.png.html) 0 0 no-repeat;
     background-size:contain
 }
 
@@ -1940,12 +1940,12 @@ body.embed .entity-header .video-js {
 }
 
 .result-item-preview.b-error, .result-item-preview.is-noimage {
-    background: hsla(0, 0%, 100%, .25) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/7b3b2bd1810cb0e642dd7e7d435d40f4.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .25) url(/build/7b3b2bd1810cb0e642dd7e7d435d40f4.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .result-item-preview.b-error, .no-svg .result-item-preview.is-noimage {
-    background:hsla(0, 0%, 100%, .25) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/nocover.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .25) url(/img/nocover.png.html) 50% 50% no-repeat
 }
 
 .result-item-footer {
@@ -1970,14 +1970,14 @@ body.embed .entity-header .video-js {
     display: inline-block;
     width: 1.2rem;
     height: 1.2rem;
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/d68d368b1fdb1aa9448170f4b8d35a3c.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/d68d368b1fdb1aa9448170f4b8d35a3c.svg.html) 50% 50% no-repeat;
     background-size: 100% !important;
     position: relative;
     top:.1rem
 }
 
 .no-svg .results-item-rating:before {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/star.png.html) 50% 50% no-repeat
+    background:transparent url(/img/star.png.html) 50% 50% no-repeat
 }
 
 .results-item-year {
@@ -2419,14 +2419,14 @@ width: 120px;
 }
 
 .entity-desc-poster-img.is-error {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/7b3b2bd1810cb0e642dd7e7d435d40f4.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/7b3b2bd1810cb0e642dd7e7d435d40f4.svg.html) 50% 50% no-repeat;
     background-size: 80% !important;
     box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, .25);
     opacity:.2
 }
 
 .no-svg .entity-desc-poster-img.is-error {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/nocover.png.html) 50% 50% no-repeat
+    background:transparent url(/img/nocover.png.html) 50% 50% no-repeat
 }
 
 .entity-desc-table {
@@ -2492,14 +2492,14 @@ width: 120px;
 }
 
 .entity-rating-mobi:before {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/112e8c05136d7ac9507567c2a589629f.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/112e8c05136d7ac9507567c2a589629f.svg.html) 50% 50% no-repeat;
     background-size: 100% !important;
     width: 1.85rem;
     top:.2rem
 }
 
 .no-svg .entity-rating-mobi:before {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/rait_star.png.html) 50% 50% no-repeat
+    background:transparent url(/img/rait_star.png.html) 50% 50% no-repeat
 }
 
 .entity-rating-kp {
@@ -2514,14 +2514,14 @@ width: 120px;
 }
 
 .entity-rating-kp:before {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/kinoplay/assets/kinopoisk.svg.html) 50% 50% no-repeat;
+    background: transparent url(/kinoplay/assets/kinopoisk.svg.html) 50% 50% no-repeat;
     background-size: 100% !important;
     width: 1.85rem;
     top:-.15rem
 }
 
 .no-svg .entity-rating-kp:before {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/kinoplay/assets/kinopoisk.svg.html) 50% 50% no-repeat
+    background:transparent url(/kinoplay/assets/kinopoisk.svg.html) 50% 50% no-repeat
 }
 
 .entity-rating-imdb {
@@ -2529,14 +2529,14 @@ width: 120px;
 }
 
 .entity-rating-imdb:before {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/kinoplay/assets/IMDb.svg.html) 50% 50% no-repeat;
+    background: transparent url(/kinoplay/assets/IMDb.svg.html) 50% 50% no-repeat;
     background-size: 100% !important;
     width: 1.85rem;
     top:-.15rem
 }
 
 .no-svg .entity-rating-imdb:before {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/kinoplay/assets/IMDb.svg.html) 50% 50% no-repeat
+    background:transparent url(/kinoplay/assets/IMDb.svg.html) 50% 50% no-repeat
 }
 
 .entity-rating-imdb, .entity-rating-kp {
@@ -2568,12 +2568,12 @@ width: 120px;
 }
 
 .entity-actor-img.b-error, .entity-actor-img.is-noimage {
-    background: hsla(0, 0%, 100%, .25) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/2998600d9c8a0de3a890593d72d4981e.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .25) url(/build/2998600d9c8a0de3a890593d72d4981e.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .entity-actor-img.b-error, .no-svg .entity-actor-img.is-noimage {
-    background:hsla(0, 0%, 100%, .25) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/noavatar.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .25) url(/img/noavatar.png.html) 50% 50% no-repeat
 }
 
 .entity-actor-desc, .entity-actor-name, .entity-episode-name {
@@ -2696,12 +2696,12 @@ width: 120px;
 }
 
 .entity-episode-img.b-error, .entity-episode-img.is-noimage {
-    background: hsla(0, 0%, 100%, .25) url(../../../../Downloaded Web Sites2/kinofilms.tk/build/7b3b2bd1810cb0e642dd7e7d435d40f4.svg.html) 50% 50% no-repeat;
+    background: hsla(0, 0%, 100%, .25) url(/build/7b3b2bd1810cb0e642dd7e7d435d40f4.svg.html) 50% 50% no-repeat;
     background-size:contain !important
 }
 
 .no-svg .entity-episode-img.b-error, .no-svg .entity-episode-img.is-noimage {
-    background:hsla(0, 0%, 100%, .25) url(../../../../Downloaded Web Sites2/kinofilms.tk/img/nocover.png.html) 50% 50% no-repeat
+    background:hsla(0, 0%, 100%, .25) url(/img/nocover.png.html) 50% 50% no-repeat
 }
 
 .entity-episode-desc {
@@ -2793,39 +2793,39 @@ width: 120px;
 }
 
 .entity-share-link.is-vk {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/7d196db6e6668dd74bb687657a89b59f.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/7d196db6e6668dd74bb687657a89b59f.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .entity-share-link.is-vk {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/share-vk.png.html) 50% 50% no-repeat
+    background:transparent url(/img/share-vk.png.html) 50% 50% no-repeat
 }
 
 .entity-share-link.is-twitter {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/651fba2121ba2b87a71be88a67a9de58.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/651fba2121ba2b87a71be88a67a9de58.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .entity-share-link.is-twitter {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/share-twitter.png.html) 50% 50% no-repeat
+    background:transparent url(/img/share-twitter.png.html) 50% 50% no-repeat
 }
 
 .entity-share-link.is-facebook {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/ac897a7b05703dd5cb00f1b4a13efb6d.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/ac897a7b05703dd5cb00f1b4a13efb6d.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .entity-share-link.is-facebook {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/share-facebook.png.html) 50% 50% no-repeat
+    background:transparent url(/img/share-facebook.png.html) 50% 50% no-repeat
 }
 
 .entity-share-link.is-odnoklassniki {
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/965df6bce29a9da66049101c5977cbdd.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/965df6bce29a9da66049101c5977cbdd.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .entity-share-link.is-odnoklassniki {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/share-odnoklassniki.png.html) 50% 50% no-repeat
+    background:transparent url(/img/share-odnoklassniki.png.html) 50% 50% no-repeat
 }
 
 .zona-desc {
@@ -2973,12 +2973,12 @@ width: 120px;
 
 .set-item input:checked + .auto-seek {
     background: #00a4ff;
-    background: #00a4ff url(../../../../Downloaded Web Sites2/kinofilms.tk/build/3e6685a13d3f0204ce58d0719d683dd0.svg.html) 20% 50% no-repeat;
+    background: #00a4ff url(/build/3e6685a13d3f0204ce58d0719d683dd0.svg.html) 20% 50% no-repeat;
     background-size:35% !important
 }
 
 .no-svg .set-item input:checked + .auto-seek {
-    background:#00a4ff url(../../../../Downloaded Web Sites2/kinofilms.tk/img/auto.png.html) 20% 50% no-repeat
+    background:#00a4ff url(/img/auto.png.html) 20% 50% no-repeat
 }
 
 .set-item input:checked + .auto-seek .auto-seek-active {
@@ -3109,12 +3109,12 @@ width: 120px;
     width: 30px;
     height: 60px;
     margin-left: -15px;
-    background: transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/build/963e9da50918d1d838089db83f19ca34.svg.html) 50% 50% no-repeat;
+    background: transparent url(/build/963e9da50918d1d838089db83f19ca34.svg.html) 50% 50% no-repeat;
     background-size:100% !important
 }
 
 .no-svg .loading:before {
-    background:transparent url(../../../../Downloaded Web Sites2/kinofilms.tk/img/spinner.gif.html) 50% 50% no-repeat
+    background:transparent url(/img/spinner.gif.html) 50% 50% no-repeat
 }
 
 .app-loading {
@@ -3124,12 +3124,12 @@ width: 120px;
     right: 0;
     bottom: 0;
     z-index: 9;
-    background: #1e252b url(../../../../Downloaded Web Sites2/kinofilms.tk/build/bbc7a0e3ea6c7f0a4f5247ed462e16bc.svg.html) 50% 35% no-repeat;
+    background: #1e252b url(/build/bbc7a0e3ea6c7f0a4f5247ed462e16bc.svg.html) 50% 35% no-repeat;
     background-size:127px !important
 }
 
 .no-svg .app-loading {
-    background:#1e252b url(../../../../Downloaded Web Sites2/kinofilms.tk/img/logo-full.png.html) 50% 35% no-repeat
+    background:#1e252b url(/img/logo-full.png.html) 50% 35% no-repeat
 }
 
 .app-loading:before {
@@ -3154,7 +3154,7 @@ width: 120px;
 
 @font-face {
     font-family: VideoJS;
-    src: url(../../../../Downloaded Web Sites2/kinofilms.tk/build/00103e881a36640a08f869ff6888f0fd.eot.html) format("eot")
+    src: url(/build/00103e881a36640a08f869ff6888f0fd.eot.html) format("eot")
 }
 
 @font-face {
