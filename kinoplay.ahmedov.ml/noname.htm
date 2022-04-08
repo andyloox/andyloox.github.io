@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js darkMode">
+<head>
+	<meta charset="UTF-8" />
+	<link href=".\assets\style1.css" rel="stylesheet">
+	<meta name="mobile-wep-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon" href="touch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./assets/logo_152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/logo_180x180.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="./assets/logo_167x167.png">
+	<link href="./assets/logo_2048x2732.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+	<link href="./assets/logo_1668x2224.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+	<link href="./assets/logo_1536x2048.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+	<link href="./assets/logo_1125x2436.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+	<link href="./assets/logo_1242x2208.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+	<link href="./assets/logo_750x1334.png" sizes="750x1334" rel="apple-touch-startup-image" />
+	<link href="./assets/logo_640x1136.png" sizes="640x1136" rel="apple-touch-startup-image" />
+	<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<link rel="manifest" href="./manifest.json">
+	<meta name="yandex-verification" content="c1d879c027f45d0b" />
+	<meta name="google-site-verification" content="8hHTxgNI9w6HwpBNAfwL2Bybp-ZOATZwAw1YhaSTmX0" />
+	<title id="websiteTitle">KinoPlay by Ahmedov</title>
+</head>
+
+<body>
+	<div id="navbar" class="">
+		<div id="navInner">
+			<span id="navbarName">KinoPlay</span>
+		</div>
+	</div>
+
+	<div class="backgroundMountain"></div>
+	<div class="backgroundMountain" id="blurredMountain"></div>
+	<div class="mainContent" style="max-width: 750px;">
+		<div class="search1">
+			<input type="search" id="text" placeholder="Поиск в Кинопоиске">
+			<input type="submit" id="submit" onclick="search();" value="Искать">
+		</div>
+		<div id="fadeInElement" class="fadeInElement"
+			style="-webkit-border-after: 1px solid #748491; border-block-end: 1px solid #748491;">
+			<div class="loader" style="margin-bottom: 150%"></div>
+		</div>
+		<label class="footer1 modal-open">Поддержать проект!</label>
+		<div class="modal" id="modal1">
+			<div class="dialog">
+				<iframe
+					src="https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=KinoPlay&targets-hint=&default-sum=250&button-text=14&comment=on&hint=%D0%9D%D0%B0%D0%BF%D0%B8%D1%88%D0%B8%D1%82%D0%B5%20%D0%92%D0%B0%D1%88%D0%B8%20%D0%BF%D0%BE%D0%B6%D0%B5%D0%BB%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B8%D0%BB%D0%B8%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%D1%8B%D1%88%D0%B5&successURL=&quickpay=shop&account=4100116156914714&"
+					width="100%" height="311" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function () {
+			function showModal(id) {
+				$(document.body).addClass('is-open-modal');
+				$(id).addClass('is-open');
+				console.log(id);
+			}
+
+			function hideModals() {
+				$(document.body).removeClass('is-open-modal');
+				$('.modal').removeClass('is-open');
+			}
+
+			$(".modal-open").on('click', function (e) {
+				console.log(e);
+				showModal('#modal1');
+			});
+
+			$(document).on('click', function (e) {
+				if (!(
+						($(e.target).parents('.dialog').length) ||
+						($(e.target).hasClass('dialog')) ||
+						($(e.target).hasClass('modal-open')))) {
+					hideModals();
+				}
+			});
+
+		});
+	</script>
+	<script>
+        var path = document.location.pathname;
+        check = path.indexOf('kinoplay') !== -1;
+        if(check == true ){
+            window.location.href = "https://kinoplay.ahmedov.ml";
+        };
+		fetch('./api_sections')
+			.then(res => res.text())
+			.then(function (data) {
+				const fadeInElement = document.getElementById('fadeInElement');
+				fadeInElement.innerHTML = data;
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+
+
+		function search() {
+			var text = document.getElementById('text').value;
+			const fadeInElement = document.getElementById('fadeInElement');
+			fadeInElement.innerHTML = '<div class="loader" style="margin-bottom: 150%"></div>';
+			fetch('./api_search?q=' + encodeURI(text))
+				.then(res => res.text())
+				.then(function (data) {
+					fadeInElement.innerHTML = data;
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+		};
+
+		(function () {
+			document.querySelector('input').addEventListener('keydown', function (e) {
+				if (e.keyCode === 13) {
+					var text = document.getElementById('text').value;
+					const fadeInElement = document.getElementById('fadeInElement');
+					fadeInElement.innerHTML = '<div class="loader" style="margin-bottom: 150%"></div>';
+					fetch('./api_search?q=' + encodeURI(text))
+						.then(res => res.text())
+						.then(function (data) {
+							const fadeInElement = document.getElementById('fadeInElement');
+							fadeInElement.innerHTML = data;
+						})
+						.catch(function (error) {
+							console.log(error);
+						});
+				}
+			});
+		})();
+
+		function moreSections() {
+			var arrow = document.getElementById('arrow');
+			arrow.setAttribute('style', 'margin: 5px');
+			arrow.setAttribute('class', 'loader');
+			arrow.removeAttribute('id');
+			fetch('./more_sections')
+				.then(res => res.text())
+				.then(function (data) {
+					const fadeInElement = document.getElementById('fadeInElement');
+					var sp = document.createElement("div");
+					sp.innerHTML = data;
+					fadeInElement.appendChild(sp);
+					arrow.setAttribute('style', 'display: none');
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+		};
+
+		function iviSections(from, to) {
+			var arrow = document.getElementById('arrow');
+			arrow.setAttribute('style', 'margin: 5px');
+			arrow.setAttribute('class', 'loader');
+			arrow.removeAttribute('id');
+			fetch('./ivi_sections?to=' + to + '&from=' + from)
+				.then(res => res.text())
+				.then(function (data) {
+					const fadeInElement = document.getElementById('fadeInElement');
+					var sp = document.createElement("div");
+					sp.innerHTML = data;
+					fadeInElement.appendChild(sp);
+					arrow.setAttribute('style', 'display: none');
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+		};
+
+		let isInstalled = localStorage.getItem('pwaInstalled') === '1' || false;
+
+		if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+			// User is currently navigating on the PWA so yes it's installed
+			localStorage.setItem('pwaInstalled', '1');
+			//        alert('1');
+			isInstalled = true;
+		} else {
+			//User is navigating in browser
+			window.addEventListener('beforeinstallprompt', () => {
+				localStorage.setItem('pwaInstalled', '0');
+				isInstalled = false;
+				//User can get an installation prompt meaning the app is not installed
+			});
+			window.addEventListener('onappinstalled', () => {
+				localStorage.setItem('pwaInstalled', '1');
+				isInstalled = true;
+			});
+		}
+	</script>
+	<script type="text/javascript" src="./assets/main.js"></script>
+	</div>
+</body>
+
+</html>
