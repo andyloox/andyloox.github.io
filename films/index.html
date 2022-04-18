@@ -180,8 +180,26 @@ if ('serviceWorker' in navigator) {
 		*/
 		function selectPlayers5() {
 			containers.innerHTML = '';
-			containers.innerHTML = '<iframe id="iframe" src="https://api1635874055.topdbltj.ws/embed/kp/1046229" frameborder="0" scrolling="no" allowfullscreen="" referrerpolicy="origin" width="1245" height="500"></iframe></p>';
+			containers.innerHTML = '<iframe src="https://api1635874055.topdbltj.ws/embed/kp/1046229" frameborder="0" scrolling="no" allowfullscreen="" referrerpolicy="origin" width="1245" height="500"></iframe></p>';
 		};
+</script>
+
+<script>
+$(document).ready(function () {
+$('.accordion-tabs').children('li').first().children('a').addClass('is-active')
+.next().addClass('is-open').show();
+$('.accordion-tabs').on('click', 'li > a', function(event) {
+if (!$(this).hasClass('is-active')) {
+event.preventDefault();
+$('.accordion-tabs .is-open').removeClass('is-open').hide();
+$(this).next().toggleClass('is-open').toggle();
+$('.accordion-tabs').find('.is-active').removeClass('is-active');
+$(this).addClass('is-active');
+} else {
+event.preventDefault();
+}
+});
+});
 </script>
 <hr color="green" align="left" size="1px">
 	<h1 class="h1" style="font-size: 1.1em; line-height: 1em; font-weight: 700; margin-top: 1em;">Схожие фильмы или сериалы:</h1>
