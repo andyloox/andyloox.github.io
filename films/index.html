@@ -116,8 +116,8 @@ if ('serviceWorker' in navigator) {
                 <button style="font-size:12px;" onclick="selectPlayers1();return false;">📱 Плеер Kino </button>   | 
                 <button style="font-size:12px;" onclick="selectPlayers2();" id="players2" >📲 Плеер  KP </button>   |
                 <button style="font-size:12px;" onclick="selectPlayers3();" id="players3" >🔝 ustore </button>      |
-                <button style="font-size:12px;" onclick="selectPlayers4();" id="players4" >📲 Плеер  KinoPlayer NEW |</button>   
-                  <button style="font-size:12px;" onclick="selectPlayers5();" id="players5" >📲 Плеер  test </button>   
+                <button style="font-size:12px;" onclick="selectPlayers4();" id="players4" >📲 Плеер  KinoPlayer NEW </button>   
+              
 	</div>
 
 
@@ -134,8 +134,7 @@ if ('serviceWorker' in navigator) {
 		const players2 = document.getElementById('players2');
 		const players3 = document.getElementById('players3');
 		const players4 = document.getElementById('players4');
-		const players5 = document.getElementById('players5');
-		iframe.src = "./players.html#"+id;
+	iframe.src = "./players.html#"+id;
 	//	containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
 		/**
 		 * Switch to players kinoplay
@@ -174,33 +173,9 @@ if ('serviceWorker' in navigator) {
 			containers.innerHTML = '';
 			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;"  src="./player4.html#'+id+'"></iframe>';
 		};
-	/**
-		 * Switch to ua
-		 
-		*/
-		function selectPlayers5() {
-			containers.innerHTML = '';
-			containers.innerHTML = '<iframe src="https://api1635874055.topdbltj.ws/embed/kp/1046229" frameborder="0" scrolling="no" allowfullscreen="" referrerpolicy="origin" width="1245" height="500"></iframe></p>';
-		};
 </script>
 
-<script>
-$(document).ready(function () {
-$('.accordion-tabs').children('li').first().children('a').addClass('is-active')
-.next().addClass('is-open').show();
-$('.accordion-tabs').on('click', 'li > a', function(event) {
-if (!$(this).hasClass('is-active')) {
-event.preventDefault();
-$('.accordion-tabs .is-open').removeClass('is-open').hide();
-$(this).next().toggleClass('is-open').toggle();
-$('.accordion-tabs').find('.is-active').removeClass('is-active');
-$(this).addClass('is-active');
-} else {
-event.preventDefault();
-}
-});
-});
-</script>
+
 <hr color="green" align="left" size="1px">
 	<h1 class="h1" style="font-size: 1.1em; line-height: 1em; font-weight: 700; margin-top: 1em;">Схожие фильмы или сериалы:</h1>
     <div class="fadeInElement" style="overflow: hidden; overflow-x: scroll; white-space: nowrap; margin-left: 5%; margin-right: 5%;"></div>
