@@ -53,7 +53,7 @@ function search(){
 			 		crossDomain: true,
 					url: 'https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword='+text,
 					type: 'GET',
-			 		headers: {'X-API-KEY':'e559c52a-6911-41c1-aaea-7781ac45ef2e'},
+			 		headers: {'X-API-KEY':'8b85d0c4-d821-4c30-bc53-97e3ca0b359b'},
 					success: function(response){
 							$('.title').empty();
 							$('.items').empty();
