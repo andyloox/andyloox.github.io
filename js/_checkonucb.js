@@ -15,7 +15,7 @@
 				 				var item = a[index];
 				 					 const h1 = document.querySelector('.h1');
 				 					 h1.setAttribute('style', 'font-size: 1.1em; line-height: 1em; font-weight: 700; margin-top: 1em;');
-					 				 $('.fadeInElement').append('<a href="/films?id='+item.filmId+'&title='+item.nameRu+' ('+item.year+')">                <div class="creditsCardWrapper" style="width: 100px;padding-top: 0px; padding-bottom: 0px;height: 120px;">                    <img style="border-radius:5px" alt="'+item.nameRu+'" src="'+item.posterUrl+'"></div>            </a>');
+					 				 $('.fadeInElement').append('<a href="/filmss?id='+item.filmId+'&title='+item.nameRu+' ('+item.year+')">                <div class="creditsCardWrapper" style="width: 100px;padding-top: 0px; padding-bottom: 0px;height: 120px;">                    <img style="border-radius:5px" alt="'+item.nameRu+'" src="'+item.posterUrl+'"></div>            </a>');
 							}
 					}
 	});
