@@ -24,7 +24,7 @@
 			 		crossDomain: true,
 					url: 'https://kinopoiskapiunofficial.tech/api/v2.2/films/'+id,
 					type: 'GET',
-			 		headers: {'X-API-KEY':'525477d9-623c-428d-a17e-59a4fc457261'},
+			 		headers: {'X-API-KEY':'f6711bd1-1bee-4c6a-8bf0-bcb754122053'},
 					success: function(response){
 							if (response.ratingImdb == null){
 								$('.entity-rating-imdb').html('-');
