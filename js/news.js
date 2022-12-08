@@ -3,7 +3,7 @@
 			 		crossDomain: true,
 					url: 'https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page=1',
 					type: 'GET',
-			 		headers: {'X-API-KEY':'525477d9-623c-428d-a17e-59a4fc457261'},
+			 		headers: {'X-API-KEY':'e559c52a-6911-41c1-aaea-7781ac45ef2e'},
 					success: function(response){
 	         				var a = response.films;
 			 				var index, len;
@@ -19,7 +19,7 @@
 			 		crossDomain: true,
 					url: 'https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page=2',
 					type: 'GET',
-			 		headers: {'X-API-KEY':'525477d9-623c-428d-a17e-59a4fc457261'},
+			 		headers: {'X-API-KEY':'e559c52a-6911-41c1-aaea-7781ac45ef2e'},
 					success: function(response){
 	         				var a = response.films;
 			 				var index, len;
@@ -35,7 +35,7 @@
 			 		crossDomain: true,
 					url: 'https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page=3',
 					type: 'GET',
-			 		headers: {'X-API-KEY':'525477d9-623c-428d-a17e-59a4fc457261'},
+			 		headers: {'X-API-KEY':'e559c52a-6911-41c1-aaea-7781ac45ef2e'},
 					success: function(response){
 	         				var a = response.films;
 			 				var index, len;
@@ -53,7 +53,7 @@ function search(){
 			 		crossDomain: true,
 					url: 'https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword='+text,
 					type: 'GET',
-			 		headers: {'X-API-KEY':'525477d9-623c-428d-a17e-59a4fc457261'},
+			 		headers: {'X-API-KEY':'e559c52a-6911-41c1-aaea-7781ac45ef2e'},
 					success: function(response){
 							$('.title').empty();
 							$('.items').empty();
