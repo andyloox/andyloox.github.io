@@ -3,7 +3,7 @@
 			 		crossDomain: true,
 					url: 'https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=2022&month=FEBRUARY',
 					type: 'GET',
-			 		headers: {'X-API-KEY':'525477d9-623c-428d-a17e-59a4fc457261'},
+			 		headers: {'X-API-KEY':'b152f118-16c5-4046-8b4b-349e570812d0'},
 					success: function(response){
 	         				var a = response.items;
 			 				var index, len;
@@ -21,7 +21,7 @@ function search(){
 			 		crossDomain: true,
 					url: 'https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword='+text,
 					type: 'GET',
-			 		headers: {'X-API-KEY':'525477d9-623c-428d-a17e-59a4fc457261'},
+			 		headers: {'X-API-KEY':'b152f118-16c5-4046-8b4b-349e570812d0'},
 					success: function(response){
 							$('.title').empty();
 							$('.items').empty();
@@ -48,7 +48,7 @@ $(document).ready(function(){
 			 		crossDomain: true,
 					url: 'https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=2022&month=FEBRUARY',
 					type: 'GET',
-			 		headers: {'X-API-KEY':'525477d9-623c-428d-a17e-59a4fc457261'},
+			 		headers: {'X-API-KEY':'b152f118-16c5-4046-8b4b-349e570812d0'},
 					success: function(response){
 	         				var a = response.items;
 			 				var index, len;
@@ -66,7 +66,7 @@ function search(){
 			 		crossDomain: true,
 					url: 'https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword='+text,
 					type: 'GET',
-			 		headers: {'X-API-KEY':'525477d9-623c-428d-a17e-59a4fc457261'},
+			 		headers: {'X-API-KEY':'b152f118-16c5-4046-8b4b-349e570812d0'},
 					success: function(response){
 							$('.title').empty();
 							$('.items').empty();
