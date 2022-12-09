@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js darkMode">
+
+<head>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode
+                .insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(85762431, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src=".\Other\watch\85762431" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <meta charset="UTF-8" />
+	<link href="./assets/style1.css?7458846259376" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <meta name="mobile-wep-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="./assets/logo_152x152.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/logo_152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/logo_180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./assets/logo_167x167.png">
+    <link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="manifest" href="./manifest.json?925099691956">
+    <title id="websiteTitle">KinoDrix by Ahmedov</title>
+    <style>
+        .toggler__checkbox {
+            display: none;
+        }
+        .toggler__content-box  {
+            position: absolute;
+            transform: translate(9999px);
+            opacity: 0;  
+            max-width: 100%;
+            width: 100%;
+            height: 30px;
+            max-height: 100px;
+            border-radius: 0;
+            overflow: visible;
+            margin: 0 auto;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-bottom: solid 1px rgba(255,255,255,.075);
+            display: none;
+        }
+        .toggler__label {
+            display: block;
+            cursor: pointer;
+            border-bottom: 1px solid #748491;
+            margin: 10px;
+            font-size: 1rem;
+            text-align: left;
+            padding-bottom: 5px;
+            padding-left: 5px;
+        }        
+        .toggler__label::selection {
+            color: none;
+            background: none;
+        }
+        .toggler__checkbox:checked ~ .toggler__content-box {
+            position: relative;
+            transition: opacity .5s linear;
+            transform: translate(0);
+            opacity: 1;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            display: block;
+        }	
+        .toggler__checkbox:checked ~ .toggler__label {
+            border-bottom: 0px solid #748491;
+        }
+        
+        .s-search {
+            position: absolute;
+            left: 0;
+            right: 0;
+            background-color: rgba(22, 22, 22, 0.9);
+            z-index: 1;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            color: #ffffff;
+            width: calc(100%);
+            text-align: center;
+            display: inline-block;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+
+        <div id="navInner" style="text-align: left;">
+            <div style="display: none; position: absolute; top: 25px;right: 30px;"><svg class="styles_advancedSearchIcon__2rhMu"
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 20 20">
+                    <path fill="#fff" fill-rule="evenodd"
+                        d="M5.995 10.3A2.7 2.7 0 0 1 8.504 12H17v2H8.504a2.7 2.7 0 0 1-5.018 0H1v-2h2.486a2.7 2.7 0 0 1 2.509-1.7zm0 1.7a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm5.997-8.7A2.7 2.7 0 0 1 14.5 5H17v2h-2.5a2.7 2.7 0 0 1-5.017 0H1V5h8.483a2.7 2.7 0 0 1 2.509-1.7zm0 1.7a1 1 0 1 0 0 2 1 1 0 0 0 0-2z">
+                    </path>
+                </svg>
+            </div>
+            <span id="navbarName" onclick="apiSections()">KinoDrix<span style="font-size: 15pt">.tk</span></span>
+            <div onclick="search()" style="cursor: pointer; position: absolute;left: calc(100% - 15px);top: 27px;">
+                <svg height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd" stroke="#fff" stroke-width="1.5">
+                        <circle cx="9" cy="9" r="8.25" />
+                        <path d="M15 15l3 3" stroke-linecap="round" />
+                    </g>
+                </svg>
+            </div>
+            <div onclick="apiCatalog()" style="display: none; cursor: pointer; position: absolute; right: 98px; top: 22px;">
+                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" width="35" height="35" x="0" y="0" version="1.0"
+                    viewBox="0 0 28 28" xml:space="preserve">
+                    <path id="rect5665" fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none"
+                        stroke-dasharray="none" stroke-dashoffset="0" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-miterlimit="4" stroke-opacity="1" stroke-width="1"
+                        d="M 21.65625 7.1757812 C 20.531614 7.2605588 19.46106 7.8802391 18.851562 8.9238281 L 15.091797 15.363281 C 14.748359 15.951321 14.605453 16.597065 14.625 17.228516 L 14.625 13.900391 C 14.625 11.970029 13.055361 10.400391 11.125 10.400391 L 3.5351562 10.400391 C 1.604795 10.400391 0.03515625 11.970029 0.03515625 13.900391 L 0.03515625 21.335938 C 0.03515625 23.266299 1.604795 24.835938 3.5351562 24.835938 L 11.125 24.835938 C 13.055361 24.835938 14.625 23.266299 14.625 21.335938 L 14.625 17.375 C 14.706212 18.48304 15.314849 19.530241 16.353516 20.123047 L 22.927734 23.875 C 24.601492 24.830277 26.75332 24.245914 27.728516 22.576172 L 31.490234 16.136719 C 32.46543 14.466977 31.900321 12.33223 30.226562 11.376953 L 23.652344 7.625 C 23.024684 7.266771 22.331032 7.1249147 21.65625 7.1757812 z M 21.720703 8.1621094 C 22.201018 8.1270391 22.69659 8.2323477 23.148438 8.4902344 L 29.720703 12.240234 C 30.925629 12.927931 31.327164 14.433635 30.621094 15.642578 L 26.861328 22.080078 C 26.155258 23.289021 24.636567 23.699415 23.431641 23.011719 L 16.857422 19.259766 C 15.652494 18.572068 15.254868 17.068317 15.960938 15.859375 L 19.720703 9.4199219 C 20.161997 8.6643327 20.920179 8.2205598 21.720703 8.1621094 z M 21.871094 9.1445312 C 21.274193 9.187213 20.706943 9.5103029 20.386719 10.058594 C 19.874362 10.93586 20.183044 12.070051 21.066406 12.574219 C 21.949769 13.078387 23.097018 12.775703 23.609375 11.898438 C 24.121733 11.021171 23.81305 9.8869814 22.929688 9.3828125 C 22.598426 9.1937494 22.229234 9.1189222 21.871094 9.1445312 z M 22.099609 10.136719 C 22.210262 10.150865 22.321613 10.186641 22.425781 10.246094 C 22.842454 10.483905 22.978452 10.994463 22.740234 11.402344 C 22.502015 11.810225 21.986986 11.948749 21.570312 11.710938 C 21.15364 11.473126 21.015687 10.962568 21.253906 10.554688 C 21.43257 10.248777 21.767652 10.094281 22.099609 10.136719 z M 3.5351562 11.400391 L 11.125 11.400391 C 12.518659 11.400391 13.625 12.506732 13.625 13.900391 L 13.625 21.335938 C 13.625 22.729595 12.518659 23.835936 11.125 23.835938 L 3.5351562 23.835938 C 2.1414979 23.835938 1.0351562 22.729595 1.0351562 21.335938 L 1.0351562 13.900391 C 1.0351562 12.506732 2.1414979 11.400391 3.5351562 11.400391 z M 3.796875 12.28125 C 2.7791737 12.28125 1.9375002 13.10967 1.9375 14.125 C 1.9375002 15.14033 2.7791737 15.96875 3.796875 15.96875 C 4.8145763 15.96875 5.6562498 15.14033 5.65625 14.125 C 5.6562498 13.10967 4.8145763 12.28125 3.796875 12.28125 z M 27.992188 12.636719 C 27.395287 12.679401 26.826083 13.004444 26.505859 13.552734 C 25.993501 14.429999 26.302185 15.562237 27.185547 16.066406 C 28.06891 16.570574 29.216158 16.267891 29.728516 15.390625 C 30.240873 14.513359 29.93219 13.381121 29.048828 12.876953 C 28.717567 12.68789 28.350328 12.61111 27.992188 12.636719 z M 3.796875 13.28125 C 4.280326 13.28125 4.6562499 13.656371 4.65625 14.125 C 4.6562499 14.593629 4.280326 14.96875 3.796875 14.96875 C 3.313424 14.96875 2.9375001 14.593629 2.9375 14.125 C 2.9375001 13.656371 3.313424 13.28125 3.796875 13.28125 z M 28.220703 13.630859 C 28.331355 13.645005 28.440754 13.680782 28.544922 13.740234 C 28.961596 13.978046 29.099547 14.488603 28.861328 14.896484 C 28.62311 15.304362 28.106127 15.440937 27.689453 15.203125 C 27.27278 14.965314 27.136782 14.454756 27.375 14.046875 C 27.553664 13.740967 27.888746 13.588423 28.220703 13.630859 z M 23.164062 13.916016 C 22.567162 13.958697 21.999911 14.281787 21.679688 14.830078 C 21.16733 15.707344 21.476011 16.841535 22.359375 17.345703 C 23.242737 17.849872 24.389986 17.547188 24.902344 16.669922 C 25.414702 15.792656 25.106019 14.658465 24.222656 14.154297 C 23.891395 13.965234 23.522203 13.890407 23.164062 13.916016 z M 23.392578 14.908203 C 23.503231 14.922349 23.614581 14.960078 23.71875 15.019531 C 24.135424 15.257342 24.271421 15.765947 24.033203 16.173828 C 23.794984 16.58171 23.279955 16.720233 22.863281 16.482422 C 22.446607 16.24461 22.308657 15.734053 22.546875 15.326172 C 22.725539 15.020261 23.060621 14.865766 23.392578 14.908203 z M 18.337891 15.195312 C 17.74099 15.237994 17.171786 15.561084 16.851562 16.109375 C 16.339205 16.98664 16.649841 18.118879 17.533203 18.623047 C 18.416565 19.127215 19.561862 18.826484 20.074219 17.949219 C 20.586577 17.071953 20.277893 15.937762 19.394531 15.433594 C 19.06327 15.24453 18.696031 15.169703 18.337891 15.195312 z M 7.3300781 15.775391 C 6.3123763 15.775391 5.4707025 16.60381 5.4707031 17.619141 C 5.4707033 18.634471 6.3123768 19.462891 7.3300781 19.462891 C 8.3477794 19.462891 9.189453 18.634471 9.1894531 17.619141 C 9.1894537 16.60381 8.3477799 15.775391 7.3300781 15.775391 z M 18.566406 16.1875 C 18.677059 16.201646 18.786457 16.239375 18.890625 16.298828 C 19.307299 16.53664 19.44525 17.045244 19.207031 17.453125 C 18.968812 17.861006 18.453783 17.997577 18.037109 17.759766 C 17.620436 17.521955 17.482484 17.01335 17.720703 16.605469 C 17.899367 16.29956 18.234449 16.145063 18.566406 16.1875 z M 7.3300781 16.775391 C 7.8135293 16.775391 8.1894534 17.150512 8.1894531 17.619141 C 8.1894531 18.087769 7.8135291 18.462891 7.3300781 18.462891 C 6.8466272 18.462891 6.4707032 18.08777 6.4707031 17.619141 C 6.4707028 17.150511 6.8466269 16.775391 7.3300781 16.775391 z M 24.457031 18.6875 C 23.860131 18.730182 23.292879 19.055224 22.972656 19.603516 C 22.460298 20.480782 22.768982 21.613018 23.652344 22.117188 C 24.535707 22.621355 25.682954 22.320625 26.195312 21.443359 C 26.70767 20.566094 26.398987 19.431902 25.515625 18.927734 C 25.184364 18.738671 24.815172 18.661891 24.457031 18.6875 z M 10.863281 19.267578 C 9.8455801 19.267578 9.0039065 20.095998 9.0039062 21.111328 C 9.0039065 22.126659 9.8455801 22.955078 10.863281 22.955078 C 11.880982 22.955078 12.722656 22.126658 12.722656 21.111328 C 12.722656 20.095998 11.880982 19.267578 10.863281 19.267578 z M 24.685547 19.681641 C 24.796199 19.695786 24.90755 19.731563 25.011719 19.791016 C 25.428393 20.028828 25.564391 20.539384 25.326172 20.947266 C 25.087954 21.355147 24.572924 21.491718 24.15625 21.253906 C 23.739577 21.016095 23.601625 20.50749 23.839844 20.099609 C 24.018508 19.793698 24.35359 19.639203 24.685547 19.681641 z M 10.863281 20.267578 C 11.346732 20.267578 11.722656 20.642699 11.722656 21.111328 C 11.722656 21.579957 11.346732 21.955078 10.863281 21.955078 C 10.37983 21.955078 10.003906 21.579957 10.003906 21.111328 C 10.003906 20.642699 10.37983 20.267578 10.863281 20.267578 z "
+                        baseline-shift="baseline" clip-rule="nonzero" color="#000" color-interpolation="sRGB"
+                        color-interpolation-filters="linearRGB" color-rendering="auto" direction="ltr" display="inline"
+                        enable-background="accumulate" font-family="sans-serif" font-size="medium" font-stretch="normal"
+                        font-style="normal" font-variant="normal" font-weight="400" image-rendering="auto"
+                        letter-spacing="normal" opacity="1" overflow="visible" shape-rendering="auto"
+                        text-anchor="start" text-decoration="none" text-rendering="auto" visibility="visible"
+                        word-spacing="normal" writing-mode="lr-tb" /></svg>
+            </div>
+            <div onclick="fav()" style="cursor: pointer; position: absolute;right: 30px;top: 25px;"><svg height="24" width="24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9 9.004h5.997M12 2c-6.84 0-7.995.981-7.995 8.873C4.005 19.707 3.836 22 5.545 22s4.498-3.878 6.455-3.878c1.957 0 4.746 3.878 6.454 3.878 1.71 0 1.541-2.293 1.541-11.127C19.995 2.98 18.84 2 12 2z"
+                        fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#fff" stroke-width="1.5">
+                    </path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="backgroundMountain"></div>
+    <div class="backgroundMountain" id="blurredMountain"></div>
+
+    <div class="mainContent" style="max-width: 750px;">
+        <div class="section s-search elem-blur hide" id="fast-search">
+            <div class="container" style="width: 100%; max-width: 750px; display: inline-block; -webkit-animation: fadeIn .8s; animation: fadeIn .8s;">
+                <!-- Element-search start -->
+                <form class="e-search" onkeypress="if(event.keyCode == 13) return false;" id="fast-search-form"
+                    style="width: 100%; max-width: 750px; display: inline-block; -webkit-animation: fadeIn .8s; animation: fadeIn .8s;">
+                    <input class="input-enter" placeholder="Начните вводить текст для поиска..." type="text" name="name"
+                        required="" id="fast-search-input"
+                        style="color: #000000; font-size: 1.00em; font-family: Roboto; font-weight: 400; background-color: #ffffff; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; -webkit-box-shadow: 0px 16px 24px rgba(0,0,0,0.15); -moz-box-shadow: 0px 16px 24px rgba(0,0,0,0.15); box-shadow: 0px 16px 24px rgba(0,0,0,0.15); line-height: 1.2; width: calc(100% - 20px); height: 2rem; max-width: calc(750px - 20px); padding-left: 5px;">
+                </form>
+                <!-- Element-search end -->
+
+            </div>
+            <div id="fast-search-result" style="width: 100%; max-width: 750px; display: inline-block;" class="mt-40">
+                <div class="b-slides swiper-outside b-slides--medium">
+                    <div class="title-wrap" id="title-wrap" style="display: none;">
+                        <h2 style="font-size: 1.3rem;">
+                            <a>
+                                <span class="link-u">Результаты поиска</span>
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="fadeInElement" id="search_input"
+                        style="max-height: 223px; margin: 1rem; display: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fadeInElement" class="fadeInElement"
+            style="margin-bottom: 30px;">
+            <div class="loader" style="margin-bottom: 150%"></div>
+        </div>
+        <label class="footer1 modal-open"
+            style="position: fixed; top: calc(100% - 30px); margin-left: 50%; left: -95px; background-color: var(--text-color);">Поддержать
+            проект!</label>
+        <div class="modal" id="modal1">
+            <div class="dialog">
+                <iframe
+                    src="https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=KinoPlay&targets-hint=&default-sum=250&button-text=14&comment=on&hint=%D0%9D%D0%B0%D0%BF%D0%B8%D1%88%D0%B8%D1%82%D0%B5%20%D0%92%D0%B0%D1%88%D0%B8%20%D0%BF%D0%BE%D0%B6%D0%B5%D0%BB%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B8%D0%BB%D0%B8%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%D1%8B%D1%88%D0%B5&successURL=&quickpay=shop&account=4100116156914714&"
+                    width="100%" height="216" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        $(function () {
+            function showModal(id) {
+                $(document.body).addClass('is-open-modal');
+                $(id).addClass('is-open');
+                console.log(id);
+            }
+
+            function hideModals() {
+                $(document.body).removeClass('is-open-modal');
+                $('.modal').removeClass('is-open');
+            }
+
+            $(".modal-open").on('click', function (e) {
+                console.log(e);
+                showModal('#modal1');
+            });
+
+            $(document).on('click', function (e) {
+                if (!(
+                        ($(e.target).parents('.dialog').length) ||
+                        ($(e.target).hasClass('dialog')) ||
+                        ($(e.target).hasClass('modal-open')))) {
+                    hideModals();
+                }
+            });
+
+        });
+    </script>
+    <script>
+        var input = document.getElementById('fast-search-input');
+        var titleWrap = document.getElementById('title-wrap');
+        var searchInput = document.getElementById('search_input');
+        input.oninput = function () {
+            titleWrap.setAttribute('style', 'display: none');
+            searchInput.setAttribute('style', 'max-height: 223px; margin: 1rem; height: 50px; text-align: center;');
+            document.getElementById('search_input').innerHTML = '<div class="loader"></div>';
+            setTimeout(apiSearch, 1500);
+        };
+
+        function apiSearch() {
+            if (input.value.length > 0) {                
+                fetch('./api_search/1.php?q=' + encodeURI(input.value))
+                .then(res => res.text())
+                .then(function (data) {
+                    document.getElementById('search_input').innerHTML = data;
+                    searchInput.setAttribute('style', 'max-height: 223px; margin: 1rem; height: 223px; text-align: left;');
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            } else {
+                titleWrap.setAttribute('style', 'display: none');
+                document.getElementById('search_input').innerHTML = '';
+                searchInput.setAttribute('style', 'display: none');  
+            }
+        }
+
+        function random() {
+            fetch('./random')
+                .then(res => res.text())
+                .then(function (data) {
+                    window.location.href = data;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
+        apiSections();
+        function apiSections(){
+            const fadeInElement = document.getElementById('fadeInElement');
+            fadeInElement.innerHTML = '<div class="loader" style="margin-bottom: 150%"></div>';
+            fetch('./api_sections/')
+                .then(res => res.text())
+                .then(function (data) {
+                    const fadeInElement = document.getElementById('fadeInElement');
+                    fadeInElement.innerHTML = data;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
+        function search() {
+            var search = document.getElementById('fast-search');
+            var ind = search.getAttribute('class');
+            var index = ind.indexOf("hide");
+            if (index !== -1) {
+                search.setAttribute('class', 'section s-search elem-blur');
+            } else {
+                search.setAttribute('class', 'section s-search elem-blur hide');
+            }
+        };
+
+        function apiCatalog() {
+            var arrow = document.getElementById('arrow');
+            arrow.setAttribute('style', 'margin: 5px');
+            arrow.setAttribute('class', 'loader');
+            arrow.removeAttribute('id');
+            fetch('./api_catalog')
+                .then(res => res.text())
+                .then(function (data) {
+                    const fadeInElement = document.getElementById('fadeInElement');
+                    var sp = document.createElement("div");
+                    sp.innerHTML = data;
+                    fadeInElement.appendChild(sp);
+                    arrow.setAttribute('style', 'display: none');
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        };
+
+        function iviSections(from, to) {
+            var arrow = document.getElementById('arrow');
+            arrow.setAttribute('style', 'margin: 5px');
+            arrow.setAttribute('class', 'loader');
+            arrow.removeAttribute('id');
+            fetch('./ivi_sections?to=' + to + '&from=' + from)
+                .then(res => res.text())
+                .then(function (data) {
+                    const fadeInElement = document.getElementById('fadeInElement');
+                    var sp = document.createElement("div");
+                    sp.innerHTML = data;
+                    fadeInElement.appendChild(sp);
+                    arrow.setAttribute('style', 'display: none');
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        };
+
+        let isInstalled = localStorage.getItem('pwaInstalled') === '1' || false;
+
+        if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+            // User is currently navigating on the PWA so yes it's installed
+            localStorage.setItem('pwaInstalled', '1');
+            //        alert('1');
+            isInstalled = true;
+        } else {
+            //User is navigating in browser
+            window.addEventListener('beforeinstallprompt', () => {
+                localStorage.setItem('pwaInstalled', '0');
+                isInstalled = false;
+                //User can get an installation prompt meaning the app is not installed
+            });
+            window.addEventListener('onappinstalled', () => {
+                localStorage.setItem('pwaInstalled', '1');
+                isInstalled = true;
+            });
+        }
+
+        function fav() {
+            const fadeInElement = document.getElementById('fadeInElement');
+            fadeInElement.innerHTML = '<div class="loader" style="margin-bottom: 150%"></div>';
+			var results = document.cookie.match(/favorites=(.+?)(;|$)/);
+			if(results == null) {
+                fadeInElement.innerHTML = '<div style="margin-bottom: 150%; color: var(--light-text-color); text-align: center;">Список Избранных пуст</div>';
+			} else {
+            fetch('./favorites?fav=' + results[1])
+                .then(res => res.text())
+                .then(function (data) {
+                    fadeInElement.innerHTML = data;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+			}
+        }
+    </script>
+    <script type="text/javascript" src="./assets/main.js"></script>
+    </div>
+</body>
+
+</html>
+
