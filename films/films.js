@@ -84,3 +84,65 @@
 							
 					}
 	});
+	$.ajax({
+			 		async: true,
+			 		crossDomain: true,
+					url: 'https://kinopoiskapiunofficial.tech/api/v2.2/films/'+id,
+					type: 'GET',
+			 		headers: {'X-API-KEY':'c7b7e689-7fd7-41fc-a60d-33a9b0f5713c'},
+					success: function(response){
+							if (response.ratingImdb == null){
+								$('.entity-rating-imdb').html('-');
+							} else {
+								$('.entity-rating-imdb').html(response.ratingImdb);
+							};
+							if (response.ratingKinopoisk == null){
+								$('.entity-rating-kp').html('-');
+							} else {
+								$('.entity-rating-kp').html(response.ratingKinopoisk);
+							};	
+							$(".js-title").html(response.nameRu);
+							if (response.filmLength == null){
+								$(".time").html('-');
+							} else {
+								$(".time").html(response.filmLength+' мин.');
+							};
+							$(".copyrightYear").html(response.year);
+							$("#title").html(response.nameOriginal);
+							
+							if( TLT == 'null' ) {
+								new_url = window.location.search + "&title=" + response.nameRu + ' (' + response.year + ')';
+								window.location.href = new_url;
+							};
+							$(".entity-desc-description").html(response.description);
+							$(".entity-desc-poster").html('<div class="entity-desc-poster-img fadeIn animated" style="background: url('+response.posterUrl+'), url("/img/nocover.png")"></div>');
+							var a = response.genres;
+			 				var index, len;
+			 				for (index = 0, len = a.length; index < len; ++index) {
+				 				var item = a[index];
+				 				if (index!==0) {
+					 				var title_genre = ', '+item.genre;
+				 				} else {
+					 				var title_genre = item.genre;
+				 				};
+					 				 $('#genres').append('<span class="entity-desc-link-u" itemprop="genre">'+title_genre+'</span>');
+							};
+							
+							var a = response.countries;
+			 				var index, len;
+			 				for (index = 0, len = a.length; index < len; ++index) {
+				 				var item = a[index];
+				 				if (index!==0) {
+					 				var title_genre = ', '+item.country;
+				 				} else {
+					 				var title_genre = item.country;
+				 				};
+					 				 $('#countries').append('<span class="entity-desc-link-u" itemprop="genre">'+title_genre+'</span>');
+							};
+							
+							var age = response.ratingAgeLimits;
+							var age = age.replace("age", "");
+							$('.age').append(age+'+');
+							
+					}
+	});
