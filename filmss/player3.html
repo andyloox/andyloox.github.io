@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html>
-
 <head>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
@@ -17,60 +15,28 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/87552151" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Фильмовик</title>
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-			background-color: black;
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
-		#yohoho {
-			width: 100%;
-			height: 100%;
-		}
-		.freehosting-2domains-link {
-			display: none
-		}
-		#yohoho-buttons div {
-			font-size: 0.5rem;
-		}
-	</style>
+<title>Фильмовик</title>
 </head>
-
 <body>
-    <div data-player="ustore" data-separator="," id="yohoho" data-resize="1" data-loading="/kinoplay/assets/loading.webp" data-bg="#000000"></div> 
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  window.addEventListener('message', function(e) {
-    if (!e || !e.data) return;
-    var q = document.querySelector('[data-yo="quality"]');
-    var t = document.querySelector('[data-yo="translate"]');
-    if (e.data.quality && q) {
-      q.innerHTML = e.data.quality;
-    }
-    if (e.data.translate && t) {
-      t.innerHTML = e.data.translate;
-    }
-  });
-});
+
+
 </script>
-<span data-yo="quality"></span> 
-<span data-yo="translate"></span> 
+<script>
+var dataUrl=window.location.href;
+var my_script_play = document.createElement("script");
+const kp_id = window.location.hash.substring(1);
+my_script_play.setAttribute("src","//pleer.videoplayers.club/get_player?type=replace&r_domain=&players=apicollaps,videocdn,hdvb,bazon,alloha,ustore,kodik,trailer,torrent&r_id=videoplayers&ani=COLLAPS&ati=&adi=&vni=VIDEOCDN&vti=&vdi=&hni=HDVB&hti=&hdi=&bni=BAZON&bti=&bdi=&alni=ALLOHATV&alti=&aldi=&usni=USTOREBZ&usti=&usdi=&koni=KODIK&koti=&kodi=&tti=&ru="+kp_id);
+my_script_play.async = true;
+document.head.appendChild(my_script_play);
+</script>
 
-	<script>
-		const yohoho = document.getElementById('yohoho');
-		const id = window.location.hash.substring(1);
-		yohoho.setAttribute('data-kinopoisk', id);
-	</script>
 
-	<script src="//yohoho.cc/yo.js"></script>
-</body>
+
+
 
 </html>
