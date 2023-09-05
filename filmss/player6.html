@@ -31,4 +31,19 @@ my_script_play.setAttribute("src","//pleer.videoplayers.club/get_player?w=610&h=
 my_script_play.async = true;
 document.head.appendChild(my_script_play);
 </script>
+
+
+<div class="kinobox_player"></div>
+<script src="https://kinobox.tv/kinobox.min.js"></script>
+<script>
+    new Kinobox('.kinobox_player', {
+        search: {
+            kinopoisk: kp_id, // поиск по kinopoisk id
+            imdb: 'IMDB_ID', // поиск по imdb id
+            title: 'TITLE' // поиск по названию
+        },
+        'players':{},
+    }).init();
+</script>
+
 </html>
