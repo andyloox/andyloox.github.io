@@ -129,14 +129,10 @@ if ('serviceWorker' in navigator) {
  				<button style="font-size:12px;" onclick="history.back();return false;"> 🔙 Назад </button>   |   
                 <button style="font-size:12px;" onclick="window.location.reload();return false;">♻️ Обновить</button>   |   
                 <button style="font-size:12px;" onclick="selectPlayers();return false;">🖥 Плеер KinoBox </button>   | 
-               /* <button style="font-size:12px;" onclick="selectPlayers1();return false;">📱 Плеер Kino </button>   | 
-        //        <button style="font-size:12px;" onclick="selectPlayers2();" id="players2" >📲 Плеер  KP </button>   |
-         //       <button style="font-size:12px;" onclick="selectPlayers3();" id="players3" >🔝 ustore </button>      |
-                */
-                <button style="font-size:12px;" onclick="selectPlayers4();" id="players4" >📲 Плеер  KinoPlayer NEW </button>   
-              
-	</div>
+                              <button style="font-size:12px;" onclick="selectPlayers4();" id="players4" >📲 Плеер  KinoPlayer NEW </button>   
+             
 
+	</div>
 
 	<div  id="containers" style="position: relative; margin: 15px;">
 		<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>
@@ -155,6 +151,12 @@ if ('serviceWorker' in navigator) {
 	//	containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
 		/**
 		 * Switch to players kinoplay
+		 	/**
+  <button style="font-size:12px;" onclick="selectPlayers1();return false;">📱 Плеер Kino </button>   | 
+             <button style="font-size:12px;" onclick="selectPlayers2();" id="players2" >📲 Плеер  KP </button>   |
+             <button style="font-size:12px;" onclick="selectPlayers3();" id="players3" >🔝 ustore </button>      |
+               
+**/
 		 */
 		function selectPlayers() {
 			containers.innerHTML = '';
