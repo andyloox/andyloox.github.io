@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(87552151, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/87552151" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Фильмовик</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			background-color: black;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		#yohoho {
+			width: 100%;
+			height: 100%;
+		}
+		.freehosting-2domains-link {
+			display: none
+		}
+		#yohoho-buttons div {
+			font-size: 0.5rem;
+		}
+	</style>
+</head>
+
+<body>
+    <div data-player="iframe,videocdn,kodik,collaps,hdvb,bazon,ustore,alloha,pleer,videospider,trailer,torrent" data-separator="," data-button="iframe: ИФ {Q} {T},videocdn: Видео {Q} {T},kodik: Кодик {Q} {T},collaps: коллапс {Q} {T},hdvb: хдвб {Q} {T},bazon: базон {Q} {T},ustore: юсторе {Q} {T},alloha: аллоха {Q} {T},pleer: плеер {Q} {T},videospider: видеоспидер {Q} {T},trailer: трейлер {Q} {T},torrent: торрент {Q} {T}" data-kodik="0c9a72daf8747f4eacc2beba552b40ef" data-collaps="fb807a1ae5d03511c48807c1758abe2b" data-hdvb="f84860deb66d9bac149fdc8c8edba1d4" data-bazon="30037585a3728a16f5c606a8c2d71347" id="yohoho" data-resize="1" data-loading="/kinoplay/assets/loading.webp" data-bg="#000000"></div> 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  window.addEventListener('message', function(e) {
+    if (!e || !e.data) return;
+    var q = document.querySelector('[data-yo="quality"]');
+    var t = document.querySelector('[data-yo="translate"]');
+    if (e.data.quality && q) {
+      q.innerHTML = e.data.quality;
+    }
+    if (e.data.translate && t) {
+      t.innerHTML = e.data.translate;
+    }
+  });
+});
+</script>
+<span data-yo="quality"></span> 
+<span data-yo="translate"></span> 
+	<script>
+		const yohoho = document.getElementById('yohoho');
+		const id = window.location.hash.substring(1);
+		yohoho.setAttribute('data-kinopoisk', id);
+	</script>
+	<script src="//yohoho.cc/yo.js"></script>
+</body>
+
+</html>
