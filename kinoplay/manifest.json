@@ -1,6 +1,6 @@
 {
-    "name": "KinoDrix",
-    "short_name": "KinoDrix",
+    "name": "Фильмовик",
+    "short_name": "Фильмовик",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#1e1e1e"
