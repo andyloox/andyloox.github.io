@@ -37,6 +37,7 @@
 		  './timecode.js',
 	      './online3.js',
 		  './sisi2.js',
+		  './m.js',
           ], function () {});
 		/*'./nyam.js',*/
 		/* './s.js',*/

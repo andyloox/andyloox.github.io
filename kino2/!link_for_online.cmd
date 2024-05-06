@@ -82,3 +82,10 @@ curl -o %nameJS% %URL%
 
 
 
+rem -----file11----
+set nameJS=m.js
+set URL=https://showy.online/m.js
+set name=m
+
+rename %nameJS% "%FolderBackup%%name%_%Date:~0,2%.%Date:~3,2%.%Date:~6,4% (%TIME:~0,2%.%TIME:~0,2%.%TIME:~6,2%).js"
+curl -o %nameJS% %URL%
