@@ -41,7 +41,7 @@
 	/*Удаляем ненужное из меню настроек*/
 
   window.lampa_settings.torrents_use = true;
-  window.lampa_settings.plugins_use = false;
+  window.lampa_settings.plugins_use = true;
   window.lampa_settings.account_use = false;
 Lampa.Settings.listener.follow('open', function (e) {
  if (e.name == 'main') {
