@@ -1,4 +1,4 @@
-//05.05.2024 - Fix videocdn
+//20.04.2024 - FanCDN
 
 (function () {
     'use strict';
@@ -68,25 +68,24 @@
       var proxy3 = 'https://cors557.deno.dev/';
       var proxy_apn = (window.location.protocol === 'https:' ? 'https://' : 'http://') + 'byzkhkgr.deploy.cx/' + param_ip;
       var proxy_secret = decodeSecret([80, 68, 77, 68, 64, 3, 27, 31, 85, 72, 94, 20, 89, 81, 12, 1, 6, 26, 83, 95, 64, 81, 81, 23, 85, 64, 68, 23]) + param_ip;
-      var proxy_other = Lampa.Storage.field('online_mod_proxy_other') === true;
-      var proxy_other_url = proxy_other ? Lampa.Storage.field('online_mod_proxy_other_url') + '' : '';
-      var user_proxy2 = (proxy_other_url || proxy2) + param_ip;
-      var user_proxy3 = (proxy_other_url || proxy3) + param_ip;
+      var proxy_other = Lampa.Storage.field('online_mod_proxy_other') === true ? Lampa.Storage.field('online_mod_proxy_other_url') + '' : '';
+      var user_proxy2 = (proxy_other || proxy2) + param_ip;
+      var user_proxy3 = (proxy_other || proxy3) + param_ip;
       if (name === 'filmix') return window.location.protocol === 'https:' ? user_proxy2 : '';
       if (name === 'filmix_site') return user_proxy2;
       if (name === 'svetacdn') return '';
-      if (name === 'allohacdn') return proxy_other ? proxy_secret : proxy_apn;
+      if (name === 'allohacdn') return proxy_secret;
       if (name === 'cookie') return user_proxy2;
 
       if (Lampa.Storage.field('online_mod_proxy_' + name) === true) {
         if (name === 'rezka') return user_proxy2;
         if (name === 'rezka2') return user_proxy2;
         if (name === 'kinobase') return proxy_apn;
-        if (name === 'cdnmovies') return proxy_other ? proxy_secret : proxy_apn;
+        if (name === 'cdnmovies') return proxy_apn;
         if (name === 'videodb') return user_proxy2;
         if (name === 'zetflix') return user_proxy2;
         if (name === 'fancdn') return user_proxy2;
-        if (name === 'redheadsound') return proxy_other ? proxy_secret : proxy_apn;
+        if (name === 'redheadsound') return proxy_apn;
         if (name === 'anilibria') return user_proxy2;
         if (name === 'kodik') return user_proxy3;
         if (name === 'kinopub') return user_proxy2;
@@ -420,7 +419,7 @@
         component.loading(false);
         str = (str || '').replace(/\n/g, '');
         var voices = str.match(/<div class="translations">\s*(<select>.*?<\/select>)/);
-        var fs = str.match(/id="(?:fs|ury)" value='([^']*)'/);
+        var fs = str.match(/id="fs" value='([^']*)'/);
 
         if (fs) {
           var files = {};
@@ -1255,7 +1254,7 @@
           extract.episode.forEach(function (episode) {
             items.push({
               title: 'S' + ses + ' / ' + episode.name,
-              quality: '360p ~ 1080p',
+              quality: '360p ~ 1080p Ultra',
               info: ' / ' + voice.name,
               season: parseInt(ses),
               episode: parseInt(episode.id),
@@ -1266,7 +1265,7 @@
           extract.voice.forEach(function (voice) {
             items.push({
               title: voice.name || select_title,
-              quality: '360p ~ 1080p',
+              quality: '360p ~ 1080p Ultra',
               info: '',
               voice: voice
             });
@@ -2061,7 +2060,7 @@
             if (episode.season_id == season_id) {
               filtred.push({
                 title: 'S' + episode.season_id + ' / ' + episode.name,
-                quality: '360p ~ 1080p',
+                quality: '360p ~ 1080p Ultra',
                 info: ' / ' + voice,
                 season: parseInt(episode.season_id),
                 episode: parseInt(episode.episode_id),
@@ -2073,7 +2072,7 @@
           extract.voice.forEach(function (voice) {
             filtred.push({
               title: voice.name || select_title,
-              quality: '360p ~ 1080p',
+              quality: '360p ~ 1080p Ultra',
               info: '',
               media: voice
             });
@@ -3609,7 +3608,7 @@
           return;
         }
 
-        if (secret_part) secret = '$1/s/' + secret_part + '/';
+        if (secret_part) secret = '$1/s/' + secret_part + Lampa.Utils.uid(3) + '/';
         var timestamp = new Date().getTime();
         var cache_timestamp = timestamp - 1000 * 60 * 10;
 
@@ -3618,7 +3617,7 @@
           return;
         }
 
-        var url = 'https://api.filmix.tv/api-fx/post/171042/video-links';
+        var url = Utils.decodeSecret([80, 68, 77, 68, 64, 3, 27, 31, 86, 79, 81, 23, 64, 92, 22, 64, 85, 89, 72, 31, 81, 85, 64, 81, 82, 89, 89, 81, 72, 23, 64, 75, 77]);
 
         if (!url.startsWith('http')) {
           if (callback) callback();
@@ -3629,12 +3628,9 @@
         network.clear();
         network.timeout(10000);
         network.silent(url, function (str) {
-          str = (str || '').replace(/\n/g, '');
-          var found = str.match(/https?:\\\/\\\/[^\/]+\\\/s\\\/([^\/]*)\\\//);
-
-          if (found) {
-            secret_part = found[1];
-            secret = '$1/s/' + secret_part + '/';
+          if (str) {
+            secret_part = str;
+            secret = '$1/s/' + secret_part + Lampa.Utils.uid(3) + '/';
             secret_url = '';
             secret_timestamp = timestamp;
           }
@@ -3643,16 +3639,13 @@
         }, function (a, c) {
           if (callback) callback();
         }, false, {
-          dataType: 'text',
-          headers: {
-            'Authorization': 'Bearer <token>'
-          }
+          dataType: 'text'
         });
       }
 
       if (!window.mod_filmix) {
         window.mod_filmix = {
-          max_qualitie: 720,
+          max_qualitie: 480,
           is_max_qualitie: false
         };
       }
@@ -13916,7 +13909,7 @@
 
       this.proxyStream = function (url, name) {
         if (url && use_stream_proxy) {
-          if (name === 'rezka2') return url.replace(/\/\/stream\.voidboost\.(cc|top|link)\//, '//prx-ams.ukrtelcdn.net/');
+          if (name === 'rezka2') return url.replace('//stream.voidboost.cc/', '//prx-ams.ukrtelcdn.net/');
           return (prefer_http ? 'http://apn.cfhttp.top/' : 'https://apn.watch/') + url;
         }
 
@@ -13932,8 +13925,15 @@
         source: Lampa.Lang.translate('settings_rest_source')
       };
       var all_sources = [{
+        name: 'rezka2',
+        title: 'HDrezka ~ 2160p',
+        source: new rezka2(this, object),
+        search: true,
+        kp: false,
+        imdb: true
+      }, {
         name: 'videocdn',
-        title: 'VideoCDN',
+        title: 'VideoCDN ~ 1080p',
         source: new videocdn(this, object),
         search: false,
         kp: false,
@@ -13947,22 +13947,16 @@
         imdb: true,
         disabled: true
       }, {
-        name: 'rezka2',
-        title: 'HDrezka',
-        source: new rezka2(this, object),
-        search: true,
-        kp: false,
-        imdb: true
-      }, {
         name: 'kinobase',
         title: 'Kinobase',
         source: new kinobase(this, object),
         search: true,
         kp: false,
-        imdb: false
+        imdb: false,
+        disabled: true
       }, {
         name: 'collaps',
-        title: 'Collaps',
+        title: 'Collaps ~ 1080p',
         source: new collaps(this, object),
         search: false,
         kp: true,
@@ -13973,57 +13967,69 @@
         source: new cdnmovies(this, object),
         search: false,
         kp: true,
-        imdb: true
-      }, {
-        name: 'filmix',
-        title: 'Filmix',
-        source: new filmix(this, object),
-        search: true,
-        kp: false,
-        imdb: false
+        imdb: true,
+        disabled: true
       }, {
         name: 'zetflix',
-        title: 'Zetflix',
+        title: 'Zetflix ~ 1080p',
         source: new zetflix(this, object),
         search: false,
         kp: true,
         imdb: true
       }, {
         name: 'fancdn',
-        title: 'FanCDN',
+        title: 'FanCDN ~ 1080p',
         source: new fancdn(this, object),
         search: false,
         kp: true,
         imdb: true
+      },{
+        name: 'alloha',
+        title: 'Alloha',
+        source: new alloha(this, object),
+        search: false,
+        kp: true,
+        imdb: true,
+        disabled: true
       }, {
         name: 'redheadsound',
-        title: 'RedHeadSound',
+        title: 'RedHeadSound ~ 1080p',
         source: new redheadsound(this, object),
         search: true,
         kp: false,
-        imdb: true
+        imdb: true,
+        disabled: true
       }, {
         name: 'cdnvideohub',
-        title: 'CDNVideoHub',
+        title: 'CDNVideoHub ~ 1080p',
         source: new cdnvideohub(this, object),
         search: false,
         kp: true,
-        imdb: true
+        imdb: true,
+        disabled: true
       }, {
         name: 'anilibria',
-        title: 'AniLibria',
+        title: 'AniLibria ~ 1080p',
         source: new anilibria(this, object),
         search: true,
         kp: false,
-        imdb: false
+        imdb: false,
+        disabled: true
       }, {
         name: 'kodik',
-        title: 'Kodik',
+        title: 'Kodik ~ 720p',
         source: new kodik(this, object),
         search: true,
         kp: true,
         imdb: true
-      }];
+      }, {
+      name: 'filmix',
+      title: 'Filmix ~ 480p',
+      source: new filmix(this, object),
+      search: true,
+      kp: false,
+      imdb: false
+    }];
 
       if (Utils.isDebug()) {
         all_sources.push({
@@ -15110,7 +15116,7 @@
       };
     }
 
-    var mod_version = '05.05.2024';
+    var mod_version = '20.04.2024';
     var isMSX = !!(window.TVXHost || window.TVXManager);
     var isTizen = navigator.userAgent.toLowerCase().indexOf('tizen') !== -1;
     var isIFrame = window.parent !== window;
@@ -15209,386 +15215,386 @@
       };
     }
 
-    Lampa.Lang.add({
-      online_mod_watch: {
-        ru: 'Смотреть онлайн',
-        uk: 'Дивитися онлайн',
-        be: 'Глядзець анлайн',
-        en: 'Watch online',
-        zh: '在线观看'
-      },
-      online_mod_nolink: {
-        ru: 'Не удалось извлечь ссылку',
-        uk: 'Неможливо отримати посилання',
-        be: 'Не ўдалося атрымаць спасылку',
-        en: 'Failed to fetch link',
-        zh: '获取链接失败'
-      },
-      online_mod_blockedlink: {
-        ru: 'К сожалению, это видео не доступно в вашем регионе',
-        uk: 'На жаль, це відео не доступне у вашому регіоні',
-        be: 'Нажаль, гэта відэа не даступна ў вашым рэгіёне',
-        en: 'Sorry, this video is not available in your region',
-        zh: '抱歉，您所在的地区无法观看该视频'
-      },
-      online_mod_waitlink: {
-        ru: 'Работаем над извлечением ссылки, подождите...',
-        uk: 'Працюємо над отриманням посилання, зачекайте...',
-        be: 'Працуем над выманнем спасылкі, пачакайце...',
-        en: 'Working on extracting the link, please wait...',
-        zh: '正在提取链接，请稍候...'
-      },
-      online_mod_captcha_address: {
-        ru: 'Требуется пройти капчу по адресу: ',
-        uk: 'Потрібно пройти капчу за адресою: ',
-        be: 'Патрабуецца прайсці капчу па адрасе: ',
-        en: 'It is required to pass the captcha at: ',
-        zh: '您需要完成验证码： '
-      },
-      online_mod_captcha_proxy: {
-        ru: 'Требуется пройти капчу. Попробуйте использовать зеркало вместо прокси',
-        uk: 'Потрібно пройти капчу. Спробуйте використовувати дзеркало замість проксі',
-        be: 'Патрабуецца прайсці капчу. Паспрабуйце выкарыстоўваць люстэрка замест проксі',
-        en: 'It is required to pass the captcha. Try to use a mirror instead of a proxy',
-        zh: '您需要通过验证码。 尝试使用镜子而不是代理'
-      },
-      online_mod_balanser: {
-        ru: 'Балансер',
-        uk: 'Балансер',
-        be: 'Балансер',
-        en: 'Balancer',
-        zh: '平衡器'
-      },
-      online_mod_file_helper: {
-        ru: 'Удерживайте клавишу "ОК" для вызова контекстного меню',
-        uk: 'Утримуйте клавішу "ОК" для виклику контекстного меню',
-        be: 'Утрымлівайце клавішу "ОК" для выкліку кантэкстнага меню',
-        en: 'Hold the "OK" key to bring up the context menu',
-        zh: '按住“确定”键调出上下文菜单'
-      },
-      online_mod_clearmark_all: {
-        ru: 'Снять отметку у всех',
-        uk: 'Зняти позначку у всіх',
-        be: 'Зняць адзнаку ва ўсіх',
-        en: 'Uncheck all',
-        zh: '取消所有'
-      },
-      online_mod_timeclear_all: {
-        ru: 'Сбросить тайм-код у всех',
-        uk: 'Скинути тайм-код у всіх',
-        be: 'Скінуць тайм-код ва ўсіх',
-        en: 'Reset timecode for all',
-        zh: '为所有人重置时间码'
-      },
-      online_mod_query_start: {
-        ru: 'По запросу',
-        uk: 'На запит',
-        be: 'Па запыце',
-        en: 'On request',
-        zh: '根据要求'
-      },
-      online_mod_query_end: {
-        ru: 'нет результатов',
-        uk: 'немає результатів',
-        be: 'няма вынікаў',
-        en: 'no results',
-        zh: '没有结果'
-      },
-      online_mod_title: {
-        ru: 'Онлайн',
-        uk: 'Онлайн',
-        be: 'Анлайн',
-        en: 'Online',
-        zh: '在线的'
-      },
-      online_mod_title_full: {
-        ru: 'Онлайн Мод',
-        uk: 'Онлайн Мод',
-        be: 'Анлайн Мод',
-        en: 'Online Mod',
-        zh: '在线的 Mod'
-      },
-      online_mod_use_stream_proxy: {
-        ru: 'Проксировать видеопоток',
-        uk: 'Проксирувати відеопотік',
-        be: 'Праксіраваць відэаструмень',
-        en: 'Proxy video stream',
-        zh: '代理视频流'
-      },
-      online_mod_proxy_find_ip: {
-        ru: 'Передавать свой IP прокси',
-        uk: 'Передавати свій IP проксі',
-        be: 'Перадаваць свой IP проксі',
-        en: 'Send your IP to proxy',
-        zh: '将您的 IP 发送给代理'
-      },
-      online_mod_proxy_other: {
-        ru: 'Использовать альтернативный прокси',
-        uk: 'Використовувати альтернативний проксі',
-        be: 'Выкарыстоўваць альтэрнатыўны проксі',
-        en: 'Use an alternative proxy',
-        zh: '使用备用代理'
-      },
-      online_mod_proxy_other_url: {
-        ru: 'Альтернативный прокси',
-        uk: 'Альтернативний проксі',
-        be: 'Альтэрнатыўны проксі',
-        en: 'Alternative proxy',
-        zh: '备用代理'
-      },
-      online_mod_proxy_balanser: {
-        ru: 'Проксировать',
-        uk: 'Проксирувати',
-        be: 'Праксіраваць',
-        en: 'Proxy',
-        zh: '代理'
-      },
-      online_mod_proxy_kp: {
-        ru: 'Проксировать КиноПоиск',
-        uk: 'Проксирувати КиноПоиск',
-        be: 'Праксіраваць КиноПоиск',
-        en: 'Proxy KinoPoisk',
-        zh: '代理 KinoPoisk'
-      },
-      online_mod_skip_kp_search: {
-        ru: 'Не искать в КиноПоиск',
-        uk: 'Не шукати у КиноПоиск',
-        be: 'Не шукаць у КиноПоиск',
-        en: 'Skip search in KinoPoisk',
-        zh: '在 KinoPoisk 中跳过搜索'
-      },
-      online_mod_iframe_proxy: {
-        ru: 'Использовать iframe-прокси',
-        uk: 'Використовувати iframe-проксі',
-        be: 'Выкарыстоўваць iframe-проксі',
-        en: 'Use iframe proxy',
-        zh: '使用 iframe 代理'
-      },
-      online_mod_prefer_http: {
-        ru: 'Предпочитать поток по HTTP',
-        uk: 'Віддавати перевагу потіку по HTTP',
-        be: 'Аддаваць перавагу патоку па HTTP',
-        en: 'Prefer stream over HTTP',
-        zh: '优先于 HTTP 流式传输'
-      },
-      online_mod_prefer_mp4: {
-        ru: 'Предпочитать поток MP4',
-        uk: 'Віддавати перевагу потіку MP4',
-        be: 'Аддаваць перавагу патоку MP4',
-        en: 'Prefer MP4 stream',
-        zh: '更喜欢 MP4 流'
-      },
-      online_mod_prefer_dash: {
-        ru: 'Предпочитать DASH вместо HLS',
-        uk: 'Віддавати перевагу DASH замість HLS',
-        be: 'Аддаваць перавагу DASH замест HLS',
-        en: 'Prefer DASH over HLS',
-        zh: '更喜欢 DASH 而不是 HLS'
-      },
-      online_mod_av1_support: {
-        ru: 'AV1 поддерживается',
-        uk: 'AV1 підтримується',
-        be: 'AV1 падтрымліваецца',
-        en: 'AV1 supported',
-        zh: 'AV1 支持'
-      },
-      online_mod_save_last_balanser: {
-        ru: 'Сохранять историю балансеров',
-        uk: 'Зберігати історію балансерів',
-        be: 'Захоўваць гісторыю балансараў',
-        en: 'Save history of balancers',
-        zh: '保存平衡器的历史记录'
-      },
-      online_mod_clear_last_balanser: {
-        ru: 'Очистить историю балансеров',
-        uk: 'Очистити історію балансерів',
-        be: 'Ачысціць гісторыю балансараў',
-        en: 'Clear history of balancers',
-        zh: '清除平衡器的历史记录'
-      },
-      online_mod_kinobase_mirror: {
-        ru: 'Зеркало для Kinobase',
-        uk: 'Дзеркало для Kinobase',
-        be: 'Люстэрка для Kinobase',
-        en: 'Mirror for Kinobase',
-        zh: 'Kinobase的镜子'
-      },
-      online_mod_kinobase_token: {
-        ru: 'ТОКЕН от Kinobase',
-        uk: 'ТОКЕН від Kinobase',
-        be: 'ТОКЕН ад Kinobase',
-        en: 'TOKEN from Kinobase',
-        zh: 'TOKEN 来自 Kinobase'
-      },
-      online_mod_rezka2_mirror: {
-        ru: 'Зеркало для HDrezka',
-        uk: 'Дзеркало для HDrezka',
-        be: 'Люстэрка для HDrezka',
-        en: 'Mirror for HDrezka',
-        zh: 'HDrezka的镜子'
-      },
-      online_mod_proxy_rezka2_mirror: {
-        ru: 'Проксировать зеркало HDrezka',
-        uk: 'Проксирувати дзеркало HDrezka',
-        be: 'Праксіраваць люстэрка HDrezka',
-        en: 'Proxy HDrezka mirror',
-        zh: '代理HDrezka镜子'
-      },
-      online_mod_rezka2_name: {
-        ru: 'Логин или email для HDrezka',
-        uk: 'Логін чи email для HDrezka',
-        be: 'Лагін ці email для HDrezka',
-        en: 'Login or email for HDrezka',
-        zh: 'HDrezka的登录或电子邮件'
-      },
-      online_mod_rezka2_password: {
-        ru: 'Пароль для HDrezka',
-        uk: 'Пароль для HDrezka',
-        be: 'Пароль для HDrezka',
-        en: 'Password for HDrezka',
-        zh: 'HDrezka的密码'
-      },
-      online_mod_rezka2_login: {
-        ru: 'Войти в HDrezka',
-        uk: 'Увійти до HDrezka',
-        be: 'Увайсці ў HDrezka',
-        en: 'Log in to HDrezka',
-        zh: '登录HDrezka'
-      },
-      online_mod_rezka2_logout: {
-        ru: 'Выйти из HDrezka',
-        uk: 'Вийти з HDrezka',
-        be: 'Выйсці з HDrezka',
-        en: 'Log out of HDrezka',
-        zh: '注销HDrezka'
-      },
-      online_mod_rezka2_cookie: {
-        ru: 'Куки для HDrezka',
-        uk: 'Кукі для HDrezka',
-        be: 'Кукі для HDrezka',
-        en: 'Cookie for HDrezka',
-        zh: 'HDrezka 的 Cookie'
-      },
-      online_mod_rezka2_fill_cookie: {
-        ru: 'Заполнить куки для HDrezka',
-        uk: 'Заповнити кукі для HDrezka',
-        be: 'Запоўніць кукі для HDrezka',
-        en: 'Fill cookie for HDrezka',
-        zh: '为HDrezka填充Cookie'
-      },
-      online_mod_secret_password: {
-        ru: 'Секретный пароль',
-        uk: 'Секретний пароль',
-        be: 'Сакрэтны пароль',
-        en: 'Secret password',
-        zh: '秘密密码'
-      },
-      online_mod_seasons_count: {
-        ru: 'Сезонов',
-        uk: 'Сезонів',
-        be: 'Сезонаў',
-        en: 'Seasons',
-        zh: '季'
-      },
-      online_mod_episodes_count: {
-        ru: 'Эпизодов',
-        uk: 'Епізодів',
-        be: 'Эпізодаў',
-        en: 'Episodes',
-        zh: '集'
-      },
-      online_mod_filmix_param_add_title: {
-        ru: 'Добавить ТОКЕН от Filmix',
-        uk: 'Додати ТОКЕН від Filmix',
-        be: 'Дадаць ТОКЕН ад Filmix',
-        en: 'Add TOKEN from Filmix',
-        zh: '从 Filmix 添加 TOKEN'
-      },
-      online_mod_filmix_param_add_descr: {
-        ru: 'Добавьте ТОКЕН для подключения подписки',
-        uk: 'Додайте ТОКЕН для підключення передплати',
-        be: 'Дадайце ТОКЕН для падлучэння падпіскі',
-        en: 'Add a TOKEN to connect a subscription',
-        zh: '添加 TOKEN 以连接订阅'
-      },
-      online_mod_filmix_param_placeholder: {
-        ru: 'Например: nxjekeb57385b..',
-        uk: 'Наприклад: nxjekeb57385b..',
-        be: 'Напрыклад: nxjekeb57385b..',
-        en: 'For example: nxjekeb57385b..',
-        zh: '例如： nxjekeb57385b..'
-      },
-      online_mod_filmix_param_add_device: {
-        ru: 'Добавить устройство на Filmix',
-        uk: 'Додати пристрій на Filmix',
-        be: 'Дадаць прыладу на Filmix',
-        en: 'Add Device to Filmix',
-        zh: '将设备添加到 Filmix'
-      },
-      online_mod_filmix_modal_text: {
-        ru: 'Введите его на странице https://filmix.biz/consoles в вашем авторизованном аккаунте!',
-        uk: 'Введіть його на сторінці https://filmix.biz/consoles у вашому авторизованому обліковому записі!',
-        be: 'Увядзіце яго на старонцы https://filmix.biz/consoles у вашым аўтарызаваным акаўнце!',
-        en: 'Enter it at https://filmix.biz/consoles in your authorized account!',
-        zh: '在您的授权帐户中的 https://filmix.biz/consoles 中输入！'
-      },
-      online_mod_filmix_modal_wait: {
-        ru: 'Ожидаем код',
-        uk: 'Очікуємо код',
-        be: 'Чакаем код',
-        en: 'Waiting for the code',
-        zh: '等待代码'
-      },
-      online_mod_filmix_copy_secuses: {
-        ru: 'Код скопирован в буфер обмена',
-        uk: 'Код скопійовано в буфер обміну',
-        be: 'Код скапіяваны ў буфер абмену',
-        en: 'Code copied to clipboard',
-        zh: '代码复制到剪贴板'
-      },
-      online_mod_filmix_copy_fail: {
-        ru: 'Ошибка при копировании',
-        uk: 'Помилка при копіюванні',
-        be: 'Памылка пры капіяванні',
-        en: 'Copy error',
-        zh: '复制错误'
-      },
-      online_mod_filmix_nodevice: {
-        ru: 'Устройство не авторизовано',
-        uk: 'Пристрій не авторизований',
-        be: 'Прылада не аўтарызавана',
-        en: 'Device not authorized',
-        zh: '设备未授权'
-      },
-      online_mod_filmix_status: {
-        ru: 'Статус',
-        uk: 'Статус',
-        be: 'Статус',
-        en: 'Status',
-        zh: '状态'
-      },
-      online_mod_voice_subscribe: {
-        ru: 'Подписаться на перевод',
-        uk: 'Підписатися на переклад',
-        be: 'Падпісацца на пераклад',
-        en: 'Subscribe to translation',
-        zh: '订阅翻译'
-      },
-      online_mod_voice_success: {
-        ru: 'Вы успешно подписались',
-        uk: 'Ви успішно підписалися',
-        be: 'Вы паспяхова падпісаліся',
-        en: 'You have successfully subscribed',
-        zh: '您已成功订阅'
-      },
-      online_mod_voice_error: {
-        ru: 'Возникла ошибка',
-        uk: 'Виникла помилка',
-        be: 'Узнікла памылка',
-        en: 'An error has occurred',
-        zh: '发生了错误'
-      }
-    });
+  Lampa.Lang.add({
+    online_mod_watch: {
+      ru: 'Смотреть онлайн',
+      uk: 'Дивитися онлайн',
+      be: 'Глядзець анлайн',
+      en: 'Watch online',
+      zh: '在线观看'
+    },
+    online_mod_nolink: {
+      ru: 'Не удалось извлечь ссылку',
+      uk: 'Неможливо отримати посилання',
+      be: 'Не ўдалося атрымаць спасылку',
+      en: 'Failed to fetch link',
+      zh: '获取链接失败'
+    },
+    online_mod_blockedlink: {
+      ru: 'К сожалению, это видео не доступно в вашем регионе',
+      uk: 'На жаль, це відео не доступне у вашому регіоні',
+      be: 'Нажаль, гэта відэа не даступна ў вашым рэгіёне',
+      en: 'Sorry, this video is not available in your region',
+      zh: '抱歉，您所在的地区无法观看该视频'
+    },
+    online_mod_waitlink: {
+      ru: 'Работаем над извлечением ссылки, подождите...',
+      uk: 'Працюємо над отриманням посилання, зачекайте...',
+      be: 'Працуем над выманнем спасылкі, пачакайце...',
+      en: 'Working on extracting the link, please wait...',
+      zh: '正在提取链接，请稍候...'
+    },
+    online_mod_captcha_address: {
+      ru: 'Требуется пройти капчу по адресу: ',
+      uk: 'Потрібно пройти капчу за адресою: ',
+      be: 'Патрабуецца прайсці капчу па адрасе: ',
+      en: 'It is required to pass the captcha at: ',
+      zh: '您需要完成验证码： '
+    },
+    online_mod_captcha_proxy: {
+      ru: 'Требуется пройти капчу. Попробуйте использовать зеркало вместо прокси',
+      uk: 'Потрібно пройти капчу. Спробуйте використовувати дзеркало замість проксі',
+      be: 'Патрабуецца прайсці капчу. Паспрабуйце выкарыстоўваць люстэрка замест проксі',
+      en: 'It is required to pass the captcha. Try to use a mirror instead of a proxy',
+      zh: '您需要通过验证码。 尝试使用镜子而不是代理'
+    },
+    online_mod_balanser: {
+      ru: 'Балансер',
+      uk: 'Балансер',
+      be: 'Балансер',
+      en: 'Balancer',
+      zh: '平衡器'
+    },
+    online_mod_file_helper: {
+      ru: 'Удерживайте клавишу "ОК" для вызова контекстного меню',
+      uk: 'Утримуйте клавішу "ОК" для виклику контекстного меню',
+      be: 'Утрымлівайце клавішу "ОК" для выкліку кантэкстнага меню',
+      en: 'Hold the "OK" key to bring up the context menu',
+      zh: '按住“确定”键调出上下文菜单'
+    },
+    online_mod_clearmark_all: {
+      ru: 'Снять отметку у всех',
+      uk: 'Зняти позначку у всіх',
+      be: 'Зняць адзнаку ва ўсіх',
+      en: 'Uncheck all',
+      zh: '取消所有'
+    },
+    online_mod_timeclear_all: {
+      ru: 'Сбросить тайм-код у всех',
+      uk: 'Скинути тайм-код у всіх',
+      be: 'Скінуць тайм-код ва ўсіх',
+      en: 'Reset timecode for all',
+      zh: '为所有人重置时间码'
+    },
+    online_mod_query_start: {
+      ru: 'По запросу',
+      uk: 'На запит',
+      be: 'Па запыце',
+      en: 'On request',
+      zh: '根据要求'
+    },
+    online_mod_query_end: {
+      ru: 'нет результатов',
+      uk: 'немає результатів',
+      be: 'няма вынікаў',
+      en: 'no results',
+      zh: '没有结果'
+    },
+    online_mod_title: {
+      ru: 'Онлайн',
+      uk: 'Онлайн',
+      be: 'Анлайн',
+      en: 'Online',
+      zh: '在线的'
+    },
+    online_mod_title_full: {
+      ru: 'Онлайн Мод',
+      uk: 'Онлайн Мод',
+      be: 'Анлайн Мод',
+      en: 'Online Mod',
+      zh: '在线的 Mod'
+    },
+    online_mod_use_stream_proxy: {
+      ru: 'Проксировать видеопоток',
+      uk: 'Проксирувати відеопотік',
+      be: 'Праксіраваць відэаструмень',
+      en: 'Proxy video stream',
+      zh: '代理视频流'
+    },
+    online_mod_proxy_find_ip: {
+      ru: 'Передавать свой IP прокси',
+      uk: 'Передавати свій IP проксі',
+      be: 'Перадаваць свой IP проксі',
+      en: 'Send your IP to proxy',
+      zh: '将您的 IP 发送给代理'
+    },
+    online_mod_proxy_other: {
+      ru: 'Использовать альтернативный прокси',
+      uk: 'Використовувати альтернативний проксі',
+      be: 'Выкарыстоўваць альтэрнатыўны проксі',
+      en: 'Use an alternative proxy',
+      zh: '使用备用代理'
+    },
+    online_mod_proxy_other_url: {
+      ru: 'Альтернативный прокси',
+      uk: 'Альтернативний проксі',
+      be: 'Альтэрнатыўны проксі',
+      en: 'Alternative proxy',
+      zh: '备用代理'
+    },
+    online_mod_proxy_balanser: {
+      ru: 'Проксировать',
+      uk: 'Проксирувати',
+      be: 'Праксіраваць',
+      en: 'Proxy',
+      zh: '代理'
+    },
+    online_mod_proxy_kp: {
+      ru: 'Проксировать КиноПоиск',
+      uk: 'Проксирувати КиноПоиск',
+      be: 'Праксіраваць КиноПоиск',
+      en: 'Proxy KinoPoisk',
+      zh: '代理 KinoPoisk'
+    },
+    online_mod_skip_kp_search: {
+      ru: 'Не искать в КиноПоиск',
+      uk: 'Не шукати у КиноПоиск',
+      be: 'Не шукаць у КиноПоиск',
+      en: 'Skip search in KinoPoisk',
+      zh: '在 KinoPoisk 中跳过搜索'
+    },
+    online_mod_iframe_proxy: {
+      ru: 'Использовать iframe-прокси',
+      uk: 'Використовувати iframe-проксі',
+      be: 'Выкарыстоўваць iframe-проксі',
+      en: 'Use iframe proxy',
+      zh: '使用 iframe 代理'
+    },
+    online_mod_prefer_http: {
+      ru: 'Предпочитать поток по HTTP',
+      uk: 'Віддавати перевагу потіку по HTTP',
+      be: 'Аддаваць перавагу патоку па HTTP',
+      en: 'Prefer stream over HTTP',
+      zh: '优先于 HTTP 流式传输'
+    },
+    online_mod_prefer_mp4: {
+      ru: 'Предпочитать поток MP4',
+      uk: 'Віддавати перевагу потіку MP4',
+      be: 'Аддаваць перавагу патоку MP4',
+      en: 'Prefer MP4 stream',
+      zh: '更喜欢 MP4 流'
+    },
+    online_mod_prefer_dash: {
+      ru: 'Предпочитать DASH вместо HLS',
+      uk: 'Віддавати перевагу DASH замість HLS',
+      be: 'Аддаваць перавагу DASH замест HLS',
+      en: 'Prefer DASH over HLS',
+      zh: '更喜欢 DASH 而不是 HLS'
+    },
+    online_mod_av1_support: {
+      ru: 'AV1 поддерживается',
+      uk: 'AV1 підтримується',
+      be: 'AV1 падтрымліваецца',
+      en: 'AV1 supported',
+      zh: 'AV1 支持'
+    },
+    online_mod_save_last_balanser: {
+      ru: 'Сохранять историю балансеров',
+      uk: 'Зберігати історію балансерів',
+      be: 'Захоўваць гісторыю балансараў',
+      en: 'Save history of balancers',
+      zh: '保存平衡器的历史记录'
+    },
+    online_mod_clear_last_balanser: {
+      ru: 'Очистить историю балансеров',
+      uk: 'Очистити історію балансерів',
+      be: 'Ачысціць гісторыю балансараў',
+      en: 'Clear history of balancers',
+      zh: '清除平衡器的历史记录'
+    },
+    online_mod_kinobase_mirror: {
+      ru: 'Зеркало для Kinobase',
+      uk: 'Дзеркало для Kinobase',
+      be: 'Люстэрка для Kinobase',
+      en: 'Mirror for Kinobase',
+      zh: 'Kinobase的镜子'
+    },
+    online_mod_kinobase_token: {
+      ru: 'ТОКЕН от Kinobase',
+      uk: 'ТОКЕН від Kinobase',
+      be: 'ТОКЕН ад Kinobase',
+      en: 'TOKEN from Kinobase',
+      zh: 'TOKEN 来自 Kinobase'
+    },
+    online_mod_rezka2_mirror: {
+      ru: 'Зеркало для HDrezka',
+      uk: 'Дзеркало для HDrezka',
+      be: 'Люстэрка для HDrezka',
+      en: 'Mirror for HDrezka',
+      zh: 'HDrezka的镜子'
+    },
+    online_mod_proxy_rezka2_mirror: {
+      ru: 'Проксировать зеркало HDrezka',
+      uk: 'Проксирувати дзеркало HDrezka',
+      be: 'Праксіраваць люстэрка HDrezka',
+      en: 'Proxy HDrezka mirror',
+      zh: '代理HDrezka镜子'
+    },
+    online_mod_rezka2_name: {
+      ru: 'Логин или email для HDrezka',
+      uk: 'Логін чи email для HDrezka',
+      be: 'Лагін ці email для HDrezka',
+      en: 'Login or email for HDrezka',
+      zh: 'HDrezka的登录或电子邮件'
+    },
+    online_mod_rezka2_password: {
+      ru: 'Пароль для HDrezka',
+      uk: 'Пароль для HDrezka',
+      be: 'Пароль для HDrezka',
+      en: 'Password for HDrezka',
+      zh: 'HDrezka的密码'
+    },
+    online_mod_rezka2_login: {
+      ru: 'Войти в HDrezka',
+      uk: 'Увійти до HDrezka',
+      be: 'Увайсці ў HDrezka',
+      en: 'Log in to HDrezka',
+      zh: '登录HDrezka'
+    },
+    online_mod_rezka2_logout: {
+      ru: 'Выйти из HDrezka',
+      uk: 'Вийти з HDrezka',
+      be: 'Выйсці з HDrezka',
+      en: 'Log out of HDrezka',
+      zh: '注销HDrezka'
+    },
+    online_mod_rezka2_cookie: {
+      ru: 'Куки для HDrezka',
+      uk: 'Кукі для HDrezka',
+      be: 'Кукі для HDrezka',
+      en: 'Cookie for HDrezka',
+      zh: 'HDrezka 的 Cookie'
+    },
+    online_mod_rezka2_fill_cookie: {
+      ru: 'Заполнить куки для HDrezka',
+      uk: 'Заповнити кукі для HDrezka',
+      be: 'Запоўніць кукі для HDrezka',
+      en: 'Fill cookie for HDrezka',
+      zh: '为HDrezka填充Cookie'
+    },
+    online_mod_secret_password: {
+      ru: 'Секретный пароль',
+      uk: 'Секретний пароль',
+      be: 'Сакрэтны пароль',
+      en: 'Secret password',
+      zh: '秘密密码'
+    },
+    online_mod_seasons_count: {
+      ru: 'Сезонов',
+      uk: 'Сезонів',
+      be: 'Сезонаў',
+      en: 'Seasons',
+      zh: '季'
+    },
+    online_mod_episodes_count: {
+      ru: 'Эпизодов',
+      uk: 'Епізодів',
+      be: 'Эпізодаў',
+      en: 'Episodes',
+      zh: '集'
+    },
+    online_mod_filmix_param_add_title: {
+      ru: 'Добавить ТОКЕН от Filmix',
+      uk: 'Додати ТОКЕН від Filmix',
+      be: 'Дадаць ТОКЕН ад Filmix',
+      en: 'Add TOKEN from Filmix',
+      zh: '从 Filmix 添加 TOKEN'
+    },
+    online_mod_filmix_param_add_descr: {
+      ru: 'Добавьте ТОКЕН для подключения подписки',
+      uk: 'Додайте ТОКЕН для підключення передплати',
+      be: 'Дадайце ТОКЕН для падлучэння падпіскі',
+      en: 'Add a TOKEN to connect a subscription',
+      zh: '添加 TOKEN 以连接订阅'
+    },
+    online_mod_filmix_param_placeholder: {
+      ru: 'Например: nxjekeb57385b..',
+      uk: 'Наприклад: nxjekeb57385b..',
+      be: 'Напрыклад: nxjekeb57385b..',
+      en: 'For example: nxjekeb57385b..',
+      zh: '例如： nxjekeb57385b..'
+    },
+    online_mod_filmix_param_add_device: {
+      ru: 'Добавить устройство на Filmix',
+      uk: 'Додати пристрій на Filmix',
+      be: 'Дадаць прыладу на Filmix',
+      en: 'Add Device to Filmix',
+      zh: '将设备添加到 Filmix'
+    },
+    online_mod_filmix_modal_text: {
+      ru: 'Введите его на странице https://filmix.biz/consoles в вашем авторизованном аккаунте!',
+      uk: 'Введіть його на сторінці https://filmix.biz/consoles у вашому авторизованому обліковому записі!',
+      be: 'Увядзіце яго на старонцы https://filmix.biz/consoles у вашым аўтарызаваным акаўнце!',
+      en: 'Enter it at https://filmix.biz/consoles in your authorized account!',
+      zh: '在您的授权帐户中的 https://filmix.biz/consoles 中输入！'
+    },
+    online_mod_filmix_modal_wait: {
+      ru: 'Ожидаем код',
+      uk: 'Очікуємо код',
+      be: 'Чакаем код',
+      en: 'Waiting for the code',
+      zh: '等待代码'
+    },
+    online_mod_filmix_copy_secuses: {
+      ru: 'Код скопирован в буфер обмена',
+      uk: 'Код скопійовано в буфер обміну',
+      be: 'Код скапіяваны ў буфер абмену',
+      en: 'Code copied to clipboard',
+      zh: '代码复制到剪贴板'
+    },
+    online_mod_filmix_copy_fail: {
+      ru: 'Ошибка при копировании',
+      uk: 'Помилка при копіюванні',
+      be: 'Памылка пры капіяванні',
+      en: 'Copy error',
+      zh: '复制错误'
+    },
+    online_mod_filmix_nodevice: {
+      ru: 'Устройство не авторизовано',
+      uk: 'Пристрій не авторизований',
+      be: 'Прылада не аўтарызавана',
+      en: 'Device not authorized',
+      zh: '设备未授权'
+    },
+    online_mod_filmix_status: {
+      ru: 'Статус',
+      uk: 'Статус',
+      be: 'Статус',
+      en: 'Status',
+      zh: '状态'
+    },
+    online_mod_voice_subscribe: {
+      ru: 'Подписаться на перевод',
+      uk: 'Підписатися на переклад',
+      be: 'Падпісацца на пераклад',
+      en: 'Subscribe to translation',
+      zh: '订阅翻译'
+    },
+    online_mod_voice_success: {
+      ru: 'Вы успешно подписались',
+      uk: 'Ви успішно підписалися',
+      be: 'Вы паспяхова падпісаліся',
+      en: 'You have successfully subscribed',
+      zh: '您已成功订阅'
+    },
+    online_mod_voice_error: {
+      ru: 'Возникла ошибка',
+      uk: 'Виникла помилка',
+      be: 'Узнікла памылка',
+      en: 'An error has occurred',
+      zh: '发生了错误'
+    }
+  });
     var network = new Lampa.Reguest();
     var online_loading = false;
 
@@ -15906,7 +15912,7 @@
 
     function addSettingsOnlineMod() {
       if (Lampa.Settings.main && Lampa.Settings.main() && !Lampa.Settings.main().render().find('[data-component="online_mod"]').length) {
-        var field = $(Lampa.Lang.translate("<div class=\"settings-folder selector\" data-component=\"online_mod\">\n            <div class=\"settings-folder__icon\">\n                <svg height=\"260\" viewBox=\"0 0 244 260\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                <path d=\"M242,88v170H10V88h41l-38,38h37.1l38-38h38.4l-38,38h38.4l38-38h38.3l-38,38H204L242,88L242,88z M228.9,2l8,37.7l0,0 L191.2,10L228.9,2z M160.6,56l-45.8-29.7l38-8.1l45.8,29.7L160.6,56z M84.5,72.1L38.8,42.4l38-8.1l45.8,29.7L84.5,72.1z M10,88 L2,50.2L47.8,80L10,88z\" fill=\"white\"/>\n                </svg>\n            </div>\n            <div class=\"settings-folder__name\">#{online_mod_title_full}</div>\n        </div>"));
+        var field = $(Lampa.Lang.translate("<div class=\"settings-folder selector\" data-component=\"online_mod\">\n            <div class=\"settings-folder__icon\">\n                <svg viewBox=\"0 0 32 32\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" enable-background=\"new 0 0 32 32\"><path d=\"m17 14.5 4.2-4.5L4.9 1.2c-.1-.1-.3-.1-.6-.2L17 14.5zM23 21l5.9-3.2c.7-.4 1.1-1 1.1-1.8s-.4-1.5-1.1-1.8L23 11l-4.7 5 4.7 5zM2.4 1.9c-.3.3-.4.7-.4 1.1v26c0 .4.1.8.4 1.2L15.6 16 2.4 1.9zM17 17.5 4.3 31c.2 0 .4-.1.6-.2L21.2 22 17 17.5z\" fill=\"currentColor\" fill=\"#ffffff\" class=\"fill-000000\"></path></svg>\n            </div>\n            <div class=\"settings-folder__name\">Онлайн</div>\n        </div>"));
         Lampa.Settings.main().render().find('[data-component="more"]').after(field);
         Lampa.Settings.main().update();
       }
