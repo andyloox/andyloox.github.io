@@ -31,9 +31,12 @@
           './rating.js',
           './otzyv.js',
           './vod.js',
-	   './prestige.js',
- 	  './vod2.js',
+	      './prestige.js',
+ 	      './vod2.js',
 		  './modss.js',
+		  './timecode.js',
+	      './online3.js',
+		  './sisi2.js',
           ], function () {});
 		/*'./nyam.js',*/
 		/* './s.js',*/

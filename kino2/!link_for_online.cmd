@@ -56,4 +56,29 @@ rename %nameJS% "%FolderBackup%%name%_%Date:~0,2%.%Date:~3,2%.%Date:~6,4% (%TIME
 curl -o %nameJS% %URL%
 
 
+rem -----file8----
+set nameJS=sisi2.js
+set URL=http://bwa-cloud.cfhttp.top/sisi.js
+set name=sisi2
+
+rename %nameJS% "%FolderBackup%%name%_%Date:~0,2%.%Date:~3,2%.%Date:~6,4% (%TIME:~0,2%.%TIME:~0,2%.%TIME:~6,2%).js"
+curl -o %nameJS% %URL%
+
+rem -----file9----
+set nameJS=online3.js
+set URL=http://bwa-cloud.cfhttp.top/online.js
+set name=online3
+
+rename %nameJS% "%FolderBackup%%name%_%Date:~0,2%.%Date:~3,2%.%Date:~6,4% (%TIME:~0,2%.%TIME:~0,2%.%TIME:~6,2%).js"
+curl -o %nameJS% %URL%
+
+rem -----file10----
+set nameJS=timecode.js
+set URL=http://bwa-cloud.cfhttp.top/timecode.js
+set name=timecode
+
+rename %nameJS% "%FolderBackup%%name%_%Date:~0,2%.%Date:~3,2%.%Date:~6,4% (%TIME:~0,2%.%TIME:~0,2%.%TIME:~6,2%).js"
+curl -o %nameJS% %URL%
+
+
 
