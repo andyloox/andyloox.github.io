@@ -45,7 +45,7 @@ set URL=https://sisi.am/nyam.js
 set name=nyam
 
 rename %nameJS% "%FolderBackup%%name%_%Date:~0,2%.%Date:~3,2%.%Date:~6,4% (%TIME:~0,2%.%TIME:~0,2%.%TIME:~6,2%).js"
-curl -o %nameJS% %URL%
+rem curl -o %nameJS% %URL%
 
 rem -----file7----
 set nameJS=s.js
@@ -53,7 +53,7 @@ set URL=https://bwa.to/s
 set name=s
 
 rename %nameJS% "%FolderBackup%%name%_%Date:~0,2%.%Date:~3,2%.%Date:~6,4% (%TIME:~0,2%.%TIME:~0,2%.%TIME:~6,2%).js"
-curl -o %nameJS% %URL%
+rem curl -o %nameJS% %URL%
 
 
 rem -----file8----
@@ -62,7 +62,7 @@ set URL=http://bwa-cloud.cfhttp.top/sisi.js
 set name=sisi2
 
 rename %nameJS% "%FolderBackup%%name%_%Date:~0,2%.%Date:~3,2%.%Date:~6,4% (%TIME:~0,2%.%TIME:~0,2%.%TIME:~6,2%).js"
-curl -o %nameJS% %URL%
+rem curl -o %nameJS% %URL%
 
 rem -----file9----
 set nameJS=online3.js
@@ -70,7 +70,7 @@ set URL=http://bwa-cloud.cfhttp.top/online.js
 set name=online3
 
 rename %nameJS% "%FolderBackup%%name%_%Date:~0,2%.%Date:~3,2%.%Date:~6,4% (%TIME:~0,2%.%TIME:~0,2%.%TIME:~6,2%).js"
-curl -o %nameJS% %URL%
+rem curl -o %nameJS% %URL%
 
 rem -----file10----
 set nameJS=timecode.js
@@ -88,4 +88,4 @@ set URL=https://showy.online/m.js
 set name=m
 
 rename %nameJS% "%FolderBackup%%name%_%Date:~0,2%.%Date:~3,2%.%Date:~6,4% (%TIME:~0,2%.%TIME:~0,2%.%TIME:~6,2%).js"
-curl -o %nameJS% %URL%
+rem curl -o %nameJS% %URL%
