@@ -30,12 +30,6 @@
           './radio.js',
           './rating.js',
           './otzyv.js',
-          './vod.js',
-		  './prestige.js',
-		  './vod2.js',
-		  './modss.js',
-		  './nyam.js',
-		  './s.js',
           ], function () {});
 
 	/*Удаляем ненужное из меню настроек*/
