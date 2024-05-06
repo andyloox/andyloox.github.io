@@ -31,13 +31,12 @@
           './rating.js',
           './otzyv.js',
           './vod.js',
-		  './prestige.js',
-		  './vod2.js',
+	   './prestige.js',
+ 	  './vod2.js',
 		  './modss.js',
-		  './nyam.js',
-		  './s.js',
           ], function () {});
-
+		/*'./nyam.js',*/
+		/* './s.js',*/
 	/*Удаляем ненужное из меню настроек*/
 
   window.lampa_settings.torrents_use = true;
