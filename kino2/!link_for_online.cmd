@@ -89,3 +89,12 @@ set name=m
 
 rename %nameJS% "%FolderBackup%%name%_%Date:~0,2%.%Date:~3,2%.%Date:~6,4% (%TIME:~0,2%.%TIME:~0,2%.%TIME:~6,2%).js"
 rem curl -o %nameJS% %URL%
+
+
+
+https://nemiroff.github.io/lampa/updater.js 
+https://nb557.github.io/plugins/online_mod.js
+https://nb557.github.io/plugins/rating.js
+https://lamраplugins.github.io/store/store.js
+http://lampaplugins.github.io/store/o.js
+https://аndreyurl54.github.iо/diesel5/tricks.js
