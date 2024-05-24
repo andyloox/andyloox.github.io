@@ -1,17 +1,7 @@
-//16.05.2024 - Fix
+//09.05.2024 - Fix
 
 (function () {
     'use strict';
-
-    function startsWith(str, searchString) {
-      return str.lastIndexOf(searchString, 0) === 0;
-    }
-
-    function endsWith(str, searchString) {
-      var start = str.length - searchString.length;
-      if (start < 0) return false;
-      return str.indexOf(searchString, start) === start;
-    }
 
     var myIp = '';
 
@@ -826,7 +816,7 @@
       var prefer_http = Lampa.Storage.field('online_mod_prefer_http') === true;
       var prefer_mp4 = Lampa.Storage.field('online_mod_prefer_mp4') === true;
       var prox = component.proxy('rezka');
-      var iframe_proxy = !prox && Lampa.Storage.field('online_mod_iframe_proxy') === true && startsWith(window.location.protocol, 'http') && !Lampa.Platform.is('android');
+      var iframe_proxy = !prox && Lampa.Storage.field('online_mod_iframe_proxy') === true && window.location.protocol.startsWith('http') && !Lampa.Platform.is('android');
       var embed = prox + (prox || iframe_proxy || window.location.protocol === 'https:' ? 'https://voidboost.net/' : 'http://voidboost.tv/');
       var filter_items = {};
       var choice = {
@@ -1167,7 +1157,7 @@
       }
 
       function decode(data) {
-        if (!startsWith(data, '#')) return data;
+        if (!data.startsWith('#')) return data;
 
         var enc = function enc(str) {
           return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
@@ -1935,7 +1925,7 @@
       }
 
       function decode(data) {
-        if (!startsWith(data, '#')) return data;
+        if (!data.startsWith('#')) return data;
 
         var enc = function enc(str) {
           return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
@@ -3098,7 +3088,7 @@
       var prefer_mp4 = false;
       var prox = component.proxy('cdnmovies');
       var stream_prox = prox;
-      var iframe_proxy = !prox && Lampa.Storage.field('online_mod_iframe_proxy') === true && !startsWith(window.location.protocol, 'http');
+      var iframe_proxy = !prox && Lampa.Storage.field('online_mod_iframe_proxy') === true && !window.location.protocol.startsWith('http');
       var host = 'https://cdnmovies.net';
       var ref = host + '/';
       var user_agent = 'Mozilla/5.0 (Linux; Android 10; K; client) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6167.178 Mobile Safari/537.36';
@@ -3121,7 +3111,7 @@
         stream_prox += 'param/cf-connecting-ip=/';
       }
 
-      var embed = prox + 'https://cdnmovies-stream.online/';
+      var embed = prox + 'https://skinny-wilderness.cdnmovies-stream.online/';
       var filter_items = {};
       var choice = {
         season: 0,
@@ -3152,6 +3142,7 @@
             network.timeout(10000);
             network["native"](embed + api, call_success, call_error, false, {
               dataType: 'text',
+              disableH2: true,
               headers: headers
             });
           } finally {
@@ -3257,7 +3248,7 @@
       }
 
       function decode(data) {
-        if (!startsWith(data, '#')) return data;
+        if (!data.startsWith('#')) return data;
 
         var enc = function enc(str) {
           return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
@@ -3357,7 +3348,7 @@
         if (element.stream) return call(element);
         var url = element.file || '';
 
-        if (startsWith(url, '[')) {
+        if (url.startsWith('[')) {
           parseStream(element, call, error, extractItemsPlaylist, url, '');
           return;
         }
@@ -3628,7 +3619,7 @@
 
         var url = 'https://api.filmix.tv/api-fx/post/171042/video-links';
 
-        if (!startsWith(url, 'http')) {
+        if (!url.startsWith('http')) {
           if (callback) callback();
           return;
         }
@@ -4822,7 +4813,7 @@
         if (element.stream) return call(element);
         var url = element.media.file || '';
 
-        if (startsWith(url, '[')) {
+        if (url.startsWith('[')) {
           parseStream(element, call, error, extractItemsPlaylist, url, '');
           return;
         }
@@ -10750,7 +10741,7 @@
       var token = 'd317441359e505c343c2063edc97e7';
       var embed = prox + 'https://api.apbugall.org/?token=' + token;
       var decrypt = Utils.decodeSecret([16, 86, 76, 90, 80, 77, 93, 95, 90, 16, 67, 77, 70, 31, 25, 65, 66, 88, 20, 16, 77, 91, 88, 92, 90, 28, 20, 89, 70, 8, 29, 72, 25, 66, 81, 70, 24, 85, 65, 64, 65, 88, 87, 68, 20, 5, 16, 66, 73, 8, 25, 66, 81, 70, 24, 88, 86, 71, 71, 25, 9, 16, 65, 74, 92, 23, 89, 82, 77, 87, 88, 28, 23, 110, 17, 92, 71, 77, 68, 67, 11, 2, 108, 22, 104, 28, 98, 106, 108, 27, 101, 27, 16, 104, 28, 22, 29, 11, 20, 81, 86, 25, 28, 91, 86, 71, 68, 29, 67, 16, 79, 85, 65, 25, 93, 84, 107, 75, 65, 25, 9, 19, 74, 64, 66, 26, 85, 81, 77, 87, 91, 17, 27, 70, 85, 74, 16, 80, 80, 108, 74, 69, 16, 9, 24, 23, 17, 111, 109, 30, 105, 26, 29, 31, 11, 22, 29, 8, 25, 81, 72, 64, 74, 81, 90, 64, 29, 80, 80, 111, 71, 73, 16, 4, 20, 90, 93, 107, 67, 69, 24, 15, 25, 93, 87, 102, 71, 65, 111, 9, 109, 25, 14, 19, 30, 19, 11, 20, 93, 72, 77, 70, 82, 90, 64, 30, 68, 87, 67, 77, 80, 82, 77, 85, 16, 9, 24, 23, 31, 64, 92, 82, 81, 94, 9, 31, 16, 18, 20, 86, 87, 87, 95, 80, 93, 101, 107, 125, 112, 86, 89, 64, 91, 86, 85, 87, 64, 27, 77, 91, 91, 81, 86, 25, 25, 31, 19, 30, 18, 81, 66, 9, 13, 30, 20, 24, 25, 85, 70, 5, 24, 27, 25, 19, 21, 80, 80, 111, 71, 73, 13, 30, 20, 24, 25, 81, 94, 87, 87, 84, 92, 97, 97, 112, 119, 95, 89, 72, 95, 87, 81, 93, 77, 28, 85, 76, 76, 66, 88, 87, 71, 23, 93, 84, 107, 75, 65, 16, 15, 19, 79, 85, 66, 20, 74, 85, 95, 81, 65, 92, 70, 16, 9, 24, 85, 65, 64, 65, 88, 87, 68, 26, 81, 84, 102, 71, 66, 25, 11, 16, 120, 89, 93, 73, 85, 29, 108, 64, 89, 88, 75, 30, 88, 80, 87, 108, 70, 92, 119, 87, 93, 73, 91, 93, 92, 90, 68, 28, 77, 66, 85, 24, 19, 30, 65, 89, 80, 103, 65, 4, 19, 19, 18, 20, 85, 90, 91, 95, 93, 81, 102, 107, 125, 115, 91, 85, 64, 86, 90, 86, 87, 64, 24, 81, 64, 68, 75, 85, 80, 77, 26, 89, 80, 103, 67, 72, 29, 26, 25, 14, 16, 65, 74, 92, 2, 20, 86, 65, 64, 66, 85, 91, 68, 23, 80, 92, 84, 85, 89, 90, 24, 13, 25, 92, 92, 74, 64, 107, 5, 101, 16, 18, 20, 20, 22, 19, 11, 20, 93, 72, 77, 70, 82, 90, 64, 30, 68, 74, 95, 65, 6, 19, 4, 20, 24, 19, 72, 81, 75, 85, 94, 22, 123, 66, 93, 95, 89, 87, 9, 20, 25, 31, 16, 81, 86, 83, 86, 80, 86, 108, 102, 121, 119, 87, 93, 73, 91, 93, 92, 90, 68, 28, 80, 95, 74, 64, 104, 8, 105, 25, 20, 19, 16, 30, 27, 20, 16, 20, 27, 20, 16, 23, 73, 85, 65, 88, 89, 31, 102, 93, 86, 92, 70, 86, 75, 9, 23, 20, 19, 16, 92, 90, 80, 86, 80, 85, 97, 106, 121, 122, 91, 94, 73, 91, 94, 81, 86, 68, 17, 70, 86, 95, 81, 66, 81, 74, 25, 25, 31, 19, 30, 27, 23, 29, 3, 16, 92, 76, 71, 75, 85, 83, 64, 22, 88, 92, 85, 87, 92, 70, 67, 20, 5, 16, 117, 85, 94, 73, 85, 30, 100, 84, 81, 77, 82, 92, 75, 89, 30, 93, 75, 24, 30, 85, 93, 93, 70, 95, 93, 92, 23, 16, 20, 12, 25, 79, 16, 19, 119, 66, 80, 83, 90, 87, 19, 10, 20, 80, 95, 74, 64, 104, 8, 105, 28, 20, 31, 98, 92, 82, 86, 75, 81, 66, 19, 2, 16, 75, 81, 85, 92, 70, 85, 70, 24, 77, 25, 14, 19, 66, 73, 11, 20, 69, 16, 75, 81, 71, 76, 70, 94, 20, 93, 72, 77, 70, 82, 90, 64, 11, 20, 69, 25, 23, 87, 82, 85, 88, 24, 79, 69, 28]);
-      var decrypt2 = Utils.decodeSecret([16, 86, 76, 90, 80, 77, 93, 95, 90, 16, 67, 90, 70, 90, 73, 64, 28, 20, 76, 95, 82, 81, 93, 21, 20, 89, 80, 17, 75, 25, 66, 82, 75, 20, 71, 93, 86, 84, 86, 67, 19, 4, 20, 75, 73, 20, 16, 29, 20, 14, 25, 79, 77, 15, 24, 70, 88, 70, 19, 97, 121, 124, 124, 76, 68, 73, 102, 86, 72, 65, 85, 71, 76, 16, 4, 20, 85, 76, 90, 83, 64, 81, 95, 87, 20, 107, 116, 120, 120, 64, 76, 64, 107, 81, 66, 76, 81, 67, 64, 16, 25, 66, 20, 71, 81, 93, 67, 26, 87, 64, 92, 90, 19, 4, 20, 86, 65, 86, 83, 77, 93, 92, 87, 28, 25, 79, 69, 11, 25, 64, 91, 80, 71, 30, 71, 93, 68, 107, 81, 66, 76, 81, 67, 64, 112, 85, 88, 80, 86, 75, 20, 13, 20, 94, 69, 87, 87, 71, 80, 91, 94, 28, 17, 75, 68, 15, 19, 77, 92, 89, 71, 22, 67, 92, 90, 87, 25, 9, 16, 82, 77, 94, 90, 64, 90, 86, 90, 24, 29, 67, 77, 2, 20, 78, 2, 20, 70, 85, 74, 16, 97, 112, 92, 84, 85, 89, 90, 106, 85, 72, 65, 86, 74, 64, 16, 9, 24, 104, 116, 120, 123, 77, 64, 64, 102, 93, 65, 76, 81, 64, 77, 15, 16, 64, 74, 73, 25, 79, 19, 92, 66, 81, 88, 16, 67, 90, 70, 90, 73, 64, 25, 15, 24, 77, 25, 87, 82, 77, 87, 88, 20, 16, 85, 16, 79, 78, 25, 70, 85, 64, 77, 66, 87, 20, 72, 25, 69, 69, 81, 74, 73, 3, 20, 17, 6, 87, 88, 65, 72, 81, 90, 92, 70, 73, 71, 13, 22, 24, 27, 25, 81, 93, 90, 91, 84, 81, 109, 98, 112, 119, 92, 84, 68, 95, 90, 93, 94, 77, 28, 73, 65, 66, 81, 71, 92, 81, 74, 80, 82, 74, 66, 81, 71, 92, 87, 88, 71, 85, 79, 80, 25, 24, 24, 64, 86, 71, 71, 93, 85, 68, 85, 2, 16, 27, 89, 70, 93, 93, 92, 85, 90, 81, 93, 83, 86, 64, 9, 18, 20, 19, 16, 92, 90, 80, 86, 80, 85, 97, 106, 121, 122, 91, 94, 73, 91, 94, 81, 86, 68, 17, 64, 92, 82, 81, 94, 29, 24, 27, 25, 22, 21, 87, 81, 71, 89, 77, 84, 80, 88, 82, 91, 85, 84, 9, 26, 16, 18, 20, 86, 87, 87, 95, 80, 93, 101, 107, 125, 112, 86, 89, 64, 91, 86, 85, 87, 64, 27, 80, 80, 25, 20, 19, 16, 27, 18, 92, 85, 80, 93, 65, 92, 89, 85, 85, 81, 88, 80, 13, 22, 24, 27, 25, 81, 93, 90, 91, 84, 81, 109, 98, 112, 119, 92, 84, 68, 95, 90, 93, 94, 77, 28, 70, 76, 69, 25, 24, 24, 81, 92, 71, 9, 25, 65, 69, 69, 20, 16, 79, 7, 9, 25, 71, 67, 24, 24, 70, 8, 14, 19, 74, 64, 82, 20, 69, 11, 25, 73, 26, 23, 87, 81, 88, 84, 24, 66, 73, 31]);
+      var decrypt2 = Utils.decodeSecret([16, 86, 76, 90, 80, 77, 93, 95, 90, 16, 67, 90, 70, 90, 73, 64, 28, 20, 76, 95, 82, 81, 93, 21, 20, 89, 80, 17, 75, 25, 66, 82, 75, 20, 71, 93, 86, 84, 86, 67, 19, 4, 20, 75, 73, 20, 16, 29, 20, 14, 25, 79, 77, 15, 24, 70, 88, 70, 19, 97, 121, 124, 124, 76, 68, 73, 102, 86, 72, 65, 85, 71, 76, 16, 4, 20, 85, 76, 90, 83, 64, 81, 95, 87, 20, 107, 116, 120, 120, 64, 76, 64, 107, 81, 66, 76, 81, 67, 64, 16, 25, 66, 20, 71, 81, 93, 67, 26, 87, 64, 92, 90, 19, 4, 20, 86, 65, 86, 83, 77, 93, 92, 87, 28, 25, 79, 69, 11, 25, 64, 91, 80, 71, 30, 71, 93, 68, 107, 81, 66, 76, 81, 67, 64, 112, 85, 88, 80, 86, 75, 20, 13, 20, 94, 69, 87, 87, 71, 80, 91, 94, 28, 17, 75, 68, 15, 19, 77, 92, 89, 71, 22, 67, 92, 90, 87, 25, 9, 16, 82, 77, 94, 90, 64, 90, 86, 90, 24, 29, 67, 77, 2, 20, 78, 2, 20, 70, 85, 74, 16, 97, 112, 92, 84, 85, 89, 90, 106, 85, 72, 65, 86, 74, 64, 16, 9, 24, 104, 116, 120, 123, 77, 64, 64, 102, 93, 65, 76, 81, 64, 77, 15, 16, 64, 74, 73, 25, 79, 19, 92, 66, 81, 88, 16, 67, 90, 70, 90, 73, 64, 25, 15, 24, 77, 25, 87, 82, 77, 87, 88, 20, 16, 85, 16, 79, 78, 25, 70, 85, 64, 77, 66, 87, 20, 72, 25, 69, 69, 81, 74, 73, 3, 20, 17, 6, 87, 88, 65, 72, 81, 90, 92, 70, 73, 71, 13, 22, 24, 27, 25, 81, 93, 90, 91, 84, 81, 109, 98, 112, 119, 92, 84, 68, 95, 90, 93, 94, 77, 28, 73, 65, 66, 81, 71, 92, 81, 74, 80, 82, 74, 66, 81, 71, 92, 87, 88, 71, 85, 79, 80, 25, 24, 24, 64, 86, 71, 71, 93, 85, 68, 85, 2, 16, 27, 89, 70, 93, 93, 92, 85, 90, 81, 93, 83, 86, 64, 9, 18, 20, 19, 16, 92, 90, 80, 86, 80, 85, 97, 106, 121, 122, 91, 94, 73, 91, 94, 81, 86, 68, 17, 64, 92, 82, 81, 94, 29, 24, 27, 25, 22, 21, 87, 81, 71, 89, 77, 84, 80, 88, 82, 91, 85, 84, 9, 26, 16, 18, 20, 86, 87, 87, 95, 80, 93, 101, 107, 125, 112, 86, 89, 64, 91, 86, 85, 87, 64, 27, 80, 80, 25, 20, 19, 16, 27, 18, 92, 85, 80, 93, 65, 92, 89, 85, 85, 81, 88, 80, 13, 22, 24, 27, 25, 81, 93, 90, 91, 84, 81, 109, 98, 112, 119, 92, 84, 68, 95, 90, 93, 94, 77, 28, 70, 76, 69, 25, 24, 24, 70, 10, 14, 19, 74, 71, 28, 20, 78, 1, 3, 20, 64, 77, 86, 16, 73, 3, 16, 68, 29, 29, 90, 85, 92, 88, 16, 75, 68, 24]);
       var filter_items = {};
       var choice = {
         season: 0,
@@ -10942,8 +10933,8 @@
       }
 
       function decode(data, aes) {
-        if (startsWith(data, '#9')) return decodeAES(data.substring(2), aes);
-        if (startsWith(data, '#7')) return decodeTrash(data.substring(2));
+        if (data.startsWith('#9')) return decodeAES(data.substring(2), aes);
+        if (data.startsWith('#7')) return decodeTrash(data.substring(2));
         return data;
       }
 
@@ -11124,7 +11115,7 @@
       function getStream(element, call, error) {
         getBaseStream(element, function (element) {
           var file = element.stream || '';
-          if (element.qualitys || element.parsed || !endsWith(file, '.m3u8')) return call(element);
+          if (element.qualitys || element.parsed || !file.endsWith('.m3u8')) return call(element);
           network.clear();
           network.timeout(10000);
           network["native"](file, function (str) {
@@ -11217,8 +11208,8 @@
                 file = file.replace(/\{v1\}/g, element.params.v1);
               }
 
-              if (startsWith(file, '[') || startsWith(file, '{')) {
-                var items = extractItems((startsWith(file, '{') ? '[]' : '') + file);
+              if (file.startsWith('[') || file.startsWith('{')) {
+                var items = extractItems((file.startsWith('{') ? '[]' : '') + file);
 
                 if (items && items.length) {
                   var voice_list = [];
@@ -11280,10 +11271,10 @@
                 element.subtitles = false;
                 var subtitle = decode(json.subtitle || '', aes);
 
-                if (startsWith(subtitle, '[')) {
+                if (subtitle.startsWith('[')) {
                   element.subtitles = parseSubs(subtitle);
                   call(element);
-                } else if (endsWith(subtitle, 'index.php')) {
+                } else if (subtitle.endsWith('index.php')) {
                   network.clear();
                   network.timeout(10000);
                   network["native"]((prox2 ? prox2 + extract.prox2 : '') + subtitle, function (str) {
@@ -11306,7 +11297,8 @@
             } catch (e) {}
 
             element.params = params;
-            if (params && params.aes) decodeStream(params.aes);else if (params) {
+
+            if (params) {
               network.clear();
               network.timeout(10000);
               network["native"]((prox2 ? prox2 + extract.prox2 : '') + extract.domain + params.query, decodeStream, function (a, c) {
@@ -13003,7 +12995,7 @@
                   info = info_match && atob(info_match[1]);
                 } catch (e) {}
 
-                if (info && startsWith(info, '/')) {
+                if (info && info.startsWith('/')) {
                   last_info = link_origin + info;
                   last_player = player_url;
                   getLinks();
@@ -13025,7 +13017,7 @@
             var obj = playlists[key];
             var quality = parseInt(key);
             var link = decode(obj && obj[0] && obj[0].src || '');
-            if (startsWith(link, '//')) link = (prefer_http ? 'http:' : 'https:') + link;
+            if (link.startsWith('//')) link = (prefer_http ? 'http:' : 'https:') + link;
             if (prefer_mp4) ;
             items.push({
               label: quality ? quality + 'p' : '360p ~ 1080p',
@@ -13193,7 +13185,7 @@
 
         var url = Utils.decodeSecret([80, 68, 77, 68, 64, 3, 27, 31, 86, 79, 81, 23, 64, 92, 22, 64, 85, 89, 72, 31, 82, 93, 93, 86, 68, 69, 86, 76, 91, 23, 64, 75, 77]);
 
-        if (!startsWith(url, 'http')) {
+        if (!url.startsWith('http')) {
           if (callback) callback();
           return;
         }
@@ -13442,7 +13434,7 @@
               var base = file.url.http.match(/^(.*)\/demo\/demo\.mp4(.*)$/);
 
               if (!base) {
-                var pos = file.url.http.indexOf((startsWith(file.file, '/') ? '' : '/') + file.file);
+                var pos = file.url.http.indexOf((file.file.startsWith('/') ? '' : '/') + file.file);
                 if (pos !== -1) base = [file.url.http, file.url.http.substring(0, pos)];
               }
 
@@ -13463,7 +13455,7 @@
                   subtitles = media.subtitles.map(function (sub) {
                     return {
                       label: sub.lang + (sub.forced ? ' - forced' : ''),
-                      url: sub.file ? base_url + '/subtitles' + (startsWith(sub.file, '/') ? '' : '/') + sub.file + '?loc=' + server : ''
+                      url: sub.file ? base_url + '/subtitles' + (sub.file.startsWith('/') ? '' : '/') + sub.file + '?loc=' + server : ''
                     };
                   });
                   if (!subtitles.length) subtitles = false;
@@ -13476,7 +13468,7 @@
                   codec: file.codec,
                   type: 'http',
                   params: base[2],
-                  file: base_url + (startsWith(file.file, '/') ? '' : '/') + file.file,
+                  file: base_url + (file.file.startsWith('/') ? '' : '/') + file.file,
                   subtitles: subtitles
                 });
               }
@@ -13556,7 +13548,7 @@
               var _base3 = file.url.hls.match(/^(.*)\/demo\/master-v1a1\.m3u8(.*)$/);
 
               if (!_base3) {
-                var _pos3 = file.url.hls.indexOf((startsWith(file.file, '/') ? '' : '/') + file.file);
+                var _pos3 = file.url.hls.indexOf((file.file.startsWith('/') ? '' : '/') + file.file);
 
                 if (_pos3 !== -1) _base3 = [file.url.hls, file.url.hls.substring(0, _pos3)];
               }
@@ -13581,7 +13573,7 @@
                   codec: file.codec,
                   type: 'hls',
                   params: _base3[2],
-                  file: _base_url3 + (startsWith(file.file, '/') ? '' : '/') + file.file,
+                  file: _base_url3 + (file.file.startsWith('/') ? '' : '/') + file.file,
                   subtitles: subtitles
                 });
               }
@@ -14529,9 +14521,9 @@
         var pl = [];
 
         try {
-          if (startsWith(str, '[')) {
+          if (str.startsWith('[')) {
             str.substring(1).split(',[').forEach(function (item) {
-              if (endsWith(item, ',')) item = item.substring(0, item.length - 1);
+              if (item.endsWith(',')) item = item.substring(0, item.length - 1);
               var label_end = item.indexOf(']');
 
               if (label_end >= 0) {
@@ -14539,7 +14531,7 @@
 
                 if (item.charAt(label_end + 1) === '{') {
                   item.substring(label_end + 2).split(';{').forEach(function (voice_item) {
-                    if (endsWith(voice_item, ';')) voice_item = voice_item.substring(0, voice_item.length - 1);
+                    if (voice_item.endsWith(';')) voice_item = voice_item.substring(0, voice_item.length - 1);
                     var voice_end = voice_item.indexOf('}');
 
                     if (voice_end >= 0) {
@@ -14584,8 +14576,8 @@
           str.split('\n').forEach(function (line) {
             line = line.trim();
 
-            if (startsWith(line, '#')) {
-              if (startsWith(line, '#EXT-X-STREAM-INF')) {
+            if (line.startsWith('#')) {
+              if (line.startsWith('#EXT-X-STREAM-INF')) {
                 xstream = true;
                 var BANDWIDTH = line.match(/\bBANDWIDTH=(\d+)\b/);
 
@@ -14631,10 +14623,10 @@
         if (link) {
           if (!referrer || link.indexOf('://') !== -1) return proxy + link;
           var url = new URL(referrer);
-          if (startsWith(link, '//')) return proxy + url.protocol + link;
-          if (startsWith(link, '/')) return proxy + url.origin + link;
-          if (startsWith(link, '?')) return proxy + url.origin + url.pathname + link;
-          if (startsWith(link, '#')) return proxy + url.origin + url.pathname + url.search + link;
+          if (link.startsWith('//')) return proxy + url.protocol + link;
+          if (link.startsWith('/')) return proxy + url.origin + link;
+          if (link.startsWith('?')) return proxy + url.origin + url.pathname + link;
+          if (link.startsWith('#')) return proxy + url.origin + url.pathname + url.search + link;
           var base = url.href.substring(0, url.href.lastIndexOf('/') + 1);
           return proxy + base + link;
         }
@@ -15163,12 +15155,11 @@
       };
     }
 
-    var mod_version = '16.05.2024';
-    console.log('App', 'start address:', window.location.href);
+    var mod_version = '09.05.2024';
     var isMSX = !!(window.TVXHost || window.TVXManager);
     var isTizen = navigator.userAgent.toLowerCase().indexOf('tizen') !== -1;
     var isIFrame = window.parent !== window;
-    var isLocal = !startsWith(window.location.protocol, 'http');
+    var isLocal = !window.location.protocol.startsWith('http');
     console.log('App', 'is MSX:', isMSX);
     console.log('App', 'is Tizen:', isTizen);
     console.log('App', 'is iframe:', isIFrame);
