@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<form>
+  <label for="camera">Выберите камеру:</label>
+  <select id="camera" name="camera" onchange="handleFruitChange()">
+    <option value="https://cctv.on-telecom.ru:4080/hls/3301363/771e79d29ab5f83b9221/playlist.m3u8">Солотча</option>
+    <option value="12">Цирк</option>
+    <option value="13">Дашки</option>
+  </select>
+</form>
+<script>
+  function handleFruitChange() {
+    const selectElement = document.getElementById('camera');
+    const selectedCamera = selectElement.value;
+    alert('Вы выбрали: ' + selectedCamera);
+  }
+</script>
+
+<input type="button" id="s1off" value="Мост Солотчи отключить" />
+<input type="button" id="s1on" value="Мост Солотчи включить" />
+
+  
+<script>
+    // Здесь не важно, как мы скрываем текст.
+    // Также можно использовать style.display:
+    document.getElementById('s1off').onclick = function() {
+      document.getElementById('video').hidden = true;
+    }
+document.getElementById('s1on').onclick = function() {
+      document.getElementById('video').hidden = false;
+    }
+
+  </script>
+  <video id="video"></video>
+  <script>
+    var video = document.getElementById('video');
+    if (Hls.isSupported()) {
+      var hls = new Hls({
+        licenseXhrSetup: function (xhr, url) {
+          xhr.withCredentials = true; // do send cookies
+          if (!xhr.readyState) {
+            // Call open to change the method (default is POST) or modify the url
+            xhr.open('get', url, true);
+            // Append headers after opening
+            xhr.setRequestHeader('Referer', 'https://ryazan.camera/');
+          }
+        },
+        enableWorker: true,
+        widevineLicenseUrl: "https://[PROJECT].nowdrm.co/v2/widevine",
+        emeEnabled: true
+      });
+      hls.loadSource('https://cctv.on-telecom.ru:4080/hls/3301363/771e79d29ab5f83b9221/playlist.m3u8');
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+        video.muted = true;
+        video.play();
+      });
+    }
+  </script>
+
+</body>
+</html>
