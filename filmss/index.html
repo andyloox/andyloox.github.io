@@ -128,7 +128,7 @@ if ('serviceWorker' in navigator) {
     <div id="actions">
  				<button style="font-size:12px;" onclick="history.back();return false;"> 🔙 Назад </button>   |   
                 <button style="font-size:12px;" onclick="window.location.reload();return false;">♻️ Обновить</button>   |   
-                <button style="font-size:12px;" onclick="selectPlayers();return false;">🖥 Плеер KinoBox </button>   | 
+                <button style="font-size:12px;" onclick="selectPlayers();return false;">🖥 Плеер Lumen (остальные не работают без VPN)</button>   | 
                 <button style="font-size:12px;" onclick="selectPlayers1();return false;">📱 Плеер Kinobox test </button>   | 
                 <button style="font-size:12px;" onclick="selectPlayers2();" id="players2" >📲 Плеер Kinobox test_all </button>   |
                 <button style="font-size:12px;" onclick="selectPlayers3();" id="players3" >🔝 videoplayers </button>      |
@@ -151,20 +151,21 @@ if ('serviceWorker' in navigator) {
 	iframe.src = "./players.html#"+id;
 	//	containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
 		/**
-		 * Switch to players kinoplay
+		 * Switch to players lumex
 
 		 */
 		function selectPlayers() {
-			containers.innerHTML = '';
-			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
+		containers.innerHTML = '';
+			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 70vmin;" scrolling="no" referrerpolicy="origin"  src="./player1.html#'+id+'"></iframe>';
+			
 		};
 
 			/**
-		 * Switch to kinodb
+		 * Switch to kinobox
 		*/
 		function selectPlayers1() {
 			containers.innerHTML = '';
-			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 70vmin;" scrolling="no" referrerpolicy="origin"  src="./player1.html#'+id+'"></iframe>';
+			containers.innerHTML = '<iframe id="iframe" style="border:0px; width: 100%; height: 75vmin;" src="./players.html#'+id+'"></iframe>';
 		};
 	/**
 		 * Switch to JO_orig
