@@ -25,16 +25,18 @@
   <iframe id="videoPlayer" allowfullscreen></iframe>
 
   <script>
-    // Получаем параметры из URL
-    const filmId = window.location.hash.substring(1);
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const filmId = params.get("id");
 
-    // Если id есть, создаем ссылку и подставляем
-    if (filmId) {
-      const videoUrl = `https://p.lumex.space/aoeIJGBZSi3y?kp_id=${filmId}`;
-      document.getElementById("videoPlayer").src = videoUrl;
-    } else {
-      document.body.innerHTML = "<h2 style='color:white;'>Ошибка: параметр ?id не найден в URL</h2>";
-    }
+      if (filmId) {
+        const videoUrl = `https://p.lumex.space/aoeIJGBZSi3y?kp_id=${filmId}`;
+        const iframe = document.getElementById("videoPlayer");
+        iframe.src = videoUrl;
+      } else {
+        document.body.innerHTML = "<h2 style='color:white; text-align:center;'>Ошибка: параметр <code>?id=</code> не найден в адресе</h2>";
+      }
+    });
   </script>
 
 </body>
