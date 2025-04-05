@@ -26,15 +26,15 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const filmId = params.get("id");
+      // Получаем ID из #хеша
+      const hash = window.location.hash;
+      const filmId = hash ? hash.substring(1) : null; // Убираем #
 
       if (filmId) {
         const videoUrl = `https://p.lumex.space/aoeIJGBZSi3y?kp_id=${filmId}`;
-        const iframe = document.getElementById("videoPlayer");
-        iframe.src = videoUrl;
+        document.getElementById("videoPlayer").src = videoUrl;
       } else {
-        document.body.innerHTML = "<h2 style='color:white; text-align:center;'>Ошибка: параметр <code>?id=</code> не найден в адресе</h2>";
+        document.body.innerHTML = "<h2 style='color:white; text-align:center;'>Ошибка: ID не найден в адресе (#1234567)</h2>";
       }
     });
   </script>
