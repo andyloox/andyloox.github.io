@@ -1,0 +1,49 @@
+<html>
+<head>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(87552151, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/87552151" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+<title>Фильмовик</title>
+</head>
+<body>
+
+<script>
+var dataUrl=window.location.href;
+var my_script_play = document.createElement("script");
+const kp_id = window.location.hash.substring(1);
+</script>
+
+
+<div class="kinobox_player"></div>
+<script src="https://kinobox.tv/kinobox.min.js"></script>
+<script>
+    new Kinobox('.kinobox_player', {
+        search: {
+            kinopoisk: kp_id, // поиск по kinopoisk id
+            imdb: 'IMDB_ID', // поиск по imdb id
+            title: 'TITLE' // поиск по названию
+        },
+        'players':{'Alloha':{'enable':true,'position':1,'token':'{token}'},'Ashdi':{'enable':true,'position':2,'token':'{token}'},'Bazon':{'enable':true,'position':3,'token':'{token}'},'Cdnmovies':{'enable':true,'position':4,'token':'{token}'},'Collaps':{'enable':true,'position':5,'token':'{token}'},'Hdvb':{'enable':true,'position':6,'token':'{token}'},'Iframe':{'enable':true,'position':7,'token':'{token}'},'Kodik':{'enable':true,'position':8,'token':'{token}'},'Videocdn':{'enable':true,'position':9,'token':'{token}'},'Voidboost':{'enable':true,'position':10,'token':'{token}'}},
+    }).init();
+</script>
+
+
+
+
+
+</html>
