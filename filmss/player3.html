@@ -29,9 +29,13 @@
 
     // Получаем ID из URL (после #)
     const id = window.location.hash.substring(1); // убираем #
+	if (id) {
+      addtoiframe('iframe', id, 600, 400, TOKEN);
+    } else {
+      document.getElementById('iframe').innerHTML = '<p>Не указан ID видео в URL (#id).</p>';
+    }
 
 
-    addtoiframe('iframe', id, 600, 400, TOKEN);
   </script>
 </body>
 
