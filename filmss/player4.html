@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html>
-
 <head>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
@@ -17,19 +15,42 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/87552151" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-</head>
+
 <title>Фильмовик</title>
+  <style>
+    iframe {
+      width: 90vw;
+      height: 90vh;
+      border: none;
+    }
+  </style>
+
+
+
+</head>
 <body>
-<div id="kinoplayertop"></div>
-	<script>
-		const yohoho = document.getElementById('kinoplayertop');
-		const id = window.location.hash.substring(1);
-		yohoho.setAttribute('data-kinopoisk', id);
-</script>
-	<script src="//kinoplayer.top/top.js"></script>
+
+<iframe id="videoPlayer" allowfullscreen></iframe>
+<iframe src="https://tv-1-kinoserial.net/embed/%window.location.hash.substring(1)%/?token=753e68a59c0b867857b8a901a1037f7c" width="100%" height="400" frameborder="0" allowfullscreen allow="autoplay *; fullscreen *"></iframe>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // Получаем ID из #хеша
+      const hash = window.location.hash;
+      const filmId = hash ? hash.substring(1) : null; // Убираем #
+
+      if (filmId) {
+        const videoUrl = `
+        
+        https://p.lumex.space/aoeIJGBZSi3y?kp_id=${filmId}`;
+        document.getElementById("videoPlayer").src = videoUrl;
+      } else {
+        document.body.innerHTML = "<h2 style='color:white; text-align:center;'>Ошибка: ID не найден в адресе (#1234567)</h2>";
+      }
+    });
+  </script>
+
 </body>
 
 </html>
