@@ -19,11 +19,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
 <title>Фильмовик</title>
+<script src="https://tv-1-kinoserial.net/static/js/addiframe.js"></script>:
 </head>
 <body>
-  <iframe id="videoFrame" width="100%" height="400" frameborder="0" allowfullscreen allow="autoplay *; fullscreen *"></iframe>
-
-  <script>
+<div id='iframe'></div>
+    <script>
     // Задаём токен (можешь вставить реальный)
     const TOKEN = 753e68a59c0b867857b8a901a1037f7c;
 
@@ -35,9 +35,9 @@
 
     // Устанавливаем src в iframe
     document.getElementById('videoFrame').src = src;
+    addtoiframe('iframe', id, 600, 400, TOKEN);
   </script>
 </body>
-
 
 
 
