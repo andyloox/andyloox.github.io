@@ -19,19 +19,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
 <title>Фильмовик</title>
-<script src="https://tv-1-kinoserial.net/static/js/addiframe.js"></script>:
+<script src="https://tv-1-kinoserial.net/static/js/addiframe.js"></script>
 </head>
 <body>
 <div id='iframe'></div>
     <script>
     // Задаём токен (можешь вставить реальный)
-    const TOKEN =753e68a59c0b867857b8a901a1037f7c;
+    const TOKEN ='753e68a59c0b867857b8a901a1037f7c';
 
     // Получаем ID из URL (после #)
     const id = window.location.hash.substring(1); // убираем #
 
 
-    addtoiframe('iframe', {id}, 600, 400, {TOKEN});
+    addtoiframe('iframe', id, 600, 400, TOKEN);
   </script>
 </body>
 
