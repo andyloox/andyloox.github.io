@@ -19,38 +19,31 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
 <title>Фильмовик</title>
-  <style>
-    iframe {
-      width: 90vw;
-      height: 90vh;
-      border: none;
-    }
-  </style>
-
-
-
 </head>
 <body>
 
-<iframe id="videoPlayer" allowfullscreen></iframe>
-<iframe src="https://tv-1-kinoserial.net/embed/%window.location.hash.substring(1)%/?token=753e68a59c0b867857b8a901a1037f7c" width="100%" height="400" frameborder="0" allowfullscreen allow="autoplay *; fullscreen *"></iframe>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      // Получаем ID из #хеша
-      const hash = window.location.hash;
-      const filmId = hash ? hash.substring(1) : null; // Убираем #
+<script>
+var dataUrl=window.location.href;
+var my_script_play = document.createElement("script");
+const kp_id = window.location.hash.substring(1);
+</script>
 
-      if (filmId) {
-        const videoUrl = `
-        
-        https://p.lumex.space/aoeIJGBZSi3y?kp_id=${filmId}`;
-        document.getElementById("videoPlayer").src = videoUrl;
-      } else {
-        document.body.innerHTML = "<h2 style='color:white; text-align:center;'>Ошибка: ID не найден в адресе (#1234567)</h2>";
-      }
-    });
-  </script>
 
-</body>
+<div class="kinobox_player"></div>
+<script src="https://kinobox.tv/kinobox.min.js"></script>
+<script>
+    new Kinobox('.kinobox_player', {
+        search: {
+            kinopoisk: kp_id, // поиск по kinopoisk id
+            imdb: 'IMDB_ID', // поиск по imdb id
+            title: 'TITLE' // поиск по названию
+        },
+        'players':{'Alloha':{'enable':true,'position':1,'token':'{token}','domain':'https://kinofilms2.sytes.net'},'Ashdi':{'enable':true,'position':2,'token':'{token}','domain':'https://kinofilms2.sytes.net'},'Bazon':{'enable':true,'position':3,'token':'{token}','domain':'https://kinofilms2.sytes.net'},'Cdnmovies':{'enable':true,'position':4,'token':'{token}','domain':'https://kinofilms2.sytes.net'},'Collaps':{'enable':true,'position':5,'token':'{token}','domain':'https://kinofilms2.sytes.net'},'Hdvb':{'enable':true,'position':6,'token':'{token}','domain':'https://kinofilms2.sytes.net'},'Iframe':{'enable':true,'position':7,'token':'{token}','domain':'https://kinofilms2.sytes.net'},'Kodik':{'enable':true,'position':8,'token':'{token}','domain':'https://kinofilms2.sytes.net'},'Videocdn':{'enable':true,'position':9,'token':'{token}','domain':'https://kinofilms2.sytes.net'},'Voidboost':{'enable':true,'position':10,'token':'{token}','domain':'https://kinofilms2.sytes.net'}},
+    }).init();
+</script>
+
+
+
+
 
 </html>
